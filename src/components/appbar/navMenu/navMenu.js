@@ -20,11 +20,11 @@ const NavMenu = () => {
     return (
         <StyledNav>
             <StyledUl>
-                <NavItem>inicio</NavItem>
-                <NavItem>blog</NavItem>
-                <NavItem>servicios</NavItem>
-                <NavItem>catálogo</NavItem>
-                <NavItem>contacto</NavItem>
+                <NavItem link={'/inicio'}>inicio</NavItem>
+                <NavItem link={'/blog'}>blog</NavItem>
+                <NavItem link={'/servicios'}>servicios</NavItem>
+                <NavItem link={'/catalogo'}>catálogo</NavItem>
+                <NavItem link={'/contacto'}>contacto</NavItem>
             </StyledUl>
         </StyledNav>
     );

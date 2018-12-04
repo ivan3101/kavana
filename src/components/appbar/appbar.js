@@ -10,7 +10,8 @@ const Appbar = () => {
       flex-direction: column;
       width: 100%;
       height: auto;
-      background-color: ${props => props.theme.primary}
+      background-color: ${props => props.theme.primary};
+      margin-bottom: 20px;
     `;
 
     return (
