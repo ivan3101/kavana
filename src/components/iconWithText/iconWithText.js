@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-import ResponsiveImg from "../../../../components/responsiveImg/responsiveImg";
+import ResponsiveImg from "../responsiveImg/responsiveImg";
 
-const locationIcons = ({ className, children, icon}) => {
+const iconWithText = ({ className, children, icon}) => {
     const Description = styled.div`
       display: flex;
       flex-direction: column;
@@ -13,7 +13,7 @@ const locationIcons = ({ className, children, icon}) => {
 
     const Icon = styled(ResponsiveImg)`
       width: auto;
-      height: 50px;
+      height: ${props => props.iconSize || '50px'};
     `;
 
     return (
@@ -26,7 +26,7 @@ const locationIcons = ({ className, children, icon}) => {
     );
 };
 
-const LocationIcons = styled(locationIcons)`
+const IconWithText = styled(iconWithText)`
   display: flex;
   flex-direction: row;
   height: auto;
@@ -34,4 +34,4 @@ const LocationIcons = styled(locationIcons)`
   gap: 5px;
 `;
 
-export default LocationIcons;
+export default IconWithText;

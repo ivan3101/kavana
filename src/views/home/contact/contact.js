@@ -17,7 +17,7 @@ const Contact = ({ className }) => {
 const StyledContact = styled(Contact)`
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 80px;
   justify-content: center;
   align-items: center;
   margin-top: 20px;

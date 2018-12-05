@@ -16,10 +16,6 @@ class Home extends Component {
             {
                 url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
                 text: 'Marico el que lo lea',
-            },
-            {
-                url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
-                text: 'ja weno',
             }
         ]
     };

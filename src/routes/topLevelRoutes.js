@@ -11,6 +11,7 @@ const TopLevelRoutes = () => {
             <Route path={'/catalogo'}/>
             <Route path={'/contacto'}/>
             <Redirect to={'/inicio'}/>
+
         </Switch>
     );
 };

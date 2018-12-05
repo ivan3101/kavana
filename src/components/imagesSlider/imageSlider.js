@@ -12,7 +12,7 @@ class ImageSlider extends Component {
     slideRef = React.createRef();
 
     componentDidMount() {
-        // this.slideInterval = setInterval(this.nextImg.bind(this), 7000)
+        this.slideInterval = setInterval(this.nextImg.bind(this), 7000)
     }
 
     componentWillUnmount() {

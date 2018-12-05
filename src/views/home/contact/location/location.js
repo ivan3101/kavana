@@ -13,8 +13,8 @@ const Location = ({ className }) => {
 
 const StyledLocation = styled(Location)`
   width: auto;
-  height: 100%;
-  max-height: 400px;
+  height: 400px;
+  max-height: 400px
 `;
 
 export default StyledLocation;

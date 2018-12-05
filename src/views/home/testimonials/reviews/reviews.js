@@ -30,8 +30,8 @@ const Reviews = ({ reviews }) => {
     return (
         <StyledDiv>
             {
-                !!reviews.length && reviews.map((review) => (
-                    <ReviewItem review={review.text} username={review.username}/>
+                !!reviews.length && reviews.map((review, index) => (
+                    <ReviewItem review={review.text} username={review.username} key={index}/>
                 ))
             }
         </StyledDiv>
