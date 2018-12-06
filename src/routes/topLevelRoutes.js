@@ -3,6 +3,7 @@ import {Redirect, Route, Switch} from "react-router-dom";
 import Home from "../views/home/home";
 import ComercioEIndustria from "../views/comercioEIndustria/comercioEIndustria";
 import AboutUs from "../views/aboutUs/aboutUs";
+import Contact from "../views/contact/contact";
 
 const TopLevelRoutes = () => {
     return (
@@ -11,7 +12,7 @@ const TopLevelRoutes = () => {
             <Route path={'/blog'}/>
             <Route path={'/servicios'}/>
             <Route path={'/catalogo'}/>
-            <Route path={'/contacto'}/>
+            <Route path={'/contacto'} component={Contact}/>
             <Route path={'/comercio-e-industria'} component={ComercioEIndustria}/>
             <Route path={'/nosotros'} component={AboutUs}/>
             <Redirect to={'/inicio'}/>

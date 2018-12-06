@@ -13,7 +13,7 @@ const FormTitle = styled.h3`
   margin-bottom: 20px;
 `;
 
-const AllyForm = ({ errors, isSubmiting, dirty, touched, match, submitError, errorMsg, errorType }) => {
+const AllyForm = ({ errors, isSubmiting, dirty, touched, match, submitError, errorMsg }) => {
     return (
         <Form style={{marginTop: '30px', width: '300px'}}>
             <FormTitle>Contáctenos para set Aliados</FormTitle>

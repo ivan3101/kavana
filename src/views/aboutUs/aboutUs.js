@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import kavanaBg from "../../assets/images/sobre-nosotros.jpg";
 import styled from "styled-components";
 import Description from "./description/description";
@@ -14,14 +14,17 @@ const Title = styled.h1`
   right: 40px;
 `;
 
-const aboutUs = ({ className }) => {
-    return (
-        <div className={className}>
-            <Title>Kavana revestimientos</Title>
-            <Description/>
-        </div>
-    );
-};
+class aboutUs extends Component {
+    render() {
+        const { className } = this.props;
+        return (
+            <div className={className}>
+                <Title>Kavana revestimientos</Title>
+                <Description/>
+            </div>
+        );
+    }
+}
 
 const AboutUs = styled(aboutUs)`
   width: 100%;
