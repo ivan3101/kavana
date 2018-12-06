@@ -5,8 +5,6 @@ import correoIcon from "../../../assets/icons/correo.png";
 import facebookIcon from "../../../assets/icons/facebook.png";
 import twitterIcon from "../../../assets/icons/twitter.png";
 import instagramIcon from "../../../assets/icons/instagram-GRIS.png";
-import ResponsiveImg from "../../responsiveImg/responsiveImg";
-import StyledLink from "../../link/link";
 import IconLink from "../../iconLink/iconLink";
 
 const socialAccounts = ({ className }) => {

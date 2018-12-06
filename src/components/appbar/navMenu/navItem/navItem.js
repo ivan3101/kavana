@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 const activeClassName = 'nav-link-active';
 
-const NavItem = ({ children, link, submenu }) => {
+const NavItem = ({ children, link, submenu, className }) => {
     const StyledLink = styled(NavLink).attrs({
         activeClassName
     })`
@@ -45,7 +45,7 @@ const NavItem = ({ children, link, submenu }) => {
 
     return (
         <SubmenuContainer>
-            <StyledLink to={link} activeClassName={activeClassName}>{ children }</StyledLink>
+            <StyledLink to={link} activeClassName={activeClassName} className={className}>{ children }</StyledLink>
             { submenu }
         </SubmenuContainer>
     );
