@@ -22,7 +22,7 @@ const Footer = styled(footer)`
   padding: 1.50rem 1.25rem;
   width: 100%;
   height: auto;
-  background-color: transparent;
+  background-color: #E2D9DA;
 `;
 
 export default Footer;

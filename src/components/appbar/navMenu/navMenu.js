@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import NavItem from "./navItem/navItem";
+import CatalogoSubmenu from "./catalogoSubmenu/catalogoSubmenu";
 
 const NavMenu = () => {
     const StyledNav = styled.nav`
@@ -23,7 +24,7 @@ const NavMenu = () => {
                 <NavItem link={'/inicio'}>inicio</NavItem>
                 <NavItem link={'/blog'}>blog</NavItem>
                 <NavItem link={'/servicios'}>servicios</NavItem>
-                <NavItem link={'/catalogo'}>catálogo</NavItem>
+                <NavItem link={'/catalogo'} submenu={<CatalogoSubmenu/>}>catálogo</NavItem>
                 <NavItem link={'/contacto'}>contacto</NavItem>
             </StyledUl>
         </StyledNav>

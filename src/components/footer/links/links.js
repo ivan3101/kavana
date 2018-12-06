@@ -15,76 +15,84 @@ const links = ({ className }) => {
       width: auto;
     `;
 
+    const Link = styled(StyledLink)`
+       border-bottom: none;
+       
+       :hover {
+        border-bottom: none;
+       }
+    `;
+
     return (
         <div className={className}>
             <Category>
-                <StyledLink link={'/inicio'}>
+                <Link link={'/inicio'}>
                     Inicio
-                </StyledLink>
-                <StyledLink link={'/blog'}>
+                </Link>
+                <Link link={'/blog'}>
                     Blog
-                </StyledLink>
-                <StyledLink link={'/nosotros'}>
+                </Link>
+                <Link link={'/nosotros'}>
                     Nosotros
-                </StyledLink>
-                <StyledLink link={'/servicios'}>
+                </Link>
+                <Link link={'/servicios'}>
                     Servicios
-                </StyledLink>
-                <StyledLink link={'/contacto'}>
+                </Link>
+                <Link link={'/contacto'}>
                     Contacto
-                </StyledLink>
+                </Link>
             </Category>
 
             <Category>
-                <StyledLink link={'/catalogo'}>
+                <Link link={'/catalogo'}>
                     Catalogo
-                </StyledLink>
+                </Link>
 
                 <SubCategory>
-                    <StyledLink link={'/catalogo/ceramica'}>
+                    <Link link={'/catalogo/ceramica'}>
                         ceramica
-                    </StyledLink>
-                    <StyledLink link={'/catalogo/porcelanato'}>
+                    </Link>
+                    <Link link={'/catalogo/porcelanato'}>
                         porcelanato
-                    </StyledLink>
-                    <StyledLink link={'/catalogo/piedras-ornamentales'}>
+                    </Link>
+                    <Link link={'/catalogo/piedras-ornamentales'}>
                         piedras ornamentales
-                    </StyledLink>
-                    <StyledLink link={'/catalogo/mallas-y-decorados'}>
+                    </Link>
+                    <Link link={'/catalogo/mallas-y-decorados'}>
                         mallas y decorados
-                    </StyledLink>
-                    <StyledLink link={'/catalogo/piezas-de-baño'}>
+                    </Link>
+                    <Link link={'/catalogo/piezas-de-baño'}>
                         piezas de baño
-                    </StyledLink>
-                    <StyledLink link={'/catalogo/muebles-de-baño'}>
+                    </Link>
+                    <Link link={'/catalogo/muebles-de-baño'}>
                         muebles de baño
-                    </StyledLink>
-                    <StyledLink link={'/catalogo/griferias'}>
+                    </Link>
+                    <Link link={'/catalogo/griferias'}>
                         griferias
-                    </StyledLink>
-                    <StyledLink link={'/catalogo/accesorios'}>
+                    </Link>
+                    <Link link={'/catalogo/accesorios'}>
                         accesorios
-                    </StyledLink>
+                    </Link>
                 </SubCategory>
             </Category>
 
             <Category>
-                <StyledLink link={'/comercio-e-industria'}>
+                <Link link={'/comercio-e-industria'}>
                     Comercio é Industria
-                </StyledLink>
+                </Link>
                 <SubCategory>
-                    <StyledLink link={'/comercio-e-industria/constructores'}>
+                    <Link link={'/comercio-e-industria/constructores'}>
                         constructores
-                    </StyledLink>
-                    <StyledLink link={'/comercio-e-industria/instaladores'}>
+                    </Link>
+                    <Link link={'/comercio-e-industria/instaladores'}>
                         instaladores
-                    </StyledLink>
-                    <StyledLink link={'/comercio-e-industria/arquitectos'}>
+                    </Link>
+                    <Link link={'/comercio-e-industria/arquitectos'}>
                         arquitectos
-                    </StyledLink>
-                    <StyledLink link={'/comercio-e-industria/diseñadores-de-interiores'}>
+                    </Link>
+                    <Link link={'/comercio-e-industria/diseñadores-de-interiores'}>
                         diseñadores de interiores
-                    </StyledLink>
+                    </Link>
                 </SubCategory>
             </Category>
         </div>
