@@ -29,5 +29,5 @@ export const redirectUrlPut = ({ redirectUrl }) => ({
 });
 
 export const loggingOutPut = () => ({
-    type:'LOGGING_OUT/PUT'
+    type:'LOGGING_OUT'
 });
