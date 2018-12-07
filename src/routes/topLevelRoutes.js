@@ -8,6 +8,7 @@ import Catalogo from "../views/catalogo/catalogo";
 import EnsureUserOnly from "../components/authCheck/ensureUserOnly/ensureUserOnly";
 import EnsureVisitorOnly from "../components/authCheck/ensureVisitorOnly/ensureVisitorOnly";
 import Login from "../views/login/login";
+import Admin from "../views/admin/admin";
 
 const TopLevelRoutes = () => {
     return (
@@ -24,7 +25,7 @@ const TopLevelRoutes = () => {
             </EnsureVisitorOnly>
 
             <EnsureUserOnly>
-                <Route path={'/admin'}/>
+                <Route path={'/admin'} component={Admin}/>
             </EnsureUserOnly>
 
         </React.Fragment>

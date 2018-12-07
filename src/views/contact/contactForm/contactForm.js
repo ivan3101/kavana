@@ -27,6 +27,24 @@ const contactForm = ({ className, errors, isSubmiting, dirty, touched, match, su
             <FormGroup>
                 <Input
                     type={'text'}
+                    name={'lastname'} invalid={errors.lastname && touched.lastname ? 1 : 0}
+                    placeholder={'apellido'}
+                />
+                <ValidationError name={'lastname'}/>
+            </FormGroup>
+
+            <FormGroup>
+                <Input
+                    type={'text'}
+                    name={'phone'} invalid={errors.phone && touched.phone ? 1 : 0}
+                    placeholder={'telefono'}
+                />
+                <ValidationError name={'phone'}/>
+            </FormGroup>
+
+            <FormGroup>
+                <Input
+                    type={'text'}
                     name={'email'} invalid={errors.email && touched.email ? 1 : 0}
                     placeholder={'email'}
                 />
