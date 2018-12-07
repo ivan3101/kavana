@@ -9,6 +9,7 @@ import Appbar from "./components/appbar/appbar";
 import {BrowserRouter as Router} from "react-router-dom";
 import TopLevelRoutes from "./routes/topLevelRoutes";
 import Footer from "./components/footer/footer";
+import StickyAppbar from "./components/appbar/stickyAppbar/stickyAppbar";
 
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
                 <div>
                     <GlobalStyles/>
                     <Appbar/>
+                    <StickyAppbar/>
                     <TopLevelRoutes/>
                     <Footer/>
                 </div>

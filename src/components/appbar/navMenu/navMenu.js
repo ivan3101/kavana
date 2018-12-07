@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NavItem from "./navItem/navItem";
 import CatalogoSubmenu from "./catalogoSubmenu/catalogoSubmenu";
 
-const NavMenu = () => {
+const NavMenu = ({ children }) => {
     const StyledNav = styled.nav`
       width: 50%;
       height: auto;
@@ -21,9 +21,10 @@ const NavMenu = () => {
     return (
         <StyledNav>
             <StyledUl>
+                {children}
                 <NavItem link={'/inicio'}>inicio</NavItem>
                 <NavItem link={'/blog'}>blog</NavItem>
-                <NavItem link={'/servicios'}>servicios</NavItem>
+                <NavItem link={'/nosotros'}>nosotros</NavItem>
                 <NavItem link={'/catalogo'} submenu={<CatalogoSubmenu/>}>catálogo</NavItem>
                 <NavItem link={'/contacto'}>contacto</NavItem>
             </StyledUl>

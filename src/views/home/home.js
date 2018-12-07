@@ -4,6 +4,7 @@ import StyledImageSlider from "../../components/imagesSlider/imageSlider";
 import InstagramImgs from "./instagramImgs/instagramsImgs";
 import Testimonials from "./testimonials/testimonials";
 import StyledContact from "./contact/contact";
+import Services from "../services/services";
 
 class Home extends Component {
 
@@ -26,6 +27,7 @@ class Home extends Component {
                 <ImageSliderContainer>
                     <StyledImageSlider images={this.state.images}/>
                 </ImageSliderContainer>
+                <Services/>
                 <InstagramImgs/>
                 <Testimonials/>
                 <StyledContact/>

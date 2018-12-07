@@ -10,7 +10,6 @@ const TopLevelRoutes = () => {
         <Switch>
             <Route exact path={'/inicio'} component={Home}/>
             <Route path={'/blog'}/>
-            <Route path={'/servicios'}/>
             <Route path={'/catalogo'}/>
             <Route path={'/contacto'} component={Contact}/>
             <Route path={'/comercio-e-industria'} component={ComercioEIndustria}/>

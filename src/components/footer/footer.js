@@ -18,8 +18,8 @@ const Footer = styled(footer)`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
-  padding: 1.50rem 1.25rem;
+  align-items: flex-start;
+  padding: 4rem 1.25rem;
   width: 100%;
   height: auto;
   background-color: #E2D9DA;

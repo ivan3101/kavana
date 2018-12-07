@@ -10,12 +10,18 @@ const formInitValues = {
     message: ''
 };
 
-class contact extends React.Component {
+const ContactContainer = styled.div`
+  margin: 40px auto 0;
+  padding: 0 2rem;
+  width: 80%;
+`;
+
+
+class Contact extends React.Component {
     render() {
-        const { className } = this.props;
 
         return (
-            <div className={className}>
+            <ContactContainer>
                 <h1>Contactanos</h1>
                 <Formik
                     initialValues={formInitValues}
@@ -33,14 +39,9 @@ class contact extends React.Component {
                     }}
                     render={props => <ContactForm {...props} />}
                 />
-            </div>
+            </ContactContainer>
         )
     }
 }
-const Contact = styled(contact)`
-  margin: 40px auto 0;
-  padding: 0 2rem;
-  width: 80%;
-`;
 
 export default Contact;

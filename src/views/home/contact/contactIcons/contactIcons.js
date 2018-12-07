@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from "styled-components";
 import ResponsiveImg from "../../../../components/responsiveImg/responsiveImg";
-import correoIcon from "../../../../assets/icons/correo.png";
+import correoIcon from "../../../../assets/icons/correo-21.svg";
+import cajaIcon from "../../../../assets/icons/caja-23.svg";
 
 const ContactIcons = ({ className }) => {
     const IconContainer = styled.div`
-      height: 120px;
+      height: 200px;
       padding: 0.85rem;
-      border-bottom: 2px solid #606060;
     `;
 
     return (
         <div className={className}>
             <IconContainer>
                 <ResponsiveImg src={correoIcon}/>
+            </IconContainer>
+            <IconContainer>
+                <ResponsiveImg src={cajaIcon}/>
             </IconContainer>
         </div>
     );

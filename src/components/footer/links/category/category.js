@@ -18,6 +18,7 @@ const Category = styled(category)`
   border-left: 1px solid ${props => props.theme.text};
   height: auto;
   width: auto;
+  flex-shrink: 0;
 `;
 
 export default Category;
