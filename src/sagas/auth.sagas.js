@@ -5,7 +5,7 @@ import {loginRequest} from "../services/auth.service";
 export function *loginFetch(action) {
     try {
         const response = yield call(loginRequest, action.data);
-        console.log(response);
+
         yield put(loginPut({
             username: action.username
         }));
