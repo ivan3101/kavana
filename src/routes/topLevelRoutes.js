@@ -7,6 +7,7 @@ import Contact from "../views/contact/contact";
 import Catalogo from "../views/catalogo/catalogo";
 import EnsureUserOnly from "../components/authCheck/ensureUserOnly/ensureUserOnly";
 import EnsureVisitorOnly from "../components/authCheck/ensureVisitorOnly/ensureVisitorOnly";
+import Login from "../views/login/login";
 
 const TopLevelRoutes = () => {
     return (
@@ -19,7 +20,7 @@ const TopLevelRoutes = () => {
             <Route path={'/nosotros'} component={AboutUs}/>
 
             <EnsureVisitorOnly>
-                <Route path={'/login'} />
+                <Route path={'/login'} component={Login}/>
             </EnsureVisitorOnly>
 
             <EnsureUserOnly>

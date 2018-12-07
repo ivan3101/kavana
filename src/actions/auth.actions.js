@@ -1,25 +1,23 @@
-export const loginFetch = ({ cedula, contraseña }) => ({
+export const loginFetch = ({ username, password }, setSubmitting) => ({
     type: 'LOGIN/FETCH',
-    tempPassword: {
-        cedula,
-        contraseña
+    setSubmitting,
+    data: {
+        username,
+        password
     }
 });
 
-export const loginPUt = ({ token, id, name }) => ({
+export const loginPut = ({ username }) => ({
     type: 'LOGIN/PUT',
     data: {
-        token,
-        id,
-        name
+        username
     }
 });
 
-export const loginFailed = ({ errorMsg, errorType }) => ({
+export const loginFailed = ({ errorMsg }) => ({
     type: 'LOGIN_FAILED',
     error: {
         errorMsg,
-        errorType
     }
 });
 
@@ -28,6 +26,6 @@ export const redirectUrlPut = ({ redirectUrl }) => ({
     redirectUrl
 });
 
-export const loggingOutPut = () => ({
-    type:'LOGGING_OUT'
+export const logoutPut = () => ({
+    type:'LOGOUT/PUT'
 });
