@@ -4,7 +4,7 @@ import StyledImageSlider from "../../components/imagesSlider/imageSlider";
 import InstagramImgs from "./instagramImgs/instagramsImgs";
 import Testimonials from "./testimonials/testimonials";
 import StyledContact from "./contact/contact";
-import Services from "../services/services";
+import Services from "./services/services";
 
 class Home extends Component {
 

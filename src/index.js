@@ -10,7 +10,7 @@ import {BrowserRouter as Router} from "react-router-dom";
 import TopLevelRoutes from "./routes/topLevelRoutes";
 import Footer from "./components/footer/footer";
 import StickyAppbar from "./components/appbar/stickyAppbar/stickyAppbar";
-
+import AuthCheck from "./components/authCheck/authCheck";
 
 ReactDOM.render(
     <Provider store={store}>
@@ -20,7 +20,9 @@ ReactDOM.render(
                     <GlobalStyles/>
                     <Appbar/>
                     <StickyAppbar/>
-                    <TopLevelRoutes/>
+                    <AuthCheck>
+                        <TopLevelRoutes/>
+                    </AuthCheck>
                     <Footer/>
                 </div>
             </Router>

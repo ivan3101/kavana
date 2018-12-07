@@ -10,6 +10,7 @@ import TextContainer from "./textContainer/textContainer";
 import {Formik} from "formik";
 import * as Yup from "yup";
 import AllyForm from "./allyForm/allyForm";
+import axios from "axios";
 
 const Container = styled.div`
   width: 90%;
@@ -30,6 +31,11 @@ const formInitValues = {
 };
 
 class ComercioEIndustria extends Component {
+    state = {
+        submitState: '',
+        message: ''
+    };
+
     render() {
         const { match } = this.props;
         return (
@@ -63,10 +69,31 @@ class ComercioEIndustria extends Component {
                                     'email': Yup.string().trim().required('Debe ingresar su email').email('Debe' +
                                         ' ingresar un email con formato valido')
                                 })}
-                                onSubmit={(values, formikActions) => {
+                                onSubmit={async (values, formikActions) => {
+                                    try {
+                                        await axios.post(`${process.env.REACT_APP_API_URL}/messages`, values);
+                                        this.setState(() => ({
+                                            submitState: 'success',
+                                            message: 'Mensaje Enviado con exito'
+                                        }))
+                                    } catch (e) {
+                                        if (e.response) {
+                                            this.setState(() => ({
+                                                submitState: 'error',
+                                                message: e.response.data.message
+                                            }))
+                                        } else {
+                                            this.setState(() => ({
+                                                submitState: 'error',
+                                                messsag: 'Ocurrio un error al enviar el mensaje. Por favor, vuelva a' +
+                                                    ' intentarlo mas tarde'
+                                            }))
+                                        }
+                                    }
+
                                     formikActions.resetForm();
                                 }}
-                                render={props => <AllyForm {...props} />}
+                                render={props => <AllyForm {...props} submitState={this.state.submitState} message={this.state.message}/>}
                             />
                         </TextContainer>
                     </ContentContainer>

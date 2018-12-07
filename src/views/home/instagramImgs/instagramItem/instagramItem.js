@@ -3,7 +3,7 @@ import ResponsiveImg from "../../../../components/responsiveImg/responsiveImg";
 import styled from "styled-components";
 import ImageDescription from "../imageDescription/imageDescription";
 
-const InstagramItem = ({ image, description }) => {
+const InstagramItem = ({ image, description, instagram, external, link }) => {
 
     const StyledDiv = styled.div`
       width: 300px;
@@ -14,7 +14,7 @@ const InstagramItem = ({ image, description }) => {
     return (
         <StyledDiv>
             <ResponsiveImg src={image}/>
-            <ImageDescription>
+            <ImageDescription instagram={instagram} external={external} link={link}>
                 { description }
             </ImageDescription>
         </StyledDiv>

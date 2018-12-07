@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import InstagramIcon from "../instagramIcon/instagramIcon";
+import StyledLink from "../../../../components/link/link";
 
 const TextBackground = styled.div`
   position: absolute;
@@ -20,7 +21,7 @@ const TextBackground = styled.div`
   }
 `;
 
-const TextDescription = styled.a`
+const TextDescription = styled(StyledLink)`
   color: white;
   left: 5%;
   bottom: 10%;
@@ -30,17 +31,21 @@ const TextDescription = styled.a`
   overflow: hidden;
   white-space: nowrap;
   width: 90%;
+  border-bottom: none;
   
   :hover {
-    text-decoration: underline;
+    border-bottom: none;
+    text-decoration: none;
   }
 `;
 
-const ImageDescription = ({ children }) => {
+const ImageDescription = ({ children, instagram, external, link }) => {
     return (
         <TextBackground>
-            <TextDescription>{ children }</TextDescription>
-            <InstagramIcon/>
+            <TextDescription external={external} link={link}>{ children }</TextDescription>
+            {
+                !!instagram && <InstagramIcon/>
+            }
         </TextBackground>
     )
 };

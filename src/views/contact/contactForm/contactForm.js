@@ -8,11 +8,11 @@ import FormGroup from "../../../components/form/formGroup/formGroup";
 import Button from "../../../components/Button/Button";
 import isEmpty from "lodash.isempty";
 
-const contactForm = ({ className, errors, isSubmiting, dirty, touched, match, submitError, errorMsg }) => {
+const contactForm = ({ className, errors, isSubmiting, dirty, touched, match, submitState, message }) => {
     return (
         <Form className={className}>
             {
-                submitError && (<SubmitError>{ errorMsg }</SubmitError>)
+                submitState && (<SubmitError error={submitState}>{ message }</SubmitError>)
             }
 
             <FormGroup>
