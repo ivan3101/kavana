@@ -31,9 +31,9 @@ const AdminNavbar = ({ match }) => {
         <AdminNavbarContainer>
             <Navbar>
                 <StyledUl>
-                    <NavItem link={`${url}/mensajes`}>mensajes</NavItem>
-                    <NavItem link={`${url}/productos`}>productos</NavItem>
-                    <NavItem link={`${url}/publicaciones`}>publicaciones</NavItem>
+                    <NavItem link={`${url}/mensajes/1`}>mensajes</NavItem>
+                    <NavItem link={`${url}/productos/1`}>productos</NavItem>
+                    <NavItem link={`${url}/publicaciones/1`}>publicaciones</NavItem>
                 </StyledUl>
             </Navbar>
         </AdminNavbarContainer>

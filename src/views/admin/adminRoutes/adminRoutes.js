@@ -7,10 +7,10 @@ const AdminRoutes = ({ match }) => {
 
     return (
         <Switch>
-            <Route path={`${path}/mensajes`} component={Messages}/>
-            <Route path={`${path}/productos`}/>
-            <Route path={`${path}/publicaciones`}/>
-            <Redirect to={`${url}/mensajes`}/>
+            <Route path={`${path}/mensajes/:page`} component={Messages}/>
+            <Route path={`${path}/productos/:page`}/>
+            <Route path={`${path}/publicaciones/:page`}/>
+            <Redirect to={`${url}/mensajes/1`}/>
         </Switch>
     );
 };

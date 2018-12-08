@@ -10,17 +10,16 @@ const activeClass = 'fixed';
 const StickyContainer = styled.div`
   position: fixed;
   visibility: hidden;
-  top: 0;
   width: 100%;
   z-index: 2;
   background-color: white;
   height: 45px;
-  transition: transform 300ms ease-in;
-  transform: translateY(-1000%);
+  transition: all 300ms ease-in;
+  top: -45px;
   
   &.${activeClass} {
      visibility: visible;
-     transform: translateY(0);
+     top: 0;
   }
 `;
 
