@@ -103,6 +103,10 @@ const Links = styled(links)`
   display: flex;
   flex-direction: row;
   gap: 50px;
+  
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export default Links;

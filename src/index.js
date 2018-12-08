@@ -11,6 +11,7 @@ import TopLevelRoutes from "./routes/topLevelRoutes";
 import Footer from "./components/footer/footer";
 import StickyAppbar from "./components/appbar/stickyAppbar/stickyAppbar";
 import AuthCheck from "./components/authCheck/authCheck";
+import MobileAppbar from "./components/mobileAppbar/mobileAppbar";
 
 ReactDOM.render(
     <Provider store={store}>
@@ -20,6 +21,7 @@ ReactDOM.render(
                     <GlobalStyles/>
                     <Appbar/>
                     <StickyAppbar/>
+                    <MobileAppbar/>
                     <AuthCheck>
                         <TopLevelRoutes/>
                     </AuthCheck>

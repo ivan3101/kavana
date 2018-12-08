@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CloseButton = styled.button`
+const CloseButton = styled.div`
   position: absolute;
   right: 30px;
   top: 15px;
@@ -10,6 +10,8 @@ const CloseButton = styled.button`
   background: none;
   border: none;
   transition: opacity 0.2s ease;
+  width: 30px;
+  height: 30px;
 `;
 
 export default CloseButton;

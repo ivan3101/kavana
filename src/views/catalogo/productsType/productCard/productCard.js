@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from "styled-components";
 import ResponsiveImg from "../../../../components/responsiveImg/responsiveImg";
-import test from "../../../../assets/images/accesorios.png";
-
 
 const ProductCardContainer = styled.div`
   width: 300px;
   height: auto;
   margin-top: 50px;
+  box-shadow: 0 0 2px 2px #dddddd;
+  padding: 1rem;
+  border-radius: 6px;
   
   > img {
     height: 200px;
@@ -35,23 +36,33 @@ const AddToCart = styled.button`
   height: auto;
 `;
 
+const ProductFooter = styled.div`
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+`;
+
 const Powered = styled.span`
   position: relative;
   bottom: 1ex; 
   font-size: 80%;
 `;
 
-const ProductCard = () => {
+const ProductCard = ({ icon, children, name, size }) => {
     return (
         <ProductCardContainer>
-            <ResponsiveImg src={test}/>
+            <ResponsiveImg src={icon}/>
             <ProductDescription>
-                <p>Marico el que lo lea</p>
-                <p>00 x 00 m<Powered>2</Powered></p>
+                <p>{name}</p>
+                <p>{size} m<Powered>2</Powered></p>
 
-                <AddToCart>
-
-                </AddToCart>
+                <ProductFooter>
+                    {
+                        children
+                    }
+                </ProductFooter>
             </ProductDescription>
         </ProductCardContainer>
     );

@@ -26,16 +26,11 @@ const range = (from, to) => {
 class Pagination extends Component {
     state = {
         currentPage: 1,
-        elementsPerPage: 9,
-        pageNumbers: []
+        elementsPerPage: 9
     };
 
     componentDidMount() {
         const { match, elementsPerPage } = this.props;
-
-        this.setState(() => ({
-            pageNumbers: this.getPageNumbers()
-        }));
 
         if (match.params.page) {
             this.setState(() => ({
@@ -100,6 +95,10 @@ class Pagination extends Component {
                     }
                     {
                         loading && <SpinnerLoading/>
+                    }
+
+                    {
+                        !loading && !items.length && <h1>No se encontraron elementos</h1>
                     }
 
                 </CardGrid>

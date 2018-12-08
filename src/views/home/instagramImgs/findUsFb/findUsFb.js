@@ -19,6 +19,10 @@ const FindUsFb = styled.div`
         text-decoration: underline;
     }
   }
+  
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export default FindUsFb;

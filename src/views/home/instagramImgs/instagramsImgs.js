@@ -11,6 +11,7 @@ const InstagramImgs = ({ publications }) => {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
+      gap: 15px;
     `;
 
     const ImgsContainer = styled.div`

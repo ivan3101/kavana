@@ -92,6 +92,18 @@ const StyledTestimonials = styled(Testimonials)`
         padding: 0;
         width: auto;
       }
+      
+      @media (max-width: 700px) {
+        flex-direction: column;
+        
+        & > div {
+          width: 90%; 
+        }
+        
+        & > div:first-child {
+          display: none;
+        }
+      }
     `;
 
 export default StyledTestimonials;

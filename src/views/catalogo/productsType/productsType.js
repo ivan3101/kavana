@@ -16,11 +16,11 @@ const ProductsTypecontainer = styled.div`
 class ProductsType extends Component {
     render() {
         const { match } = this.props;
-        const { typeProduct } = match.params;
+        const { category } = match.params;
 
         return (
             <ProductsTypecontainer>
-                <h1>{ typeProduct.split('-').join(' ') }</h1>
+                <h1>{ category.split('-').join(' ') }</h1>
                 <Filters/>
                 <CardGrid>
                     <ProductCard/>

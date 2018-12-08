@@ -8,6 +8,11 @@ const ServicesTitleContainer= styled.div`
   justify-content: center;
   align-items: center;
   background-color: #333333;
+  
+  @media (max-width: 700px) {
+    width: 100%;
+    padding: 1rem 0;
+  }
 `;
 
 const servicesTitle = ({ className }) => {

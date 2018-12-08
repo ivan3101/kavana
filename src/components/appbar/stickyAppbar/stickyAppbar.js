@@ -21,6 +21,10 @@ const StickyContainer = styled.div`
      visibility: visible;
      top: 0;
   }
+  
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const StyledLogo = styled(ResponsiveImg)`

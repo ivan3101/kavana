@@ -12,6 +12,10 @@ const Appbar = () => {
       height: auto;
       background-color: ${props => props.theme.primary};
       margin-bottom: 20px;
+      
+      @media (max-width: 700px) {
+        display: none;
+      }
     `;
 
     return (

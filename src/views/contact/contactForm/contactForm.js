@@ -73,6 +73,10 @@ const contactForm = ({ className, errors, isSubmiting, dirty, touched, match, su
 const ContactForm = styled(contactForm)`
   width: 40%;
   margin: 20px auto;
+  
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 export default ContactForm;

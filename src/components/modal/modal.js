@@ -3,7 +3,10 @@ import styled from "styled-components";
 import Overlay from "./overlay/overlay";
 import CloseButton from "./closeButton/closeButton";
 import ModalContent from "./modalContent/modalContent";
-import CrossIcon from "./crossIcon/crossIcon";
+import closeIconWhite from "../../assets/icons/close-white.svg";
+import closeIcon from "../../assets/icons/close.svg";
+import ResponsiveImg from "../responsiveImg/responsiveImg";
+
 
 const modal = ({ className, children, closeCb, modalColor, crossColor, textColor }) => {
     return (
@@ -13,7 +16,7 @@ const modal = ({ className, children, closeCb, modalColor, crossColor, textColor
                 {children}
 
                 <CloseButton onClick={closeCb}>
-                    <CrossIcon crossColor={crossColor}/>
+                    <ResponsiveImg src={crossColor === 'white' ? closeIconWhite : closeIcon}/>
                 </CloseButton>
             </ModalContent>
         </div>

@@ -17,6 +17,10 @@ const ContactContainer = styled.div`
   margin: 40px auto 0;
   padding: 0 2rem;
   width: 80%;
+  
+  @media (max-width: 700px) {
+    width: 95%;
+  }
 `;
 
 

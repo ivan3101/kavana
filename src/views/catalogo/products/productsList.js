@@ -11,41 +11,41 @@ export const productsList = [
     {
         name: 'Cerámicas',
         icon: ceramicas,
-        url: '/catalogo/ceramica'
+        url: '/ceramica'
     },
     {
         name: 'Porcelanatos',
         icon: porcelanatos,
-        url: '/catalogo/porcelanato'
+        url: '/porcelanato'
     },
     {
         name: 'Piezas de Baño',
         icon: piezasDeBano,
-        url: '/catalogo/piezas-de-baño'
+        url: '/piezas-de-baño'
     },
     {
         name: 'Muebles de Baño',
         icon: mueblesDeBano,
-        url: '/catalogo/muebles-de-baño'
+        url: '/muebles-de-baño'
     },
     {
         name: 'Piedras Ornamentales',
         icon: piedrasOrnamentales,
-        url: '/catalogo/piedras-ornamentales'
+        url: '/piedras-ornamentales'
     },
     {
         name: 'Mallas y Decorados',
         icon: mallasYDecorado,
-        url: '/catalogo/mallas-y-decorados'
+        url: '/mallas-y-decorados'
     },
     {
         name: 'Griferias',
         icon: griferias,
-        url: '/catalogo/griferias'
+        url: '/griferias'
     },
     {
         name: 'Accesorios',
         icon: accesorios,
-        url: '/catalogo/accesorios'
+        url: '/accesorios'
     }
 ];

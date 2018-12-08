@@ -28,6 +28,10 @@ const StyledContactIcons = styled(ContactIcons)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export default StyledContactIcons;

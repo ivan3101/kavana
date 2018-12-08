@@ -23,6 +23,10 @@ const Footer = styled(footer)`
   width: 100%;
   height: auto;
   background-color: #E2D9DA;
+  
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export default Footer;

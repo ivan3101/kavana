@@ -10,6 +10,10 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 30px;
+  
+  @media (max-width: 700px) {
+    flex-direction: column;
+  })
 `;
 
 const Services = () => {
@@ -20,7 +24,7 @@ const Services = () => {
                 {
                     !!servicesItems.length && servicesItems.map((service) => (
                         <ServiceItem key={service.name}>
-                            <ResponsiveImg src={service.icon} style={{width: '200px', height: '200px'}}/>
+                            <ResponsiveImg src={service.icon}/>
                             <p>{ service.name }</p>
                         </ServiceItem>
                     ))

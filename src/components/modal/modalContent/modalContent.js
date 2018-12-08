@@ -15,6 +15,10 @@ const ModalContent = styled.div`
   border-radius: 4px;
   width: 520px;
   color: ${props => props.textColor || props.theme.text};
+  
+  @media (max-width: 700px) {
+    width: 90%;
+  }
 `;
 
 export default ModalContent;

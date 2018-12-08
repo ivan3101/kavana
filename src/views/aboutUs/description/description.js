@@ -21,6 +21,10 @@ const Description = styled(description)`
   width: 600px;
   padding: 1.50rem 0.80rem;
   border-bottom: 1px solid ${props => props.theme.secondary};
+  
+  @media (max-width: 700px) {
+    width: 90%;
+  }
 `;
 
 export default Description;

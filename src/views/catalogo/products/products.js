@@ -3,7 +3,7 @@ import CardGrid from "../../../components/cardGrid/cardGrid";
 import {productsList} from "./productsList";
 import InstagramItem from "../../home/instagramImgs/instagramItem/instagramItem";
 
-const Products = () => {
+const Products = ({ match }) => {
     return (
         <CardGrid>
             {
@@ -11,7 +11,7 @@ const Products = () => {
                     <InstagramItem
                         description={product.name}
                         image={product.icon}
-                        link={product.url}
+                        link={match.url + product.url + '/1'}
                         key={product.name}
                     />
                 ))

@@ -15,7 +15,7 @@ const Catalogo = ({ match }) => {
         <CatalogoContainer>
             <Switch>
                 <Route path={match.path} component={Products} exact/>
-                <Route path={`${match.path}/:typeProduct`} component={ProductsType}/>
+                <Route path={`${match.path}/:category`} component={ProductsType}/>
                 <Redirect to={match.url}/>
             </Switch>
         </CatalogoContainer>

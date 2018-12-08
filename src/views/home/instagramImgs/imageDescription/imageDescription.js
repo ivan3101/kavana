@@ -19,6 +19,11 @@ const TextBackground = styled.div`
     opacity: 1;
     background-color: #11111199;
   }
+  
+  @media (max-width: 700px) {
+    opacity: 1;
+    background-color: #11111166;
+  }
 `;
 
 const TextDescription = styled(StyledLink)`
@@ -32,6 +37,7 @@ const TextDescription = styled(StyledLink)`
   white-space: nowrap;
   width: 90%;
   border-bottom: none;
+  font-weight: 500;
   
   :hover {
     border-bottom: none;

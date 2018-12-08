@@ -17,6 +17,11 @@ const Title = styled.h1`
   top: 35%;
   transform: translateY(-65%);
   right: 40px;
+  
+  @media (max-width: 700px) {
+    font-size: 2.5rem;
+    right: 0;
+  }
 `;
 
 const AboutsUsContainer = styled.div`
@@ -71,7 +76,7 @@ class AboutUs extends Component {
                 <Modal
                     show={this.state.showModal}
                     modalColor={'#ff6c0f'}
-                    crossColor={'#eeeeee'}
+                    crossColor={'white'}
                     textColor={'#ffffff'}
                     closeCb={this.closeModal}
                 >

@@ -7,6 +7,8 @@ const CardGrid = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
+  transition: all 300ms ease-in;
+  gap: 20px;
 `;
 
 export default CardGrid;

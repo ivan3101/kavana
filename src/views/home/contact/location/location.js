@@ -14,7 +14,11 @@ const Location = ({ className }) => {
 const StyledLocation = styled(Location)`
   width: auto;
   height: 400px;
-  max-height: 400px
+  max-height: 400px;
+  
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 export default StyledLocation;
