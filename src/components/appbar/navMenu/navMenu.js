@@ -31,15 +31,20 @@ const NavMenu = ({ children, dispatch, isLoggedIn }) => {
             <StyledUl>
                 {children}
                 <NavItem link={'/inicio'}>inicio</NavItem>
-                <NavItem link={'/blog'}>blog</NavItem>
+                <NavItem link={'/blog/1'}>blog</NavItem>
                 <NavItem link={'/nosotros'}>nosotros</NavItem>
                 <NavItem link={'/catalogo'} submenu={<CatalogoSubmenu/>}>catálogo</NavItem>
                 <NavItem link={'/contacto'}>contacto</NavItem>
                 {
                     isLoggedIn && (
-                        <Button onClick={onLogout}>
-                            cerrar sesión
-                        </Button>
+                        <React.Fragment>
+                            <NavItem link={'/admin'}>
+                                panel de control
+                            </NavItem>
+                            <Button onClick={onLogout}>
+                                cerrar sesión
+                            </Button>
+                        </React.Fragment>
                     )
                 }
             </StyledUl>

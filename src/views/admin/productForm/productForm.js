@@ -69,7 +69,7 @@ function Checkbox(props) {
 }
 
 
-const ProductForm = ({ className, errors, isSubmiting, dirty, touched, match, submitState, message, setFieldValue }) => {
+const ProductForm = ({ className, errors, isSubmitting, dirty, touched, match, submitState, message, setFieldValue }) => {
     return (
         <div>
             <Form className={className}>
@@ -78,7 +78,7 @@ const ProductForm = ({ className, errors, isSubmiting, dirty, touched, match, su
                 }
 
                 {
-                    isSubmiting && <SpinnerLoading/>
+                    isSubmitting && <SpinnerLoading/>
                 }
 
                 <FormGroup>
@@ -180,7 +180,7 @@ const ProductForm = ({ className, errors, isSubmiting, dirty, touched, match, su
 
                 <Button
                     type={'submit'}
-                    disabled={isSubmiting || !isEmpty(errors) || !dirty}
+                    disabled={isSubmitting || !isEmpty(errors) || !dirty}
                 >
                     agregar</Button>
             </Form>

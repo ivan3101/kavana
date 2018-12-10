@@ -7,12 +7,17 @@ import ValidationError from "../../../components/form/validationError/validation
 import FormGroup from "../../../components/form/formGroup/formGroup";
 import Button from "../../../components/Button/Button";
 import isEmpty from "lodash.isempty";
+import SpinnerLoading from "../../../components/spinnerLoading/spinnerLoading";
 
-const contactForm = ({ className, errors, isSubmiting, dirty, touched, match, submitState, message }) => {
+const contactForm = ({ className, errors, isSubmitting, dirty, touched, match, submitState, message }) => {
     return (
         <Form className={className}>
             {
                 submitState && (<SubmitError error={submitState}>{ message }</SubmitError>)
+            }
+
+            {
+                isSubmitting && <SpinnerLoading/>
             }
 
             <FormGroup>
@@ -63,7 +68,7 @@ const contactForm = ({ className, errors, isSubmiting, dirty, touched, match, su
 
             <Button
                 type={'submit'}
-                disabled={isSubmiting || !isEmpty(errors) || !dirty}
+                disabled={isSubmitting || !isEmpty(errors) || !dirty}
             >
                 enviar</Button>
         </Form>

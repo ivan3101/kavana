@@ -27,7 +27,7 @@ const ContactContainer = styled.div`
 class Contact extends React.Component {
     state = {
         submitState: '',
-        message: ''
+        message: '',
     };
 
     render() {
@@ -53,12 +53,16 @@ class Contact extends React.Component {
                     })}
                     onSubmit={async (values, formikActions) => {
                         try {
+                            formikActions.setSubmitting(true);
                             await axios.post(`${process.env.REACT_APP_API_URL}/messages`, values);
                             this.setState(() => ({
                                 submitState: 'success',
                                 message: 'Mensaje Enviado con exito'
-                            }))
+                            }));
+                            formikActions.resetForm();
+                            formikActions.setSubmitting(false);
                         } catch (e) {
+                            formikActions.setSubmitting(false);
                             if (e.response) {
                                 this.setState(() => ({
                                     submitState: 'error',
@@ -73,7 +77,6 @@ class Contact extends React.Component {
                             }
                         }
 
-                        formikActions.resetForm();
                     }}
                     render={props => <ContactForm {...props} submitState={this.state.submitState} message={this.state.message}/>}
                 />

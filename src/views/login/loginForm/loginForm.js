@@ -15,6 +15,10 @@ const LoginForm = ({ className, errors, isSubmitting, dirty, touched, match, sub
                 submitState && (<SubmitError error={submitState}>{ message }</SubmitError>)
             }
 
+            {
+                isSubmitting && <SpinnerLoading/>
+            }
+
             <FormGroup>
                 <Input
                     type={'text'}

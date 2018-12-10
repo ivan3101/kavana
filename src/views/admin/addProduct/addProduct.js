@@ -52,6 +52,10 @@ class AddProduct extends Component {
                         category: Yup.string().trim().required('Debe seleccionar una categoria')
                     })}
                     onSubmit={async (values, formikAction) => {
+                        this.setState(() => ({
+                            submitState: '',
+                            message: ''
+                        }));
                         window.scrollTo(0,0);
 
                         formikAction.setSubmitting(true);

@@ -26,6 +26,7 @@ const Slide = ({ text, image }) => {
         padding-top: 30px;
         padding-left: 40px;
         font-size: 1.50rem;
+        white-space: normal;
       }
     `;
 

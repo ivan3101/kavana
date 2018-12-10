@@ -13,6 +13,22 @@ const PageNumbersContainer = styled.div`
   margin-top: 30px;
 `;
 
+const ContainerGrid = styled.div`
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+    'a1 a1 . . . .'
+    'a1 a1 a2 a2 a4 a4'
+    'a1 a1 a2 a2 a4 a4'
+    'a1 a1 a3 a3 a4 a4'
+    'a1 a1 a3 a3 a7 a7'
+    'a5 a5 a6 a6 a7 a7'
+    'a5 a5 a6 a6 a7 a7'
+    'a5 a5 . . . .'
+    'a5 a5 . . . .'
+  ;
+`;
+
 const range = (from, to) => {
     const range = [];
 
@@ -82,26 +98,47 @@ class Pagination extends Component {
     };
 
     render() {
-        const { renderFn, loading, onChangePage, items } = this.props;
+        const { renderFn, loading, onChangePage, items, grid } = this.props;
         const { currentPage } = this.state;
 
         const pageNumbers = this.getPageNumbers();
 
         return (
             <React.Fragment>
-                <CardGrid>
-                    {
-                        !!items.length && items.map(renderFn)
-                    }
-                    {
-                        loading && <SpinnerLoading/>
-                    }
+                {
+                    !!grid && (
+                        <ContainerGrid>
+                            {
+                                !!items.length && items.map(renderFn)
+                            }
+                            {
+                                loading && <SpinnerLoading/>
+                            }
 
-                    {
-                        !loading && !items.length && <h1>No se encontraron elementos</h1>
-                    }
+                            {
+                                !loading && !items.length && <h1>No se encontraron elementos</h1>
+                            }
+                        </ContainerGrid>
+                    )
+                }
+                {
+                    !grid && (
+                        <CardGrid>
+                            {
+                                !!items.length && items.map(renderFn)
+                            }
+                            {
+                                loading && <SpinnerLoading/>
+                            }
 
-                </CardGrid>
+                            {
+                                !loading && !items.length && <h1>No se encontraron elementos</h1>
+                            }
+
+                        </CardGrid>
+                    )
+                }
+
                 <PageNumbersContainer>
                     {
                         !!pageNumbers.length && pageNumbers.map(pageNumber => (

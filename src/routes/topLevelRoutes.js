@@ -9,12 +9,15 @@ import EnsureUserOnly from "../components/authCheck/ensureUserOnly/ensureUserOnl
 import EnsureVisitorOnly from "../components/authCheck/ensureVisitorOnly/ensureVisitorOnly";
 import Login from "../views/login/login";
 import Admin from "../views/admin/admin";
+import Blog from "../views/blog/blog";
+import BlogPost from "../views/blog/blogPost/blogPost";
 
 const TopLevelRoutes = () => {
     return (
         <React.Fragment>
             <Route exact path={'/inicio'} component={Home}/>
-            <Route path={'/blog'}/>
+            <Route path={'/blog/post/:postId'} component={BlogPost}/>
+            <Route path={'/blog/:page'} component={Blog} exact/>
             <Route path={'/catalogo'} component={Catalogo}/>
             <Route path={'/contacto'} component={Contact}/>
             <Route path={'/comercio-e-industria'} component={ComercioEIndustria}/>

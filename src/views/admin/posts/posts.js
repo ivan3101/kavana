@@ -12,45 +12,44 @@ const ProductsContainer = styled.div`
   margin: 30px auto;
 `;
 
-class Products extends Component {
+class Posts extends Component {
 
     state = {
-        products: [],
-        totalProducts: 0,
+        posts: [],
+        totalPosts: 0,
         loading: true,
         modalOpen: false,
         modalMessage: ''
     };
 
     async componentDidMount() {
-        const { category, page } = this.props.match.params;
+        const { page } = this.props.match.params;
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/blog?offset=${(page - 1) * 9}`);
 
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/category/${category}?offset=${page}`);
-
-        const { products, totalProducts } = response.data.data;
+        const { posts, totalPosts } = response.data.data;
 
         this.setState(() => ({
-            products,
-            totalProducts,
+            posts,
+            totalPosts,
             loading: false
         }))
     }
 
     async componentDidUpdate(prevProps) {
         const { page } = this.props.match.params;
-        const { page: prevPage, category } = prevProps.match.params;
+        const { page: prevPage } = prevProps.match.params;
 
         if (page !== prevPage) {
             this.setState(() => ({
                 loading: true,
-                products: []
+                posts: []
             }));
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/category/${category}?offset=${(page - 1) * 9}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/blog?offset=${(page - 1) * 9}`);
 
-            const { products } = response.data.data;
+            const { posts } = response.data.data;
 
             this.setState(() => ({
-                products,
+                posts,
                 loading: false
             }));
         }
@@ -58,27 +57,26 @@ class Products extends Component {
 
     onChangePage = (page) => {
         const { history } = this.props;
-        const { category } = this.props.match.params;
-        history.push('/admin/productos/' + category + '/' + page);
+        history.push('/admin/blog/' + page);
     };
 
     onDeleteProduct = async (id) => {
         try {
             this.setState(() => ({
                 loading: true,
-                products: []
+                posts: []
             }));
-            const { category } = this.props.match.params;
-            await axios.delete(`${process.env.REACT_APP_API_URL}/products/${id}`);
+
+            await axios.delete(`${process.env.REACT_APP_API_URL}/blog/${id}`);
 
             const { page } = this.props.match.params;
-            const responseGet = await axios.get(`${process.env.REACT_APP_API_URL}/products/category/${category}?offset=${(page - 1) * 9}`);
+            const responseGet = await axios.get(`${process.env.REACT_APP_API_URL}/blog?offset=${(page - 1) * 9}`);
 
             this.setState(() => ({
                 modalOpen: true,
                 loading: false,
-                modalMessage: 'El producto ha sido eliminado con exito',
-                products: responseGet.data.data.products
+                modalMessage: 'El post ha sido eliminado con exito',
+                posts: responseGet.data.data.posts
             }))
 
         } catch (e) {
@@ -90,27 +88,25 @@ class Products extends Component {
         }
     };
 
-    onEditProduct = (productId) => {
+    onEditProduct = (postId) => {
         const { history } = this.props;
 
-        history.push('/admin/productos/editar/' + productId);
+        history.push('/admin/posts/editar/' + postId);
     };
 
-    renderFn = (product, index) => (
+    renderFn = (post, index) => (
         <ProductCard
-            icon={process.env.REACT_APP_API_PUBLIC + '/' + product.icon}
-            name={product.name}
-            size={product.size}
+            icon={process.env.REACT_APP_API_PUBLIC + '/' + post.images[0]}
+            name={post.header}
             key={index}
-            showSize
         >
-            <Button onClick={() => this.onEditProduct(product._id)}>editar</Button>
-            <Button color={'#cc0000'} text={'#ffffff'} onClick={() => this.onDeleteProduct(product._id)}>borrar</Button>
+            <Button onClick={() => this.onEditProduct(post._id)}>editar</Button>
+            <Button color={'#cc0000'} text={'#ffffff'} onClick={() => this.onDeleteProduct(post._id)}>borrar</Button>
         </ProductCard>
     );
 
     onAddProduct = () => {
-        this.props.history.push('/admin/productos/agregar')
+        this.props.history.push('/admin/posts/agregar')
     };
 
     closeModal = () => {
@@ -120,21 +116,20 @@ class Products extends Component {
     };
 
     render() {
-        const { products, totalProducts, loading } = this.state;
-        const { category } = this.props.match.params;
+        const { posts, totalPosts, loading } = this.state;
 
         return (
             <div>
                 <Modal show={this.state.modalOpen} closeCb={this.closeModal}>
-                  <h1>Producto eliminado</h1>
-                  <p>{this.state.modalMessage}</p>
+                    <h1>Producto eliminado</h1>
+                    <p>{this.state.modalMessage}</p>
                 </Modal>
 
-                <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') } <Button onClick={this.onAddProduct}>agregar producto</Button></h1>
+                <h1>Posts <Button onClick={this.onAddProduct}>agregar post</Button></h1>
                 <ProductsContainer>
                     <Pagination
-                        items={products}
-                        totalItems={totalProducts}
+                        items={posts}
+                        totalItems={totalPosts}
                         loading={loading}
                         onChangePage={this.onChangePage}
                         renderFn={this.renderFn}
@@ -145,4 +140,4 @@ class Products extends Component {
     }
 }
 
-export default Products;
+export default Posts;

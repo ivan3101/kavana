@@ -10,17 +10,7 @@ import axios from "axios";
 class Home extends Component {
 
     state = {
-        publications: [],
-        images: [
-            {
-                url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/aurora.jpg",
-                text: 'Asesoria Personalizada en la Selección de Productos',
-            },
-            {
-                url: "https://s3.us-east-2.amazonaws.com/dzuz14/thumbnails/canyon.jpg",
-                text: 'Marico el que lo lea',
-            }
-        ]
+        publications: []
     };
 
     async componentDidMount() {
@@ -39,7 +29,7 @@ class Home extends Component {
         return (
             <React.Fragment>
                 <ImageSliderContainer>
-                    <StyledImageSlider images={this.state.images}/>
+                    <StyledImageSlider/>
                 </ImageSliderContainer>
                 <Services/>
                 <InstagramImgs publications={this.state.publications}/>

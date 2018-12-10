@@ -71,11 +71,22 @@ class ComercioEIndustria extends Component {
                                 })}
                                 onSubmit={async (values, formikActions) => {
                                     try {
-                                        await axios.post(`${process.env.REACT_APP_API_URL}/messages`, values);
+                                        formikActions.setSubmitting(true)
+                                        this.setState(() => ({
+                                            submitState: '',
+                                            message: ''
+                                        }));
+
+                                        await axios.post(`${process.env.REACT_APP_API_URL}/messages`, {
+                                            ...values,
+                                            message: 'Quiero ser tu aliado'
+                                        });
                                         this.setState(() => ({
                                             submitState: 'success',
                                             message: 'Mensaje Enviado con exito'
                                         }))
+
+                                        formikActions.resetForm();
                                     } catch (e) {
                                         if (e.response) {
                                             this.setState(() => ({
@@ -90,8 +101,8 @@ class ComercioEIndustria extends Component {
                                             }))
                                         }
                                     }
+                                    formikActions.setSubmitting(false)
 
-                                    formikActions.resetForm();
                                 }}
                                 render={props => <AllyForm {...props} submitState={this.state.submitState} message={this.state.message}/>}
                             />

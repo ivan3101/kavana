@@ -7,18 +7,22 @@ import ValidationError from "../../../components/form/validationError/validation
 import Button from "../../../components/Button/Button";
 import isEmpty from 'lodash.isempty';
 import styled from "styled-components";
+import SpinnerLoading from "../../../components/spinnerLoading/spinnerLoading";
 
 const FormTitle = styled.h3`
   color: ${props => props.theme.secondary};
   margin-bottom: 20px;
 `;
 
-const AllyForm = ({ errors, isSubmiting, dirty, touched, match, submitState, message }) => {
+const AllyForm = ({ errors, isSubmitting, dirty, touched, match, submitState, message }) => {
     return (
         <Form style={{marginTop: '30px', width: '300px'}}>
             <FormTitle>Contáctenos para set Aliados</FormTitle>
             {
                 submitState && (<SubmitError error={submitState}>{ message }</SubmitError>)
+            }
+            {
+                isSubmitting && <SpinnerLoading/>
             }
             <FormGroup>
                 <Input
@@ -57,7 +61,7 @@ const AllyForm = ({ errors, isSubmiting, dirty, touched, match, submitState, mes
             </FormGroup>
 
             <Button type={'submit'}
-                    disabled={isSubmiting || !isEmpty(errors) || !dirty}
+                    disabled={isSubmitting || !isEmpty(errors) || !dirty}
             >
                 enviar
             </Button>

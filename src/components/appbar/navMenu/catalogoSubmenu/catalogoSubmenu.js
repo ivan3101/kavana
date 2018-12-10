@@ -6,35 +6,35 @@ import StyledLink from "../../../link/link";
 const catalogoRoutes = [
     {
         name: 'Cerámica',
-        route: '/catalogo/ceramica'
+        route: '/catalogo/ceramica/1'
     },
     {
         name: 'Porcelanato',
-        route: '/catalogo/porcelanato'
+        route: '/catalogo/porcelanato/1'
     },
     {
         name: 'Piedras Ornamentales',
-        route: '/catalogo/piedras-ornamentales'
+        route: '/catalogo/piedras-ornamentales/1'
     },
     {
         name: 'Mallas y Decorados',
-        route: '/catalogo/mallas-y-decorados'
+        route: '/catalogo/mallas-y-decorados/1'
     },
     {
         name: 'Muebles de Baño',
-        route: '/catalogo/muebles-de-baño'
+        route: '/catalogo/muebles-de-baño/1'
     },
     {
         name: 'Piezas de Baño',
-        route: '/catalogo/piezas-de-baño'
+        route: '/catalogo/piezas-de-baño/1'
     },
     {
         name: 'Griferias',
-        route: '/catalogo/griferias'
+        route: '/catalogo/griferias/1'
     },
     {
         name: 'Accesorios',
-        route: '/catalogo/accesorios'
+        route: '/catalogo/accesorios/1'
     }
 ];
 

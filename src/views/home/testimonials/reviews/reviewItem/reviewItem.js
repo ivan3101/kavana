@@ -7,7 +7,7 @@ const ReviewItem = ({ review, username }) => {
     const StyledDiv = styled.div`
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      margin-bottom: 5px;
       width: 100%;
       height: auto;
     `;
@@ -23,7 +23,7 @@ const ReviewItem = ({ review, username }) => {
       flex-direction: row;
       text-transform: uppercase;
       align-items: center;
-      gap: 5px;
+      margin-bottom: 5px;
       
       img {
         width: auto;

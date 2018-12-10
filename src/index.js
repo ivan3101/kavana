@@ -12,6 +12,7 @@ import Footer from "./components/footer/footer";
 import StickyAppbar from "./components/appbar/stickyAppbar/stickyAppbar";
 import AuthCheck from "./components/authCheck/authCheck";
 import MobileAppbar from "./components/mobileAppbar/mobileAppbar";
+import Cart from "./components/cart/cart";
 
 ReactDOM.render(
     <Provider store={store}>
@@ -26,6 +27,7 @@ ReactDOM.render(
                         <TopLevelRoutes/>
                     </AuthCheck>
                     <Footer/>
+                    <Cart/>
                 </div>
             </Router>
         </ThemeProviderConnected>

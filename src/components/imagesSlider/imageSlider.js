@@ -1,18 +1,30 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
 import Slide from "./slide/slide";
+import * as axios from "axios";
+import SpinnerLoading from "../spinnerLoading/spinnerLoading";
 
 class ImageSlider extends Component {
     state = {
         currentIndex: 0,
         translateValue: 0,
+        sliders: [],
+        loading: true
     };
 
     slideInterval;
     slideRef = React.createRef();
 
-    componentDidMount() {
-        this.slideInterval = setInterval(this.nextImg.bind(this), 7000)
+    async componentDidMount() {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/slider`);
+
+        this.setState(() => ({
+            sliders: response.data.data.sliders,
+            loading: false
+        }));
+        if (response.data.data.sliders.length > 1) {
+            this.slideInterval = setInterval(this.nextImg.bind(this), 7000)
+        }
     }
 
     componentWillUnmount() {
@@ -23,10 +35,9 @@ class ImageSlider extends Component {
 
 
     nextImg = () => {
-        const { images } = this.props;
-        const { currentIndex } = this.state;
+        const { currentIndex, sliders } = this.state;
 
-        if (currentIndex < images.length - 1) {
+        if (currentIndex < sliders.length - 1) {
             this.setState((prevState) => ({
                 currentIndex: prevState.currentIndex + 1,
                 translateValue: prevState.translateValue + -(this.slideWidth())
@@ -45,8 +56,8 @@ class ImageSlider extends Component {
     };
 
     render() {
-        const { images, className } = this.props;
-
+        const { className } = this.props;
+        const { sliders } = this.state;
         return (
             <div
                 className={className}
@@ -56,9 +67,12 @@ class ImageSlider extends Component {
                 ref={this.slideRef}
             >
                 {
-                    images.length && images.map((image, i) => (
-                        <Slide key={image.url} image={image.url} text={image.text}/>
+                    sliders.length && sliders.map((slider, i) => (
+                        <Slide key={slider.image} image={`${process.env.REACT_APP_API_PUBLIC}/${slider.image}`} text={slider.message}/>
                     ))
+                }
+                {
+                    !!this.state.loading && <SpinnerLoading/>
                 }
             </div>
         );
@@ -70,6 +84,7 @@ const StyledImageSlider = styled(ImageSlider)`
   height: 100%;
   transition: transform 450ms ease-out;
   position: relative;
+  white-space: nowrap;
 `;
 
 export default StyledImageSlider;

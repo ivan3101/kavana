@@ -9,44 +9,36 @@ class Testimonials extends Component {
     state = {
         reviews: [
             {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
+                text: 'Responsables los recomiendo al 100% gracias',
+                username: 'estrellitas!'
             },
             {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
+                text: 'Lo recomiendo',
+                username: 'FEJU5531818'
             },
             {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
+                text: 'TODO BIEN! 100% RECOMENDADO',
+                username: 'SUPLINOVA'
             },
             {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
+                text: 'Lo recomiendo, buena atencion gracias',
+                username: 'MARIWA'
             },
             {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
+                text: 'Excelente vendedor. Totalmente recomendado',
+                username: 'KAROTECH'
             },
             {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
+                text: 'Excelente atencion',
+                username: 'ALLU5047175'
             },
             {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
+                text: '100% recomendado',
+                username: 'JOSEDO86'
             },
             {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
-            },
-            {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
-            },
-            {
-                text: 'Marico el que lo lea',
-                username: 'ivan31'
+                text: 'Entrega rapida sin problemas. 100% recomendado',
+                username: 'YATORO'
             }
         ]
     };

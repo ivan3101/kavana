@@ -3,8 +3,9 @@ import styled from "styled-components";
 import Products from "./products/products";
 import {Redirect, Route, Switch} from "react-router-dom";
 import ProductsType from "./productsType/productsType";
+import Product from "./product/product";
 
-const CatalogoContainer = styled.div`
+export const CatalogoContainer = styled.div`
   width: 80%;
   height: auto;
   margin: 40px auto;
@@ -12,13 +13,12 @@ const CatalogoContainer = styled.div`
 
 const Catalogo = ({ match }) => {
     return (
-        <CatalogoContainer>
-            <Switch>
-                <Route path={match.path} component={Products} exact/>
-                <Route path={`${match.path}/:category`} component={ProductsType}/>
-                <Redirect to={match.url}/>
-            </Switch>
-        </CatalogoContainer>
+        <Switch>
+            <Route path={match.path} component={Products} exact/>
+            <Route path={`${match.path}/producto/:productId`} component={Product}/>
+            <Route path={`${match.path}/:category/:page`} component={ProductsType}/>
+            <Redirect to={match.url}/>
+        </Switch>
     );
 };
 
