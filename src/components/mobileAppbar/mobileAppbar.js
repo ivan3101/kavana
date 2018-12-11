@@ -57,6 +57,7 @@ class MobileAppbar extends React.Component {
                     <ResponsiveImg src={menuIcon}/>
                 </MenuButton>
                 <StyledLogo src={logo}/>
+
             </StickyContainer>
         );
     }

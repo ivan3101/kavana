@@ -43,7 +43,7 @@ const CartContainer = styled.div`
   }
   
   @media (max-width: 700px) {
-    display: none;
+    width: 150px;
   }
 `;
 

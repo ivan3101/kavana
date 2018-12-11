@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
 import * as axios from "axios";
-import ProductCard from "../catalogo/productsType/productCard/productCard";
 import Pagination from "../../components/pagination/pagination";
 import StyledBlogSlider from "./blogSlider/blogSlider";
 import ImageSliderContainer from "../home/imageSliderContainer/imageSliderContainer";

@@ -25,7 +25,16 @@ const ContainerGrid = styled.div`
     'a5 a5 a6 a6 a7 a7'
     'a5 a5 a6 a6 a7 a7'
     'a5 a5 . . . .'
-    'a5 a5 . . . .'
+    'a5 a5 . . . .';
+    
+    @media (max-width: 700px) {
+      display: flex;
+      flex-direction: column;
+      
+      div {
+        margin-bottom: 20px;
+      }
+    }
   ;
 `;
 
