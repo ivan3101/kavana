@@ -32,9 +32,14 @@ const Slide = ({ text, image }) => {
 
     return (
         <StyledDiv>
-            <div>
+        {
+          !!text && (
+              <div>
                 <p>{ text }</p>
             </div>
+            )
+        }
+            
         </StyledDiv>
     );
 };
