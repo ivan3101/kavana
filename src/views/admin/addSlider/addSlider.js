@@ -29,7 +29,7 @@ class AddSlider extends Component {
                 <Formik
                     initialValues={initialValues}
                     validationSchema={Yup.object().shape({
-                        message: Yup.string().trim().required('Debe ingresar un mensaje'),
+                        message: Yup.string().trim(),
                         image: Yup.mixed().required('Debe ingresar el banner del producto'),
                     })}
                     onSubmit={async (values, formikAction) => {
