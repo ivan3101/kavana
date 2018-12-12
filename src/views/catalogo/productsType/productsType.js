@@ -119,7 +119,6 @@ class ProductsType extends Component {
             <CatalogoContainer>
                 <ProductsContainer>
                     <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') }</h1>
-                    <Filter/>
                     <Pagination
                         items={products}
                         totalItems={totalProducts}

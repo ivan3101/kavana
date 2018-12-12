@@ -7,13 +7,9 @@ import {CatalogoContainer} from "../catalogo";
 
 const Products = ({ match, history }) => {
 
-    const onAddProduct = () => {
-        history.push('/admin/productos/agregar');
-    };
-
     return (
         <CatalogoContainer>
-            <h1>Tipos de Productos <Button onClick={onAddProduct}>añadir producto</Button></h1>
+            <h1>Tipos de Productos</h1>
             <CardGrid>
                 {
                     !!productsList.length && productsList.map(product => (

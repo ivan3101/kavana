@@ -32,7 +32,7 @@ const ContainerGrid = styled.div`
       flex-direction: column;
       
       div {
-        margin-bottom: 20px;
+        margin-bottom: 2 0px;
       }
     }
   ;
