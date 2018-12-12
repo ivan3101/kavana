@@ -25,7 +25,7 @@ class Products extends Component {
     async componentDidMount() {
         const { category, page } = this.props.match.params;
 
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/category/${category}?offset=${page}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/category/${category}?offset=${(page - 1) * 9}`);
 
         const { products, totalProducts } = response.data.data;
 
