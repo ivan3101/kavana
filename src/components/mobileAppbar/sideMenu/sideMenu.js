@@ -65,7 +65,7 @@ const SideMenu = ({ open, onClick, isLoggedIn, dispatch }) => {
             <Overlay open={open} onClick={onClick}/>
             <SideMenuContainer open={open}>
                 <StyledLink to={'/inicio'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>inicio</StyledLink>
-                <StyledLink to={'/blog'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>blog</StyledLink>
+                <StyledLink to={'/blog/1'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>blog</StyledLink>
                 <StyledLink to={'/nosotros'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>nosotros</StyledLink>
                 <StyledLink to={'/catalogo'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>catálogo</StyledLink>
                 <StyledLink to={'/contacto'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>contacto</StyledLink>
