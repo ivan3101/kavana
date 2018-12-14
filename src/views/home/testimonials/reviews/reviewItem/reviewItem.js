@@ -27,12 +27,12 @@ const ReviewItem = ({ review, username }) => {
     const StyledUsername = styled.p`
       font-size: 0.90rem;
       height: 30px;
-      display: flex;
-      flex-direction: row;
+      display: block;
+      //flex-direction: row;
       text-transform: uppercase;
-      align-items: center;
+      //align-items: center;
       margin-bottom: 5px;
-      min-height: 30px;
+      //min-height: 30px;
       
       img {
         width: auto;
