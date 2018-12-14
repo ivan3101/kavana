@@ -18,7 +18,7 @@ const FindUsMercadolibre = ({ className }) => {
 
 const StyledFindUsMercadolibre = styled(FindUsMercadolibre)`
   transform-origin: top left;
-  transform: rotateZ(90deg) translateY(-100%) translateX(-50%);
+  transform: rotateZ(-90deg) translateX(-50%) translateY(-20%);
   position: absolute;
   left: 0;
   top: 50%;

@@ -31,7 +31,7 @@ const InstagramImgs = ({ publications }) => {
     return (
         <ImgsContainer>
             <p>
-                Siguenos en Instagram!{' '}
+                ¡Siguenos en Instagram!{' '}
                 <StyledLink
                     external
                     link={'http://instagram.com/kavanarevest'}

@@ -50,48 +50,48 @@ const links = ({ className }) => {
 
                 <SubCategory>
                     <Link link={'/catalogo/ceramica'}>
-                        ceramica
+                        Ceramica
                     </Link>
                     <Link link={'/catalogo/porcelanato'}>
-                        porcelanato
+                        Porcelanato
                     </Link>
                     <Link link={'/catalogo/piedras-ornamentales'}>
-                        piedras ornamentales
+                        Piedras Ornamentales
                     </Link>
                     <Link link={'/catalogo/mallas-y-decorados'}>
-                        mallas y decorados
+                        Mallas y Decorados
                     </Link>
                     <Link link={'/catalogo/piezas-de-baño'}>
-                        piezas de baño
+                        Piezas de Baño
                     </Link>
                     <Link link={'/catalogo/muebles-de-baño'}>
-                        muebles de baño
+                        Muebles de Baño
                     </Link>
                     <Link link={'/catalogo/griferias'}>
-                        griferias
+                        Griferias
                     </Link>
                     <Link link={'/catalogo/accesorios'}>
-                        accesorios
+                        Accesorios
                     </Link>
                 </SubCategory>
             </Category>
 
             <Category>
                 <Link link={'/comercio-e-industria'}>
-                    Comercio é Industria
+                    Comercio e Industria
                 </Link>
                 <SubCategory>
                     <Link link={'/comercio-e-industria/constructores'}>
-                        constructores
+                        Constructores
                     </Link>
                     <Link link={'/comercio-e-industria/instaladores'}>
-                        instaladores
+                        Instaladores
                     </Link>
                     <Link link={'/comercio-e-industria/arquitectos'}>
-                        arquitectos
+                        Arquitectos
                     </Link>
                     <Link link={'/comercio-e-industria/diseñadores-de-interiores'}>
-                        diseñadores de interiores
+                        Diseñadores de Interiores
                     </Link>
                 </SubCategory>
             </Category>

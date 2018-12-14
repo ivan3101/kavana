@@ -31,7 +31,7 @@ const ContactInfo = ({ className }) => {
             </LocationIcons>
 
             <LocationIcons icon={phoneIcon}>
-                <p>+58 (241) 8256818</p>
+                <p>+58 241 - 8256818</p>
                 <p>+58 424 - 3674623</p>
             </LocationIcons>
 
