@@ -26,6 +26,7 @@ const Services = () => {
                         <ServiceItem key={service.name}>
                             <ResponsiveImg src={service.icon}/>
                             <p>{ service.name }</p>
+                            <p>{ service.description }</p>
                         </ServiceItem>
                     ))
                 }

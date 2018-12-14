@@ -11,7 +11,7 @@ import asesoriaTecnica from "../../../assets/icons/Asesoría Técnica Especializ
 export const servicesItems = [
     {
         name: 'Medición In Situ',
-        icon: meditionInSitu
+        icon: meditionInSitu,
     },
     {
         name: 'Diseño de Ambientes',

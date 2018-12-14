@@ -22,6 +22,7 @@ const StyledLink = styled(Link)`
   border-bottom: 1px solid transparent;
   text-decoration: none;
   display: inline-block;
+  padding: 8px 30px 0 7px;
       
   :hover {
     color: ${props => props.theme.secondary};

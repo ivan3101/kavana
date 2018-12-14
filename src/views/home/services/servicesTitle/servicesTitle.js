@@ -7,7 +7,10 @@ const ServicesTitleContainer= styled.div`
   height: auto;
   justify-content: center;
   align-items: center;
-  background-color: #333333;
+  background-color: #2e3841;
+  -webkit-box-shadow:5px 0px 22px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow:5px 0px 22px 0px rgba(0,0,0,0.75);
+  box-shadow:5px 0px 22px 0px rgba(0,0,0,0.75);
   
   @media (max-width: 700px) {
     width: 100%;
@@ -27,7 +30,7 @@ const servicesTitle = ({ className }) => {
 
 const ServicesTitle = styled(servicesTitle)`
   color: #ffffff;
-  text-align: center;
+  text-align: left;
 `;
 
 export default ServicesTitle;

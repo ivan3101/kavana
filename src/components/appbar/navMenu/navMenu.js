@@ -30,11 +30,11 @@ const NavMenu = ({ children, dispatch, isLoggedIn }) => {
         <StyledNav>
             <StyledUl>
                 {children}
-                <NavItem link={'/inicio'}>inicio</NavItem>
-                <NavItem link={'/blog/1'}>blog</NavItem>
-                <NavItem link={'/nosotros'}>nosotros</NavItem>
-                <NavItem link={'/catalogo'} submenu={<CatalogoSubmenu/>}>catálogo</NavItem>
-                <NavItem link={'/contacto'}>contacto</NavItem>
+                <NavItem link={'/inicio'}>Inicio</NavItem>
+                <NavItem link={'/blog/1'}>Blog</NavItem>
+                <NavItem link={'/nosotros'}>Nosotros</NavItem>
+                <NavItem link={'/catalogo'} submenu={<CatalogoSubmenu/>}>Catálogo</NavItem>
+                <NavItem link={'/contacto'}>Contacto</NavItem>
                 {
                     isLoggedIn && (
                         <React.Fragment>
