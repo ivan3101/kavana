@@ -41,7 +41,7 @@ const LoginForm = ({ className, errors, isSubmitting, dirty, touched, match, sub
                 type={'submit'}
                 disabled={isSubmitting || !isEmpty(errors) || !dirty}
             >
-                {isLoading ? <SpinnerLoading/> : 'iniciar sesióñ'}</Button>
+                {isLoading ? <SpinnerLoading/> : 'Iniciar Sesion'}</Button>
         </Form>
     );
 };

@@ -6,6 +6,7 @@ const info = ({ className, openModal }) => {
 
     const StyledParagraph = styled(StyledLink)`
       color: ${props => props.theme.secondary};
+      padding-right: 10px;
     `;
 
     const onOpenModal = (event) => {

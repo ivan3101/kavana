@@ -14,7 +14,7 @@ const Category = styled(category)`
   flex-direction: column;
   gap: 10px;
   font-size: 0.80rem;
-  padding-left: 10px;
+  padding: 10px;
   border-left: 1px solid ${props => props.theme.text};
   height: auto;
   width: auto;

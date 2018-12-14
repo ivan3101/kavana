@@ -76,7 +76,7 @@ class Posts extends Component {
                 modalOpen: true,
                 loading: false,
                 modalMessage: 'El post ha sido eliminado con exito',
-                posts: responseGet.data.data.posts
+                posts: responseGet.data.data.post
             }))
 
         } catch (e) {
