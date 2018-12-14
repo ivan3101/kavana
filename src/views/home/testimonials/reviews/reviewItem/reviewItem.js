@@ -32,9 +32,11 @@ const ReviewItem = ({ review, username }) => {
       text-transform: uppercase;
       align-items: center;
       margin-bottom: 5px;
+      min-height: 30px;
       
       img {
         width: auto;
+        height: 30px;
       }
     `;
 
