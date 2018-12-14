@@ -10,6 +10,10 @@ const ReviewItem = ({ review, username }) => {
       margin-bottom: 5px;
       width: 100%;
       height: auto;
+      
+       @media (max-width: 700px) {
+        margin-bottom: 2rem;
+      }
     `;
 
     const StyledTextReview = styled.p`
