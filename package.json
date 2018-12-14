@@ -2,7 +2,7 @@
   "name": "kavana",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rafaarraez.github.io/kavana",
+  "homepage": "https://kavana-api.herokuapp.com/",
   "dependencies": {
     "axios": "^0.18.0",
     "date-fns": "^1.29.0",
