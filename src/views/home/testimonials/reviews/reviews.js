@@ -24,6 +24,10 @@ const Reviews = ({ reviews }) => {
       & > div {
         animation: ${scrollAnimation} infinite 3s alternate linear;
       }
+      
+      @media (max-width: 700px) {
+        margin-bottom: 2rem;
+      }
     `;
 
 

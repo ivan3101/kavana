@@ -14,6 +14,10 @@ const ReviewItem = ({ review, username }) => {
 
     const StyledTextReview = styled.p`
       font-weight: 500;
+      
+      @media (max-width: 700px) {
+        margin-bottom: 1rem;
+      }
     `;
 
     const StyledUsername = styled.p`
