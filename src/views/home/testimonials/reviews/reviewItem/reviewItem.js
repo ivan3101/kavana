@@ -5,23 +5,20 @@ import ResponsiveImg from "../../../../../components/responsiveImg/responsiveImg
 
 const ReviewItem = ({ review, username }) => {
     const StyledDiv = styled.div`
-      display: flex;
+      display: block;
       flex-direction: column;
-      margin-bottom: 5px;
+      margin-bottom: 15px;
       width: 100%;
       height: auto;
       
-       @media (max-width: 700px) {
-        margin-bottom: 2rem;
-      }
+      // @media (max-width: 700px) {
+      //  margin-bottom: 2rem;
+      //}
     `;
 
     const StyledTextReview = styled.p`
       font-weight: 500;
-      
-      @media (max-width: 700px) {
-        margin-bottom: 1rem;
-      }
+      margin-bottom: 5px;
     `;
 
     const StyledUsername = styled.p`
