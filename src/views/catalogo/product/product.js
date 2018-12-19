@@ -24,6 +24,10 @@ const ProductContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 30px;
+  
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 const ProductDescription = styled.div`
@@ -31,11 +35,21 @@ const ProductDescription = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+  
+  @media (max-width: 700px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const ProductIcon = styled.div`
   height: auto;
   width: 50%;
+  
+  @media (max-width: 700px) {
+    width: 100%;
+    max-height: 300px;
+  }
 `;
 
 const ProductDetails = styled.div`
@@ -61,6 +75,12 @@ const CharacteristicsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
+  
+  @media (max-width: 700px) {
+    width: 100%;
+    gap: 0;
+    justify-content: center;
+  }
 `;
 
 const Characteristic = styled.div`
@@ -99,7 +119,11 @@ class Product extends React.Component {
 
     addToCart = (productId, productName) => {
         const { dispatch } = this.props;
-        dispatch(addToCart({productId, productName}));
+
+        if (!this.inCart(productId)) {
+            dispatch(addToCart({productId, productName}));
+        }
+
     };
 
     inCart = (productId) => {
@@ -130,7 +154,7 @@ class Product extends React.Component {
                                 <p>{product.size} m<Powered>2</Powered></p>
                                 <p>PZAS/CAJA {product.piecesByBox}</p>
                                 <p>m<Powered>2</Powered>/caja {product.sizeByBox}</p>
-                                <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={() => this.inCart(product._id)}/>
+                                <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={this.inCart(product._id)}/>
                             </ProductDetails>
                         </ProductDescription>
 

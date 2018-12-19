@@ -89,7 +89,11 @@ class ProductsType extends Component {
 
     onAddCart = (productId, productName) => {
         const { dispatch } = this.props;
-        dispatch(addToCart({productId, productName}));
+
+        if (!this.inCart(productId)) {
+            dispatch(addToCart({productId, productName}));
+        }
+
     };
 
     inCart = (productId) => {
