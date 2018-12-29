@@ -88,8 +88,8 @@ const ProductForm = ({ className, errors, isSubmitting, dirty, touched, match, s
                         name={'category'}
                         invalid={errors.category && touched.category ? 1 : 0}
                         >
-                        <option value="ceramica">Ceramica</option>
-                        <option value="porcelanato">Porcelanato</option>
+                        <option value="ceramica-y-porcelanato">Cerámicas y Porcelanatos</option>
+                        <option value="materiales-de-instalacion">Materiales de Instalación</option>
                         <option value="piezas-de-baño">Piezas de baño</option>
                         <option value="muebles-de-baño">Muebles de Baño</option>
                         <option value="piedras-ornamentales">Piedras ornamentales</option>

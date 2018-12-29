@@ -36,8 +36,10 @@ const NavItem = ({ children, link, submenu, className }) => {
                 padding: 0.5rem 0;
                 width: auto;
                 height: auto;
-                background: #000000;
+                background: #ffffff;
                 clip: auto;
+                border: 1px solid #FF6C0F;
+                border-radius: 3px;
             }
         ` : ''  
       }

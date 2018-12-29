@@ -4,14 +4,15 @@ import ResponsiveImg from "../../../../components/responsiveImg/responsiveImg";
 import correoIcon from "../../../../assets/icons/correo-21.svg";
 import cajaIcon from "../../../../assets/icons/caja-23.svg";
 
-const ContactIcons = ({ className }) => {
+const ContactIcons = ({ className, onClick }) => {
     const IconContainer = styled.div`
       height: 200px;
       padding: 0.85rem;
+      cursor: pointer;
     `;
 
     return (
-        <div className={className}>
+        <div className={className} onClick={onClick}>
             <IconContainer>
                 <ResponsiveImg src={correoIcon}/>
             </IconContainer>

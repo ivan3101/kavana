@@ -2,7 +2,6 @@ import React from 'react';
 import CardGrid from "../../../components/cardGrid/cardGrid";
 import {productsList} from "./productsList";
 import InstagramItem from "../../home/instagramImgs/instagramItem/instagramItem";
-import Button from "../../../components/Button/Button";
 import {CatalogoContainer} from "../catalogo";
 
 const Products = ({ match, history }) => {

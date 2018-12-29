@@ -12,37 +12,46 @@ export const servicesItems = [
     {
         name: 'Medición In Situ',
         icon: meditionInSitu,
+        description: `Nos dirigimos hasta el lugar en remodelación o construcción y tomamos las medidas de los espacios requeridos`
     },
     {
         name: 'Diseño de Ambientes',
-        icon: disenoDeAmbientes
+        icon: disenoDeAmbientes,
+        description: `Nos dirigimos hasta el lugar en remodelación o construcción y tomamos las medidas de los espacios requeridos. Ademas de entregar el material renderizados`
     },
     {
         name: 'Despacho a Nivel Nacional',
-        icon: despacho
+        icon: despacho,
+        description: `Realizamos despachos gratuitos en la Zona Norte de Valencia, Naguanagua y San Diego y a Nivel Nacional previa cotización de zona`
     },
     {
         name: 'Envio de Muestras',
-        icon: muestras
+        icon: muestras,
+        description: `Para proyectos enviamos muestras para proyectos sin costo alguno`
     },
     {
         name: 'E-Commerce Mercado Libre',
-        icon: ecommerce
+        icon: ecommerce,
+        description: `Nos apoyamos en la Plataforma de E-Commerce de MercadoLibre para llegar a Nivel Nacional con los mismos precios de tienda`
     },
     {
         name: 'Atención vía Whatsapp',
-        icon: whatsapp
+        icon: whatsapp,
+        description: `Facilitamos la atención para aquellos que no pueden venir a la tienda, por este medio enviamos imágenes de productos, cotizaciones y todo lo relacionado con el proceso de ventas`
     },
     {
         name: 'Enlace con la Red de Aliados',
-        icon: aliados
+        icon: aliados,
+        description: `Dedicado a profesionales en Arquitectura y Construcción. Brindamos la oportunidad de conectar con una amplia red de alidos profesionales en el area de arquitectura y construcción`
     },
     {
         name: 'Atención Personalizada',
-        icon: atencionPersonalizada
+        icon: atencionPersonalizada,
+        description: `Nos esmeramos porque reciba la mejor atención, para ello contamos con asesoría personalizada`
     },
     {
         name: 'Asesoria Técnica Especializada',
-        icon: asesoriaTecnica
+        icon: asesoriaTecnica,
+        description: `Contamos con profesionales en área de Arquitectura que el brindarán la mejor asesoría durante el proceso de ventas`
     }
 ];

@@ -6,14 +6,14 @@ import StyledLink from "../../../../components/link/link";
 const TextBackground = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
   bottom: 0;
-  width: 100%;
+  width: 300px;
   height: 100%;
   opacity: 0;
   background-color: #111111;
   transition: all 300ms ease;
+  transform: translateX(-50%);
   
   :hover {
     opacity: 1;

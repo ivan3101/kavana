@@ -20,7 +20,7 @@ const TopLevelRoutes = () => {
             <Route path={'/blog/:page'} component={Blog} exact/>
             <Route path={'/catalogo'} component={Catalogo}/>
             <Route path={'/contacto'} component={Contact}/>
-            <Route path={'/comercio-e-industria'} component={ComercioEIndustria}/>
+            <Route path={'/unete'} component={ComercioEIndustria}/>
             <Route path={'/nosotros'} component={AboutUs}/>
 
             <EnsureVisitorOnly>

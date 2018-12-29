@@ -33,7 +33,7 @@ class Contact extends React.Component {
     render() {
 
         return (
-            <ContactContainer>
+            <ContactContainer className={this.props.className}>
                 <h1>Contactanos</h1>
                 <Formik
                     initialValues={formInitValues}

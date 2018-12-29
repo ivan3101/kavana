@@ -39,7 +39,7 @@ const catalogoRoutes = [
 ];
 
 const SubNavItem = styled(StyledLink)`
-  color: #ffffff;
+  color: #000000;
   padding: 1rem;
   border-bottom: none;
   

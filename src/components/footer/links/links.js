@@ -32,11 +32,11 @@ const links = ({ className }) => {
                 <Link link={'/blog'}>
                     Blog
                 </Link>
+                <Link link={'/inicio#servicios'}>
+                    Servicios
+                </Link>
                 <Link link={'/nosotros'}>
                     Nosotros
-                </Link>
-                <Link link={'/servicios'}>
-                    Servicios
                 </Link>
                 <Link link={'/contacto'}>
                     Contacto
@@ -77,20 +77,20 @@ const links = ({ className }) => {
             </Category>
 
             <Category>
-                <Link link={'/comercio-e-industria'}>
-                    Comercio e Industria
+                <Link link={'/unete'}>
+                    Unete a nuestra red de Aliados
                 </Link>
                 <SubCategory>
-                    <Link link={'/comercio-e-industria/constructores'}>
+                    <Link link={'/unete/constructores'}>
                         Constructores
                     </Link>
-                    <Link link={'/comercio-e-industria/instaladores'}>
+                    <Link link={'/unete/instaladores'}>
                         Instaladores
                     </Link>
-                    <Link link={'/comercio-e-industria/arquitectos'}>
+                    <Link link={'/unete/arquitectos'}>
                         Arquitectos
                     </Link>
-                    <Link link={'/comercio-e-industria/diseñadores-de-interiores'}>
+                    <Link link={'/unete/diseñadores-de-interiores'}>
                         Diseñadores de Interiores
                     </Link>
                 </SubCategory>

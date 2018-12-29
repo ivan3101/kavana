@@ -10,6 +10,10 @@ const LoginContainer = styled.div`
   margin: 20px auto;
   width: 400px;
   height: auto;
+  
+  @media (max-width: 700px) {
+    width: 90%;
+  }
 `;
 
 const formInitValues = {

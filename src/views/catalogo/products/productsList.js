@@ -9,14 +9,14 @@ import accesorios from "../../../assets/images/accesorios.png";
 
 export const productsList = [
     {
-        name: 'Cerámicas',
+        name: 'Cerámicas y Porcelanatos',
         icon: ceramicas,
-        url: '/ceramica'
+        url: '/ceramica-y-porcelanato'
     },
     {
-        name: 'Porcelanatos',
+        name: 'Materiales de Instalación',
         icon: porcelanatos,
-        url: '/porcelanato'
+        url: '/materiales-de-instalacion'
     },
     {
         name: 'Piezas de Baño',
