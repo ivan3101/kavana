@@ -45,11 +45,6 @@ export const servicesItems = [
         description: `Dedicado a profesionales en Arquitectura y Construcción. Brindamos la oportunidad de conectar con una amplia red de alidos profesionales en el area de arquitectura y construcción`
     },
     {
-        name: 'Atención Personalizada',
-        icon: atencionPersonalizada,
-        description: `Nos esmeramos porque reciba la mejor atención, para ello contamos con asesoría personalizada`
-    },
-    {
         name: 'Asesoria Técnica Especializada',
         icon: asesoriaTecnica,
         description: `Contamos con profesionales en área de Arquitectura que el brindarán la mejor asesoría durante el proceso de ventas`

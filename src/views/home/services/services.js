@@ -17,6 +17,14 @@ const ServicesContainer = styled.div`
   })
 `;
 
+const ImgService = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
 class Services extends React.Component {
 
     state = {
@@ -46,6 +54,9 @@ class Services extends React.Component {
                 >
                     {this.state.showModal && (
                         <React.Fragment>
+                            <ImgService>
+                                <ResponsiveImg src={servicesItems[this.state.service].icon}/>
+                            </ImgService>
                             <h1>{servicesItems[this.state.service].name}</h1>
                             <br/>
                             <p>{servicesItems[this.state.service].description}</p>

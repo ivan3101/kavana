@@ -54,6 +54,7 @@ const StyledContact = styled(Contact)`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 40px;
 `;
 
 export default StyledContact;

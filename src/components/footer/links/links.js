@@ -17,6 +17,7 @@ const links = ({ className }) => {
 
     const Link = styled(StyledLink)`
        border-bottom: none;
+       font-weight: bold;
        
        :hover {
         border-bottom: none;
