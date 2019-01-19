@@ -1,19 +1,41 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
-import Filters from "./filters/filters";
 import ProductCard from "./productCard/productCard";
 import * as axios from "axios";
 import Pagination from "../../../components/pagination/pagination";
-import Filter from "./filters/filter/filter";
 import {addToCart} from "../../../actions/cart.actions";
 import {connect} from "react-redux";
 import {CatalogoContainer} from "../catalogo";
+import SearchInput, {createFilter} from "react-search-input";
+import { lighten } from 'polished';
 
 const ProductsContainer = styled.div`
   width: 90%;
   
   h1 {
     text-transform: capitalize;
+  }
+`;
+
+const SearchBar = styled(SearchInput)`
+  width: 80%;
+  margin: 0 auto;
+  
+  input {
+  width: 100%;
+  background-color: white;
+  padding: 0.25rem 0.50rem;
+  border-radius: 6px;
+  border: 2px solid ${props => props.theme.text};
+  color: ${props => lighten(0.1, props.theme.text)};
+  
+  :focus {
+    border: 2px solid ${props => props.invalid ? props.theme.warning : props.theme.secondary};
+  }
+  
+  ::placeholder {
+    color: ${props => lighten(0.3, props.theme.text)};
+  }
   }
 `;
 
@@ -24,7 +46,8 @@ class ProductsType extends Component {
         totalProducts: 0,
         loading: true,
         modalOpen: false,
-        modalMessage: ''
+        modalMessage: '',
+        searchTerm: ""
     };
 
     async componentDidMount() {
@@ -115,16 +138,25 @@ class ProductsType extends Component {
         </ProductCard>
     );
 
+    onSearch = (term) => {
+        this.setState(() => ({
+            searchTerm: term
+        }))
+    };
+
     render() {
-        const { products, totalProducts, loading } = this.state;
+        const { products, totalProducts, loading,searchTerm } = this.state;
         const { category } = this.props.match.params;
+
+        const filteredProducts = products.filter(createFilter(searchTerm, "name"));
 
         return (
             <CatalogoContainer>
                 <ProductsContainer>
                     <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') }</h1>
+                    <SearchBar onChange={this.onSearch}/>
                     <Pagination
-                        items={products}
+                        items={filteredProducts}
                         totalItems={totalProducts}
                         loading={loading}
                         onChangePage={this.onChangePage}
