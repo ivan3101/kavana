@@ -109,6 +109,7 @@ class BlogSlider extends Component {
     render() {
         const { className } = this.props;
         const { sliders } = this.state;
+
         return (
             <React.Fragment>
                 <h1 style={{color: '#ff802f', textAlign: 'center', marginBottom: '10px'}}>Articulos Destacados</h1>
@@ -120,12 +121,15 @@ class BlogSlider extends Component {
                     ref={this.slideRef}
                 >
                     {
-                        sliders.length && sliders.map((slider) => (
+                        !!sliders.length && sliders.map((slider) => (
                             <Slide key={slider.image} image={`${process.env.REACT_APP_API_PUBLIC}/${slider.image}`} link={`/blog/post/${slider.id}`} text={slider.header} resume={slider.resume}/>
                         ))
                     }
                     {
                         !!this.state.loading && <SpinnerLoading/>
+                    }
+                    {
+                        !this.state.loading && !sliders.length && <h3>No se encontraron articulos destacados</h3>
                     }
                 </div>
             </React.Fragment>

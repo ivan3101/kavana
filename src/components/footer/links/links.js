@@ -50,11 +50,11 @@ const links = ({ className }) => {
                 </Link>
 
                 <SubCategory>
-                    <Link link={'/catalogo/ceramica'}>
-                        Ceramica
+                    <Link link={'/catalogo/ceramica-y-porcelanato/1'}>
+                        Cerámica y Porcelanatos
                     </Link>
-                    <Link link={'/catalogo/porcelanato'}>
-                        Porcelanato
+                    <Link link={'/catalogo/materiales-de-instalacion/1'}>
+                        Materiales de Construcción
                     </Link>
                     <Link link={'/catalogo/piedras-ornamentales'}>
                         Piedras Ornamentales

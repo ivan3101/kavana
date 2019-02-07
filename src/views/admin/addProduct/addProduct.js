@@ -19,7 +19,7 @@ const formInitValues = {
     characteristics: [],
     icon: null,
     banner: null,
-    category: ''
+    category: 'ceramica-y-porcelanato'
 };
 
 class AddProduct extends Component {

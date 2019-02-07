@@ -5,12 +5,12 @@ import StyledLink from "../../../link/link";
 
 const catalogoRoutes = [
     {
-        name: 'Cerámica',
-        route: '/catalogo/ceramica/1'
+        name: 'Cerámica y Porcelanatos',
+        route: '/catalogo/ceramica-y-porcelanato/1'
     },
     {
-        name: 'Porcelanato',
-        route: '/catalogo/porcelanato/1'
+        name: 'Materiales de Instalación',
+        route: '/catalogo/materiales-de-instalacion/1'
     },
     {
         name: 'Piedras Ornamentales',

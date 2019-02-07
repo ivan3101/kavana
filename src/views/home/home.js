@@ -7,6 +7,7 @@ import StyledContact from "./contact/contact";
 import Services from "./services/services";
 import axios from "axios";
 import ServicesContainer from "./services/servicesContainer";
+import StyledBlogSlider from "../blog/blogSlider/blogSlider";
 
 const ServicesComponent = ServicesContainer(Services);
 
@@ -50,6 +51,9 @@ class Home extends Component {
             <React.Fragment>
                 <ImageSliderContainer>
                     <StyledImageSlider/>
+                </ImageSliderContainer>
+                <ImageSliderContainer>
+                    <StyledBlogSlider />
                 </ImageSliderContainer>
                 <ServicesComponent ref={this.servicesRef}/>
                 <InstagramImgs publications={this.state.publications}/>
