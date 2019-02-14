@@ -8,6 +8,7 @@ import Services from "./services/services";
 import axios from "axios";
 import ServicesContainer from "./services/servicesContainer";
 import StyledBlogSlider from "../blog/blogSlider/blogSlider";
+import ProductsGallery from "./productsGallery/productsGallery";
 
 const ServicesComponent = ServicesContainer(Services);
 
@@ -55,6 +56,7 @@ class Home extends Component {
                 <ImageSliderContainer>
                     <StyledBlogSlider />
                 </ImageSliderContainer>
+                <ProductsGallery/>
                 <ServicesComponent ref={this.servicesRef}/>
                 <InstagramImgs publications={this.state.publications}/>
                 <Testimonials/>
