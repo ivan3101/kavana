@@ -97,6 +97,27 @@ const AddToCartProduct = styled(AddToCart)`
   transform: translateY(0);
 `;
 
+const DataSheet = styled.table`
+  margin: 0 auto;
+  text-align: left;
+  font-size: 0.90rem;
+  border-collapse: collapse;
+  width: 40%;
+  
+  th, td {
+    padding: 0.85rem;
+    margin: 0;
+  }
+  
+  tr:hover {
+    background-color: #ebebeb;
+  }
+`;
+
+const DSHeader = styled.thead`
+  background-color: #ebebeb;
+`;
+
 class Product extends React.Component {
 
     state = {
@@ -150,10 +171,6 @@ class Product extends React.Component {
                             </ProductIcon>
                             <ProductDetails>
                                 <p>{product.name}</p>
-                                <p>{product.sku}</p>
-                                <p>{product.size} m<Powered>2</Powered></p>
-                                <p>PZAS/CAJA {product.piecesByBox}</p>
-                                <p>m<Powered>2</Powered>/caja {product.sizeByBox}</p>
                                 <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={this.inCart(product._id)}/>
                             </ProductDetails>
                         </ProductDescription>
@@ -168,6 +185,41 @@ class Product extends React.Component {
                             }
                         </CharacteristicsContainer>
                     </ProductContainer>
+
+                    <DataSheet>
+                        <DSHeader>
+                        <tr>
+                            <th>
+                                Atributo
+                            </th>
+                            <th>
+                                Detalle
+                            </th>
+                        </tr>
+                        </DSHeader>
+                        <tbody>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>{product.name}</td>
+                        </tr>
+                        <tr>
+                            <td>SKU</td>
+                            <td>{product.sku}</td>
+                        </tr>
+                        <tr>
+                            <td>Tamaño (m<Powered>2</Powered>)</td>
+                            <td>{product.size} m<Powered>2</Powered></td>
+                        </tr>
+                        <tr>
+                            <td>Piezas por Caja</td>
+                            <td>{product.piecesByBox}</td>
+                        </tr>
+                        <tr>
+                            <td>Tamaño por Caja (m<Powered>2</Powered>)</td>
+                            <td>{product.sizeByBox} m<Powered>2</Powered></td>
+                        </tr>
+                        </tbody>
+                    </DataSheet>
                 </div>
             )
         }
