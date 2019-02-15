@@ -1,11 +1,11 @@
 import ceramicas from "../../../assets/images/ceramicas.png";
-import porcelanatos from "../../../assets/images/porcelanatos.png";
 import piezasDeBano from "../../../assets/images/piezasdebano.png";
 import mueblesDeBano from "../../../assets/images/mueblesdebano.png";
 import piedrasOrnamentales from "../../../assets/images/piedrasornamentales.png";
 import mallasYDecorado from "../../../assets/images/mallasydecorados.png";
 import griferias from "../../../assets/images/griferias.png";
 import accesorios from "../../../assets/images/accesorios.png";
+import materiales from "../../../assets/images/materiales.jpg";
 
 export const productsList = [
     {
@@ -15,7 +15,7 @@ export const productsList = [
     },
     {
         name: 'Materiales de Instalación',
-        icon: porcelanatos,
+        icon: materiales,
         url: '/materiales-de-instalacion'
     },
     {
