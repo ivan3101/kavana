@@ -47,7 +47,11 @@ const StyledContactInfo = styled(ContactInfo)`
   width: auto;
   height: 100%;
   flex-direction: column;
-  gap: 25px;
+  margin-left: 35px;
+  
+  & > div {
+    margin-top: 25px;
+  }
 `;
 
 export default StyledContactInfo;

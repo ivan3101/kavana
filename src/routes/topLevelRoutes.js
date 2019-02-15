@@ -20,7 +20,7 @@ const TopLevelRoutes = () => {
             <Route path={'/blog/post/:postId'} component={BlogPost}/>
             <Route path={'/blog/:page'} component={Blog} exact/>
             <Route path={'/catalogo'} component={Catalogo}/>
-            <Route path={'/contacto'} component={Contact}/>
+            <Route path={'/contacto'} render={props => <Contact {...props} nameModal={"Contactanos"}/>}/>
             <Route path={'/unete'} component={ComercioEIndustria}/>
             <Route path={'/nosotros'} component={AboutUs}/>
 

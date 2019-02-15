@@ -36,7 +36,7 @@ class Contact extends React.Component {
                     show={this.state.showModal}
                     closeCb={this.onShowModal}
                 >
-                    <StyledContactForm/>
+                    <StyledContactForm nameModal={"Buzon de Sugerencias"}/>
 
                 </Modal>
                 <StyledContactIcons onClick={this.onShowModal}/>

@@ -12,7 +12,7 @@ const copyright = ({ className }) => {
     return (
         <div className={className}>
             <ResponsiveImg src={logoImg}/>
-            <Text>Kavana revestimientos &copy;{'  '}|{'  '}2018</Text>
+            <Text>Kavanayen Suministros 2012 C.A. Rif J-40143131-3</Text>
         </div>
     );
 };

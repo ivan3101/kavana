@@ -4,6 +4,7 @@ import {Formik} from "formik";
 import * as Yup from "yup";
 import ContactForm from "./contactForm/contactForm";
 import axios from "axios";
+import StyledLocation from "../home/contact/location/location";
 
 const formInitValues = {
     name: '',
@@ -34,7 +35,7 @@ class Contact extends React.Component {
 
         return (
             <ContactContainer className={this.props.className}>
-                <h1>Contactanos</h1>
+                <h1>{this.props.nameModal}</h1>
                 <Formik
                     initialValues={formInitValues}
                     validationSchema={Yup.object().shape({
@@ -80,6 +81,12 @@ class Contact extends React.Component {
                     }}
                     render={props => <ContactForm {...props} submitState={this.state.submitState} message={this.state.message}/>}
                 />
+
+                <br/>
+
+                <h2>Donde nos encontramos</h2>
+
+                <StyledLocation/>
             </ContactContainer>
         )
     }
