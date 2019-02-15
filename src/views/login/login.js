@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import {loginFetch} from "../../actions/auth.actions";
 import LoginForm from "./loginForm/loginForm";
 
-const LoginContainer = styled.div`
+export const LoginContainer = styled.div`
   margin: 20px auto;
   width: 400px;
   height: auto;

@@ -11,6 +11,7 @@ import Login from "../views/login/login";
 import Admin from "../views/admin/admin";
 import Blog from "../views/blog/blog";
 import BlogPost from "../views/blog/blogPost/blogPost";
+import Register from "../views/register/register";
 
 const TopLevelRoutes = () => {
     return (
@@ -25,6 +26,7 @@ const TopLevelRoutes = () => {
 
             <EnsureVisitorOnly>
                 <Route path={'/login'} component={Login}/>
+                <Route path={'/register'} component={Register}/>
             </EnsureVisitorOnly>
 
             <EnsureUserOnly>

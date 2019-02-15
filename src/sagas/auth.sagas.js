@@ -5,10 +5,12 @@ import {loginRequest} from "../services/auth.service";
 export function *loginFetch(action) {
     try {
         const response = yield call(loginRequest, action.data);
-        const { username } = response.data.data;
+        const { username, role, _id } = response.data.data;
 
         yield put(loginPut({
-            username
+            username,
+            role,
+            id: _id
         }));
         action.setSubmitting(false);
 

@@ -5,7 +5,7 @@ import {redirectUrlPut} from "../../../actions/auth.actions";
 
 class EnsureUserOnly extends Component {
     componentDidMount() {
-        const { currentUrl, dispatch, isLoggedIn, history } = this.props;
+        const { currentUrl, dispatch, isLoggedIn, history, role } = this.props;
 
         if (!isLoggedIn) {
             if (currentUrl.split('/')[1] === 'admin') {
@@ -16,9 +16,9 @@ class EnsureUserOnly extends Component {
     }
 
     render() {
-        const { children, isLoggedIn } = this.props;
+        const { children, isLoggedIn, role } = this.props;
 
-        if (isLoggedIn) {
+        if (isLoggedIn && role === "ADMIN") {
             return children;
         } else {
             return null;
@@ -28,7 +28,8 @@ class EnsureUserOnly extends Component {
 
 const mapStateToProps = (state, ownProps) => ({
     isLoggedIn: state.auth.isAuthenticated,
-    currentUrl: ownProps.location.pathname
+    currentUrl: ownProps.location.pathname,
+    role: state.auth.role
 });
 
 export default withRouter(connect(mapStateToProps)(EnsureUserOnly));

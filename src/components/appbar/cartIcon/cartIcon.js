@@ -2,28 +2,14 @@ import styled from "styled-components";
 import {clearCart, removeFromCart} from "../../../actions/cart.actions";
 import Modal from "../../modal/modal";
 import closeIcon from "../../../assets/icons/close.svg";
-import {Formik} from "formik";
-import * as Yup from "yup";
 import * as axios from "axios";
 import cart from "../../../assets/icons/CARRITO-BOTON.png";
 import {connect} from "react-redux";
 import React from "react";
 import ResponsiveImg from "../../responsiveImg/responsiveImg";
-import CartForm from "../../cart/cartForm/cartForm";
-
-const initValues = {
-    name: '',
-    lastname: '',
-    cedula: '',
-    rif: '',
-    email: '',
-    phone: '',
-    address: '',
-    amount: '',
-    unidadDeMedida: '',
-    socialReason: '',
-    contribuyente: false
-};
+import SpinnerLoading from "../../cart/cart";
+import Button from "../../Button/Button";
+import SubmitError from "../../form/submitError/submitError";
 
 const CartContainer = styled.div`
   cursor: pointer;
@@ -61,30 +47,64 @@ const Remove = styled.span`
   cursor: pointer;
 `;
 
-const FormContainer = styled.div`
-  padding-top: 1rem;
-  border-top: 1px solid ${props => props.theme.secondary};
-  width: 90%;
-  margin: 0 auto;
-`;
-
 class CartIcon extends React.Component {
 
     state = {
+        loading: false,
         showModal: false,
         submitState: '',
         message: ''
     };
 
     onShowModal = () => {
-        this.setState((prevState) => ({
-            showModal: !prevState.showModal
-        }))
+        this.setState((prevState) => {
+            if (prevState.showModal) {
+                return {
+                    showModal: !prevState.showModal,
+                    submitState: "",
+                    message: ""
+                }
+            } else {
+                return {
+                    showModal: !prevState.showModal
+                }
+            }
+        })
     };
 
     onRemoveFromCart = (productId) => {
         const { dispatch } = this.props;
         dispatch(removeFromCart(productId));
+    };
+
+    onClickBuy = async () => {
+        try {
+
+            this.setState(() => ({
+                loading: true
+            }));
+
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/cart/${this.props.id}`, {
+                products: this.props.cart
+            });
+
+            this.setState(() => ({
+                submitState: 'success',
+                message: response.data.message
+            }));
+
+            this.props.dispatch(clearCart());
+        } catch (e) {
+            this.setState(() => ({
+                submitState: 'error',
+                message: 'Ocurrio un error al pedir su cotización. Por favor, vuelva a' +
+                    ' intentarlo mas tarde'
+            }))
+        }
+
+        this.setState(() => ({
+            loading: false
+        }));
     };
 
     render() {
@@ -112,66 +132,30 @@ class CartIcon extends React.Component {
                         }
                     </ProductsContainer>
 
-                    <FormContainer>
-                        <Formik
-                            initialValues={initValues}
-                            validationSchema={Yup.object().shape({
-                                name: Yup.string().trim().required('Debe ingresar su nombre').matches(/^[a-zA-Z\s]+$/, {
-                                    message: 'El nombre solo puede contener letras y espacios'}),
-                                lastname: Yup.string().trim().required('Debe ingresar su apellido').matches(/^[a-zA-Z\s]+$/, {
-                                    message: 'El apellido solo puede contener letras y espacios'}),
-                                cedula: Yup.string().trim().required("Debe ingresar su cedula").matches(/^([VEJPGvejpg])-([0-9]{7,9})$/, {
-                                    message: 'La cedula debe tener el formato Y-XXXXXXX. Las letras aceptadas son V' +
-                                        ' E J P G.'
-                                }),
-                                rif: Yup.string().trim().required("Debe ingresar su RIF").matches(/^([VEJPGvejpg])-([0-9]{7,9})-([0-9])$/, {
-                                    message: 'El RIF debe tener el formato Y-XXXXXXX-X. Las letras aceptadas son V' +
-                                        ' E J P G.'
-                                }),
-                                email: Yup.string().trim().required("Debe ingresar su correo").email('Debe ingresar' +
-                                    ' un email valido'),
-                                phone: Yup.string().trim().required('Debe ingresar su numero de telefono').matches(/^([0-9]{4})-([0-9]{7}$)/, {
-                                    message: 'El numero de telefono debe tener el formato XXXX-XXXXXXX'
-                                }),
-                                address: Yup.string().trim().required("Debe ingresar su direccion"),
-                                amount: Yup.string().trim().required("Debe ingresar la cantidad").matches(/^([0-9]+)$/, {
-                                    message: 'Este campo solo acepta numeros'
-                                }),
-                                unidadDeMedida: Yup.string().trim().required("Debe ingresar una unidad de medida"),
-                                socialReason: Yup.string().trim().required("Debe ingresar una razon social"),
-                                contribuyente: Yup.boolean()
-                            })}
-                            onSubmit={async (values, formikActions) => {
-                                try {
-                                    this.setState(() => ({
-                                        submitState: '',
-                                        message: ''
-                                    }));
+                    {
+                        this.state.loading && <SpinnerLoading/>
+                    }
 
-                                    formikActions.setSubmitting(true);
+                    {
+                        !this.props.isLoggedIn && <h2>Debe iniciar sesión para poder pedir una cotización</h2>
+                    }
 
-                                    const response = await axios.post(`${process.env.REACT_APP_API_URL}/cart`, { user: {...values}, products: this.props.cart});
+                    {
+                        !this.state.loading && this.state.submitState && (
+                            <SubmitError error={this.state.submitState}>
+                                {this.state.message}
+                            </SubmitError>
+                        )
+                    }
 
-                                    this.setState(() => ({
-                                        submitState: 'success',
-                                        message: response.data.message
-                                    }));
-
-                                    formikActions.setSubmitting(false);
-                                    formikActions.resetForm();
-                                    this.props.dispatch(clearCart());
-                                } catch (e) {
-                                    formikActions.setSubmitting(false);
-                                    this.setState(() => ({
-                                        submitState: 'error',
-                                        message: 'Ocurrio un error al enviar su presupuesto. Por favor, vuelva a' +
-                                            ' intentarlo mas tarde'
-                                    }))
-                                }
-                            }}
-                            render={props => <CartForm {...props} submitState={this.state.submitState} message={this.state.message}/>}
-                        />
-                    </FormContainer>
+                    <Button
+                        disabled={
+                            !this.props.isLoggedIn
+                            || !this.props.cart.length
+                            || this.state.loading
+                        }
+                        onClick={this.onClickBuy}
+                    >Pedir Cotización</Button>
                 </Modal>
                 <CartContainer onClick={this.onShowModal}>
                     <ResponsiveImg src={cart}/>
@@ -181,7 +165,9 @@ class CartIcon extends React.Component {
     }
 }
 const mapStateToProps = (state) => ({
-    cart: state.cart.products
+    cart: state.cart.products,
+    isLoggedIn: state.auth.isAuthenticated,
+    id: state.auth.id
 });
 
 export default connect(mapStateToProps)(CartIcon);

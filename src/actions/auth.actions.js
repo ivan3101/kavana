@@ -7,10 +7,12 @@ export const loginFetch = ({ username, password }, setSubmitting) => ({
     }
 });
 
-export const loginPut = ({ username }) => ({
+export const loginPut = ({ username, role, id }) => ({
     type: 'LOGIN/PUT',
     data: {
-        username
+        username,
+        role,
+        id
     }
 });
 

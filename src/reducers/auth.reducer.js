@@ -1,10 +1,12 @@
 const defaultState = {
     isAuthenticated: false,
     username: '',
+    role: "",
     redirectUrl: '/',
     error: '',
     errorMsg: '',
-    loading: false
+    loading: false,
+    id: ""
 };
 
 export const authReducer = (state = defaultState, action) => {
@@ -20,7 +22,9 @@ export const authReducer = (state = defaultState, action) => {
                 ...state,
                 isAuthenticated: true,
                 username: action.data.username,
-                loading: false
+                loading: false,
+                role: action.data.role,
+                id: action.data.id
             };
 
         case 'LOGIN_FAILED':

@@ -6,7 +6,7 @@ import Button from "../../Button/Button";
 import {connect} from "react-redux";
 import {logoutPut} from "../../../actions/auth.actions";
 
-const Title = ({isLoggedIn, dispatch}) => {
+const Title = ({isLoggedIn, dispatch, role, username }) => {
     const StyledDiv = styled.div`
       display: flex;
       justify-content: center;
@@ -39,19 +39,32 @@ const Title = ({isLoggedIn, dispatch}) => {
             <StyledUl>
                 <CartIcon/>
                 {
-                    !isLoggedIn && <NavItem link={'/login'}>Login</NavItem>
+                    !isLoggedIn && (
+                        <React.Fragment>
+                            <NavItem link={'/login'}>Iniciar Sesión</NavItem>
+                            <NavItem link={"/register"}>Registrarse</NavItem>
+                        </React.Fragment>
+                    )
                 }
 
                 {
                     isLoggedIn && (
-                        <React.Fragment>
-                            <NavItem link={'/admin'}>
-                                Panel de Control
-                            </NavItem>
+                        <p>Bienvenido, {username}</p>
+                    )
+                }
+                {
+                    isLoggedIn && role === "ADMIN" && (
+                        <NavItem link={'/admin'}>
+                            Panel de Control
+                        </NavItem>
+                    )
+                }
+
+                {
+                    isLoggedIn && (
                             <Button onClick={onLogout}>
                                 Cerrar Sesión
                             </Button>
-                        </React.Fragment>
                     )
                 }
             </StyledUl>
@@ -60,7 +73,9 @@ const Title = ({isLoggedIn, dispatch}) => {
 };
 
 const mapStateToPros = (state) => ({
-    isLoggedIn: state.auth.isAuthenticated
+    isLoggedIn: state.auth.isAuthenticated,
+    role: state.auth.role,
+    username: state.auth.username
 });
 
 export default connect(mapStateToPros)(Title);

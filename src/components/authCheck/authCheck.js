@@ -15,17 +15,20 @@ class AuthCheck extends Component {
     }
 
     componentDidUpdate(prevProps) {
-        const { redirectUrl } = this.props;
+        const { redirectUrl, role } = this.props;
         const isLoggingOut = prevProps.isLoggedIn && !this.props.isLoggedIn;
         const isLoggingIn = !prevProps.isLoggedIn && this.props.isLoggedIn;
 
         if (isLoggingIn) {
-            if (redirectUrl.split('/')[1] === 'admin') {
-                this.props.history.replace(redirectUrl);
+            if (role === "ADMIN") {
+                if (redirectUrl.split('/')[1] === 'admin') {
+                    this.props.history.replace(redirectUrl);
+                } else {
+                    this.props.history.push('/admin');
+                }
             } else {
-                this.props.history.push('/admin');
+             this.props.history.replace("/inicio");
             }
-
         } else if (isLoggingOut) {
             this.props.history.push('/inicio')
         }
@@ -39,7 +42,8 @@ class AuthCheck extends Component {
 const mapStateToProps = (state, ownProps) => ({
     isLoggedIn: state.auth.isAuthenticated,
     redirectUrl: state.auth.redirectUrl,
-    currentUrl: ownProps.location.pathname
+    currentUrl: ownProps.location.pathname,
+    role: state.auth.role
 });
 
 export default withRouter(connect(mapStateToProps)(AuthCheck));
