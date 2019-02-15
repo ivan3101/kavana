@@ -24,10 +24,12 @@ const SearchBar = styled(SearchInput)`
   input {
   width: 100%;
   background-color: white;
-  padding: 0.25rem 0.50rem;
+  padding: 0.4rem 0.60rem;
   border-radius: 6px;
-  border: 2px solid ${props => props.theme.text};
+  border: 2px solid #ccc;
   color: ${props => lighten(0.1, props.theme.text)};
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   
   :focus {
     border: 2px solid ${props => props.invalid ? props.theme.warning : props.theme.secondary};
@@ -154,7 +156,7 @@ class ProductsType extends Component {
             <CatalogoContainer>
                 <ProductsContainer>
                     <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') }</h1>
-                    <SearchBar onChange={this.onSearch}/>
+                    <SearchBar onChange={this.onSearch} placeholder={"Ingrese el texto de busqueda"}/>
                     <Pagination
                         items={filteredProducts}
                         totalItems={totalProducts}
