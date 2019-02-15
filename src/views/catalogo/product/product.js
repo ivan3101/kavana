@@ -45,10 +45,11 @@ const ProductDescription = styled.div`
 const ProductIcon = styled.div`
   height: auto;
   width: 50%;
+  max-height: 300px;
   
   @media (max-width: 700px) {
     width: 100%;
-    max-height: 300px;
+    max-height: 100%;
   }
 `;
 
@@ -56,10 +57,15 @@ const ProductDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  justify-content: center;
   
   p:first-child {
     font-size: 1.25rem;
     font-weight: 500;
+  }
+  
+  @media (max-width: 700px) {
+    align-items: center;
   }
 `;
 
@@ -111,6 +117,10 @@ const DataSheet = styled.table`
   
   tr:hover {
     background-color: #ebebeb;
+  }
+  
+  @media (max-width: 700px) {
+  width: 80%;
   }
 `;
 
