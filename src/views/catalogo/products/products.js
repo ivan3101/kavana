@@ -14,7 +14,7 @@ const Products = ({ match, history }) => {
                     !!productsList.length && productsList.map(product => (
                         <InstagramItem
                             description={product.name}
-                            image={product.icon.path}
+                            image={product.icon}
                             link={match.url + product.url + '/1'}
                             key={product.name}
                         />
