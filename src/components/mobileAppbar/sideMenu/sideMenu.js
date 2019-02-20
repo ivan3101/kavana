@@ -64,11 +64,13 @@ const SideMenu = ({ open, onClick, isLoggedIn, dispatch }) => {
         <React.Fragment>
             <Overlay open={open} onClick={onClick}/>
             <SideMenuContainer open={open}>
-                <StyledLink to={'/inicio'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>inicio</StyledLink>
-                <StyledLink to={'/blog/1'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>blog</StyledLink>
-                <StyledLink to={'/nosotros'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>nosotros</StyledLink>
-                <StyledLink to={'/catalogo'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>catálogo</StyledLink>
-                <StyledLink to={'/contacto'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>contacto</StyledLink>
+                <StyledLink to={'/inicio'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Inicio</StyledLink>
+                <StyledLink to={'/blog/1'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Blog</StyledLink>
+                <StyledLink to={'/nosotros'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Nosotros</StyledLink>
+                <StyledLink to={'/catalogo'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Catálogo</StyledLink>
+                <StyledLink to={'/contacto'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Contacto</StyledLink>
+                <StyledLink to={"/login"} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Iniciar Sesión</StyledLink>
+                <StyledLink to={"/register"} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Registrarse</StyledLink>
                 {
                     isLoggedIn && (
                         <React.Fragment>
