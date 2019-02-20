@@ -65,7 +65,7 @@ class ProductsGallery extends Component {
                 {loading && !products.length && <SpinnerLoading/>}
                 {!loading && products.length && products.map((product, index) => (
                     <ProductCard
-                        icon={process.env.REACT_APP_API_PUBLIC + '/' + product.icon}
+                        icon={product.icon.path}
                         name={product.name}
                         size={product.size}
                         key={index}

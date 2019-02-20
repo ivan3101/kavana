@@ -65,7 +65,7 @@ class BlogSlider extends Component {
         const sliders = response.data.data.posts.map(post => ({
             id: post._id,
             header: post.header,
-            image: post.images[0],
+            image: post.images[0].path,
             resume: post.resume
         }));
 
@@ -122,7 +122,7 @@ class BlogSlider extends Component {
                 >
                     {
                         !!sliders.length && sliders.map((slider) => (
-                            <Slide key={slider.image} image={`${process.env.REACT_APP_API_PUBLIC}/${slider.image}`} link={`/blog/post/${slider.id}`} text={slider.header} resume={slider.resume}/>
+                            <Slide key={slider.image} image={slider.image} link={`/blog/post/${slider.id}`} text={slider.header} resume={slider.resume}/>
                         ))
                     }
                     {

@@ -173,11 +173,11 @@ class Product extends React.Component {
         } else {
             return (
                 <div>
-                    <Banner banner={`${process.env.REACT_APP_API_PUBLIC}/${product.banner}`}/>
+                    <Banner banner={product.banner.path}/>
                     <ProductContainer>
                         <ProductDescription>
                             <ProductIcon>
-                                <ResponsiveImg src={`${process.env.REACT_APP_API_PUBLIC}/${product.icon}`}/>
+                                <ResponsiveImg src={product.icon.path}/>
                             </ProductIcon>
                             <ProductDetails>
                                 <p>{product.name}</p>

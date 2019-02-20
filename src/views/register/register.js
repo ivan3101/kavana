@@ -18,18 +18,10 @@ const registerInitValues = {
 };
 
 const registerValidationSchema = Yup.object().shape({
-    firstname: Yup
+    name: Yup
         .string()
         .trim()
-        .required("Debe ingresar su nombre")
-        .matches(/^[a-zA-Z\s]+$/, {
-            excludeEmptyString: true,
-            message: "Solo puede ingresar letras y espacios"
-        }),
-    lastname: Yup
-        .string()
-        .trim()
-        .required("Debe ingresar su apellido")
+        .required("Debe ingresar su nombre o razón social")
         .matches(/^[a-zA-Z\s]+$/, {
             excludeEmptyString: true,
             message: "Solo puede ingresar letras y espacios"

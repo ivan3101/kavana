@@ -19,8 +19,6 @@ const RegisterForm = ({ errors, isSubmitting, dirty, touched, status }) => {
     const identificationNumberErrors = idx(errors, _ => _.identification.number);
     const identificationNumberTouched = idx(touched, _ => _.identification.number);
 
-    console.log(status);
-
     return (
         <Form>
 
@@ -31,23 +29,13 @@ const RegisterForm = ({ errors, isSubmitting, dirty, touched, status }) => {
             {isSubmitting && <SpinnerLoading/>}
 
             <FormGroup>
-                <Label>Nombre</Label>
+                <Label>Nombre o Razón Social</Label>
                 <Input
                     type={"text"}
-                    name={"firstname"}
-                    invalid={errors.firstname && touched.firstname ? 1 : 0 }
+                    name={"name"}
+                    invalid={errors.name && touched.name ? 1 : 0 }
                 />
-                <ValidationError name={"firstname"}/>
-            </FormGroup>
-
-            <FormGroup>
-                <Label>Apellido</Label>
-                <Input
-                    type={"text"}
-                    name={"lastname"}
-                    invalid={errors.lastname && touched.lastname ? 1 : 0 }
-                />
-                <ValidationError name={"lastname"} />
+                <ValidationError name={"name"}/>
             </FormGroup>
 
             <FormGroup>

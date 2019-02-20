@@ -76,7 +76,7 @@ class Posts extends Component {
                 modalOpen: true,
                 loading: false,
                 modalMessage: 'El post ha sido eliminado con exito',
-                posts: responseGet.data.data.post
+                posts: responseGet.data.data.posts
             }))
 
         } catch (e) {
@@ -96,12 +96,12 @@ class Posts extends Component {
 
     renderFn = (post, index) => (
         <ProductCard
-            icon={process.env.REACT_APP_API_PUBLIC + '/' + post.images[0]}
+            icon={post.images[0].path}
             name={post.header}
             key={index}
         >
             <Button onClick={() => this.onEditProduct(post._id)}>editar</Button>
-            <Button color={'#cc0000'} text={'#ffffff'} onClick={() => this.onDeleteProduct(post._id)}>borrar</Button>
+            <Button color={'#cc0000'} text={'#ffffff'} onClick={() => this.onDeleteProduct(post._id)}>Borrar</Button>
         </ProductCard>
     );
 
@@ -125,7 +125,7 @@ class Posts extends Component {
                     <p>{this.state.modalMessage}</p>
                 </Modal>
 
-                <h1>Posts <Button onClick={this.onAddProduct}>agregar post</Button></h1>
+                <h1>Posts <Button onClick={this.onAddProduct}>Agregar post</Button></h1>
                 <ProductsContainer>
                     <Pagination
                         items={posts}

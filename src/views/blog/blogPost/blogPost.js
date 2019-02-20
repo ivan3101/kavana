@@ -69,7 +69,7 @@ class BlogPost extends Component {
                     <ImagesContainer>
                         {
                             post.images.map(image => (
-                                <ResponsiveImg src={`${process.env.REACT_APP_API_PUBLIC}/${image}`}/>
+                                <ResponsiveImg src={image.path}/>
                             ))
                         }
                     </ImagesContainer>

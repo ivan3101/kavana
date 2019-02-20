@@ -128,7 +128,7 @@ class ProductsType extends Component {
 
     renderFn = (product, index) => (
         <ProductCard
-            icon={process.env.REACT_APP_API_PUBLIC + '/' + product.icon}
+            icon={product.icon.path}
             name={product.name}
             size={product.size}
             key={index}

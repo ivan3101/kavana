@@ -39,11 +39,8 @@ class Contact extends React.Component {
                 <Formik
                     initialValues={formInitValues}
                     validationSchema={Yup.object().shape({
-                        'name': Yup.string().trim().required('Debe ingresar su nombre').matches(/^[a-zA-Z\s]+$/, {
+                        'name': Yup.string().trim().required('Debe ingresar su nombre o razó social').matches(/^[a-zA-Z\s]+$/, {
                             message: 'Su nombre solo puede contener letras y espacios'
-                        }),
-                        'lastname': Yup.string().trim().required('Debe ingresar su apellido').matches(/^[a-zA-Z\s]+$/, {
-                            message: 'Su apellido solo puede contener letras y espacios'
                         }),
                         'phone': Yup.string().trim().required('Debe ingresar su numero de telefono').matches(/^([0-9]{4})-([0-9]{7}$)/, {
                             message: 'El numero de telefono debe tener el formato XXXX-XXXXXXX'

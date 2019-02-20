@@ -24,18 +24,9 @@ const contactForm = ({ className, errors, isSubmitting, dirty, touched, match, s
                 <Input
                     type={'text'}
                     name={'name'} invalid={errors.name && touched.name ? 1 : 0}
-                    placeholder={'nombre'}
+                    placeholder={'Nombre o Razón Social'}
                 />
                 <ValidationError name={'name'}/>
-            </FormGroup>
-
-            <FormGroup>
-                <Input
-                    type={'text'}
-                    name={'lastname'} invalid={errors.lastname && touched.lastname ? 1 : 0}
-                    placeholder={'apellido'}
-                />
-                <ValidationError name={'lastname'}/>
             </FormGroup>
 
             <FormGroup>

@@ -68,7 +68,7 @@ class ImageSlider extends Component {
             >
                 {
                     !!sliders.length && sliders.map((slider, i) => (
-                        <Slide key={slider.image} image={`${process.env.REACT_APP_API_PUBLIC}/${slider.image}`} text={slider.message}/>
+                        <Slide key={slider.image} image={slider.image} text={slider.message}/>
                     ))
                 }
                 {

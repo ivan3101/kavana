@@ -98,14 +98,14 @@ class Products extends Component {
 
     renderFn = (product, index) => (
         <ProductCard
-            icon={process.env.REACT_APP_API_PUBLIC + '/' + product.icon}
+            icon={product.icon.path}
             name={product.name}
             size={product.size}
             key={index}
             showSize
         >
             <Button onClick={() => this.onEditProduct(product._id)}>editar</Button>
-            <Button color={'#cc0000'} text={'#ffffff'} onClick={() => this.onDeleteProduct(product._id)}>borrar</Button>
+            <Button color={'#cc0000'} text={'#ffffff'} onClick={() => this.onDeleteProduct(product._id)}>Borrar</Button>
         </ProductCard>
     );
 
@@ -130,7 +130,7 @@ class Products extends Component {
                   <p>{this.state.modalMessage}</p>
                 </Modal>
 
-                <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') } <Button onClick={this.onAddProduct}>agregar producto</Button></h1>
+                <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') } <Button onClick={this.onAddProduct}>Agregar producto</Button></h1>
                 <ProductsContainer>
                     <Pagination
                         items={products}

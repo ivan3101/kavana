@@ -3,20 +3,26 @@ import styled from "styled-components";
 import ResponsiveImg from "../../../../components/responsiveImg/responsiveImg";
 import correoIcon from "../../../../assets/icons/correo-21.svg";
 import cajaIcon from "../../../../assets/icons/caja-23.svg";
+import {withRouter} from "react-router-dom";
 
-const ContactIcons = ({ className, onClick }) => {
+const ContactIcons = ({ className, onClick, history }) => {
     const IconContainer = styled.div`
       height: 200px;
       padding: 0.85rem;
       cursor: pointer;
     `;
 
+    const toContactUs = () => {
+        window.scrollTo(0, 0);
+        history.push("/contacto");
+    };
+
     return (
-        <div className={className} onClick={onClick}>
-            <IconContainer>
+        <div className={className}>
+            <IconContainer onClick={toContactUs}>
                 <ResponsiveImg src={correoIcon}/>
             </IconContainer>
-            <IconContainer>
+            <IconContainer onClick={onClick}>
                 <ResponsiveImg src={cajaIcon}/>
             </IconContainer>
         </div>
@@ -35,4 +41,4 @@ const StyledContactIcons = styled(ContactIcons)`
   }
 `;
 
-export default StyledContactIcons;
+export default withRouter(StyledContactIcons);
