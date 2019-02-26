@@ -16,6 +16,7 @@ const NavItem = ({ children, link, submenu, className }) => {
       transition: all 300ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
       text-decoration: none;
       border-bottom: 1px solid transparent;
+      margin-right: 10px;
       
       :hover {
         color: ${props => props.theme.secondary};

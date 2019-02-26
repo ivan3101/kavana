@@ -11,6 +11,7 @@ const ServiceItem = styled.div`
   margin-bottom: 20px;
   cursor: pointer;
   transition: transform .2s ease-in-out;
+  margin-right: 20px;
   
   img {
     width: 200px;
