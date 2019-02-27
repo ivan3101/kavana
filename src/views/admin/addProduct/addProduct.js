@@ -37,10 +37,10 @@ class AddProduct extends Component {
                     validationSchema={Yup.object().shape({
                         name: Yup.string().trim().required('Debe ingresar el nombre del producto'),
                         sku: Yup.string().trim().required('Debe ingresar el SKU del producto'),
-                        size: Yup.string().trim().required('Debe ingresar el tamaño del producto').matches(/^([0-9]+)x([0-9]+)$/, {
+                        size: Yup.string().trim().matches(/^([0-9]+)x([0-9]+)$/, {
                             message: 'El tamaño debe tener el formato 00x00'
                         }),
-                        sizeByBox: Yup.string().trim().required('Debe ingresar los m2 por caja del producto').matches(/^([0-9]+)$/, {
+                        sizeByBox: Yup.string().trim().matches(/^(?:[1-9]\d*|0)?(?:\.\d+)?$/, {
                             message: 'El tamaño solo puede contener numeros'
                         }),
                         piecesByBox: Yup.string().trim().required('Debe ingresar las piezas por caja del producto').matches(/^([0-9]+)$/, {
