@@ -30,7 +30,7 @@ const socialAccounts = ({ className }) => {
                 />
             </div>
             <IconWithText icon={correoIcon}>
-                kavanayensuministros@gmail.com
+                info@kavanarevestimientos.com
             </IconWithText>
         </div>
     );

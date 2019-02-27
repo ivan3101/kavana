@@ -36,7 +36,7 @@ const ContactInfo = ({ className }) => {
             </LocationIcons>
 
             <LocationIcons icon={correoIcon}>
-                <p>kavanayensuministros@gmail.com</p>
+                <p>info@kavanarevestimientos.com</p>
             </LocationIcons>
         </div>
     );
