@@ -43,10 +43,10 @@ class AddProduct extends Component {
                         sizeByBox: Yup.string().trim().matches(/^(?:[1-9]\d*|0)?(?:\.\d+)?$/, {
                             message: 'El tamaño solo puede contener numeros'
                         }),
-                        piecesByBox: Yup.string().trim().required('Debe ingresar las piezas por caja del producto').matches(/^([0-9]+)$/, {
+                        piecesByBox: Yup.string().trim().matches(/^([0-9]+)$/, {
                             message: 'El tamaño solo puede contener numeros'
                         }),
-                        characteristics: Yup.array().required('Debe seleccionar al menos una caracteristica'),
+                        characteristics: Yup.array(),
                         icon: Yup.mixed().required('Debe ingresar el icono del producto'),
                         banner: Yup.mixed().required('Debe ingresar el banner del producto'),
                         category: Yup.string().trim().required('Debe seleccionar una categoria')
