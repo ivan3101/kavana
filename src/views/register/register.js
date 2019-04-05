@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import * as Yup from "yup";
 import {LoginContainer} from "../login/login";
 import {Formik} from "formik";
 import * as axios from "axios";
 import RegisterForm from "./registerForm/registerForm";
+import {ContactContainer} from "../contact/contact";
 
 const registerInitValues = {
     firstname: "",
@@ -29,22 +30,22 @@ const registerValidationSchema = Yup.object().shape({
     email: Yup
         .string()
         .trim()
-        .required("Debe ingresar su correo electronico")
+        .required("Debe ingresar su correo electrónico")
         .email("El correo ingresado es incorrecto"),
     identification: Yup.object().shape({
         number: Yup.string()
             .trim()
-            .required("Debe ingresar su numero de cedula")
+            .required("Debe ingresar su numero de cédula")
             .matches(/^([0-9]{6,10})$/, {
                 excludeEmptyString: true,
                 message: "El numero de cedula es invalido"
             }),
         type: Yup.string()
             .trim()
-            .required("Debe seleccionar su tipo de cedula")
+            .required("Debe seleccionar su tipo de cédula")
             .matches(/^([VEJPG])$/, {
                 excludeEmptyString: true,
-                message: "El tipo de cedula seleccionado es invalido"
+                message: "El tipo de cédula seleccionado es invalido"
             })
     }),
     username: Yup
@@ -69,58 +70,60 @@ const registerValidationSchema = Yup.object().shape({
 
 const Register = () => {
     return (
-        <LoginContainer>
+        <ContactContainer>
             <h1>Registrarse</h1>
-            <Formik
-                initialValues={registerInitValues}
-                validationSchema={registerValidationSchema}
-                onSubmit={async (values, formikActions) => {
-                    window.scrollTo(0,0);
-                    formikActions.setSubmitting(true);
+            <LoginContainer>
+                <Formik
+                    initialValues={registerInitValues}
+                    validationSchema={registerValidationSchema}
+                    onSubmit={async (values, formikActions) => {
+                        window.scrollTo(0,0);
+                        formikActions.setSubmitting(true);
 
-                    try {
+                        try {
 
-                        const { identification } = values;
+                            const { identification } = values;
 
-                        const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, {
-                            ...values,
-                            identification: `${identification.type}-${identification.number}`
-                        });
-
-                        formikActions.resetForm();
-                        formikActions.setStatus({
-                            type: "success",
-                            message: "Se ha registrado con exito. Ahora puede proceder a iniciar sesión"
-                        })
-
-                    } catch (error) {
-                        if (error.response) {
-                            const response =
-                                error.response;
-
-                            formikActions.setStatus({
-                                type: "error",
-                                message: response.data.message
+                            const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, {
+                                ...values,
+                                identification: `${identification.type}-${identification.number}`
                             });
-                        } else if (error.request) {
+
+                            formikActions.resetForm();
                             formikActions.setStatus({
-                                type: "error",
-                                message:
-                                    "No se pudo establecer una conexión con el servidor. Por favor, vuelva a intentarlo mas tarde"
-                            });
-                        } else {
-                            formikActions.setStatus({
-                                type: "error",
-                                message:
-                                    "Ha ocurrido un error. Por favor, vuelva a intentarlo mas tarde"
-                            });
+                                type: "success",
+                                message: "Se ha registrado con exito. Ahora puede proceder a iniciar sesión"
+                            })
+
+                        } catch (error) {
+                            if (error.response) {
+                                const response =
+                                    error.response;
+
+                                formikActions.setStatus({
+                                    type: "error",
+                                    message: response.data.message
+                                });
+                            } else if (error.request) {
+                                formikActions.setStatus({
+                                    type: "error",
+                                    message:
+                                        "No se pudo establecer una conexión con el servidor. Por favor, vuelva a intentarlo mas tarde"
+                                });
+                            } else {
+                                formikActions.setStatus({
+                                    type: "error",
+                                    message:
+                                        "Ha ocurrido un error. Por favor, vuelva a intentarlo mas tarde"
+                                });
+                            }
                         }
-                    }
-                    formikActions.setSubmitting(false);
-                }}
-                component={RegisterForm}
-            />
-        </LoginContainer>
+                        formikActions.setSubmitting(false);
+                    }}
+                    component={RegisterForm}
+                />
+            </LoginContainer>
+        </ContactContainer>
     );
 };
 

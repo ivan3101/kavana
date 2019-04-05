@@ -45,7 +45,7 @@ const InstagramImgs = ({ publications }) => {
                     external
                     link={'https://www.facebook.com/kavanarevest/'}
                 >
-                    encuentranos en facebook
+                    Encuentranos en facebook
                 </StyledLink>
             </FindUsFb>
             <StyledDiv>

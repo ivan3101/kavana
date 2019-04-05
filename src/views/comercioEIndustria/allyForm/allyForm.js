@@ -17,7 +17,7 @@ const FormTitle = styled.h3`
 const AllyForm = ({ errors, isSubmitting, dirty, touched, match, submitState, message }) => {
     return (
         <Form style={{marginTop: '30px', width: '300px'}}>
-            <FormTitle>Contáctenos para set Aliados</FormTitle>
+            <FormTitle>Contáctenos para ser Aliados</FormTitle>
             {
                 submitState && (<SubmitError error={submitState}>{ message }</SubmitError>)
             }

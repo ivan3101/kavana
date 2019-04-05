@@ -29,7 +29,7 @@ const TextBackground = styled.div`
 const TextDescription = styled(StyledLink)`
   color: white;
   left: 5%;
-  bottom: 10%;
+  top: 10%;
   position: absolute;
   cursor: pointer;
   text-overflow: '... más.';

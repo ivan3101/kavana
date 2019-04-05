@@ -32,6 +32,10 @@ const IconWithText = styled(iconWithText)`
   height: auto;
   width: 100%;
   gap: 5px;
+  
+  a {
+    color: #2c3e50;
+  }
 `;
 
 export default IconWithText;

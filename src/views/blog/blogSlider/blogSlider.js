@@ -112,7 +112,7 @@ class BlogSlider extends Component {
 
         return (
             <React.Fragment>
-                <h1 style={{color: '#ff802f', textAlign: 'center', marginBottom: '10px'}}>Articulos Destacados</h1>
+                <br/>
                 <div
                     className={className}
                     style={{

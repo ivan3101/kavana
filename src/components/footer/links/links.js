@@ -46,7 +46,7 @@ const links = ({ className }) => {
 
             <Category>
                 <Link link={'/catalogo'}>
-                    Catalogo
+                    Catálogo
                 </Link>
 
                 <SubCategory>
@@ -79,7 +79,7 @@ const links = ({ className }) => {
 
             <Category>
                 <Link link={'/unete'}>
-                    Unete a nuestra red de Aliados
+                    Únete a nuestra red de Aliados
                 </Link>
                 <SubCategory>
                     <Link link={'/unete/constructores'}>

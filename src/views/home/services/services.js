@@ -59,7 +59,7 @@ class Services extends React.Component {
                             </ImgService>
                             <h1>{servicesItems[this.state.service].name}</h1>
                             <br/>
-                            <p>{servicesItems[this.state.service].description}</p>
+                            <p style={{ "text-align": "justify", "line-height": "25px"}}>{servicesItems[this.state.service].description}</p>
                         </React.Fragment>
                     )}
                 </Modal>

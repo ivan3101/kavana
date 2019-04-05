@@ -41,7 +41,7 @@ class ComercioEIndustria extends Component {
         return (
             <div>
                 <Container>
-                    <h1>Unete a nuestra red de Aliados</h1>
+                    <h1>Únete a nuestra red de Aliados</h1>
 
                     <ContentContainer>
                         <Sidebar/>

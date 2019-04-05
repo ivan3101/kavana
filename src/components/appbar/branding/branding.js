@@ -10,7 +10,7 @@ const Branding = () => {
       justify-content: space-between;
       padding: 1.25rem 1rem;
       width: 100%;
-      height: 125px;
+      height: 150px;
     `;
 
     return (

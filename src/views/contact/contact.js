@@ -14,7 +14,7 @@ const formInitValues = {
     message: ''
 };
 
-const ContactContainer = styled.div`
+export const ContactContainer = styled.div`
   margin: 40px auto 0;
   padding: 0 2rem;
   width: 80%;
@@ -42,8 +42,8 @@ class Contact extends React.Component {
                         'name': Yup.string().trim().required('Debe ingresar su nombre o razó social').matches(/^[a-zA-Z\s]+$/, {
                             message: 'Su nombre solo puede contener letras y espacios'
                         }),
-                        'phone': Yup.string().trim().required('Debe ingresar su numero de telefono').matches(/^([0-9]{4})-([0-9]{7}$)/, {
-                            message: 'El numero de telefono debe tener el formato XXXX-XXXXXXX'
+                        'phone': Yup.string().trim().required('Debe ingresar su numero de teléfono').matches(/^([0-9]{4})-([0-9]{7}$)/, {
+                            message: 'El numero de teléfono debe tener el formato XXXX-XXXXXXX'
                         }),
                         'email': Yup.string().trim().required('Debe ingresar su email').email('Debe' +
                             ' ingresar un email con formato valido'),
@@ -80,8 +80,13 @@ class Contact extends React.Component {
                 />
 
                 <br/>
+                <br/>
+                <br/>
 
-                <h2>Donde nos encontramos</h2>
+                <h2>Dnde nos encontramos</h2>
+
+                <br/>
+                <br/>
 
                 <StyledLocation/>
             </ContactContainer>
