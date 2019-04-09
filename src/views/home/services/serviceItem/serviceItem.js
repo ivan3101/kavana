@@ -7,19 +7,54 @@ const ServiceItem = styled.div`
   border: 2px solid transparent;
   border-right: 2px solid ${props => lighten(0.7, props.theme.text)};
   text-align: center;
-  padding: 1rem;
+  padding: 0;
   margin-bottom: 20px;
   cursor: pointer;
   transition: transform .2s ease-in-out;
   margin-right: 20px;
+  transition: all .3s ease-in-out;
   
+  p{
+    paddin: 0;
+    display: none;
+    transition: transform .5s ease-in-out;
+  }
+
   img {
     width: 200px;
     height: 200px;
+    transition: all .3s ease-in-out;
+  }
+
+  :hover{
+    transition: transform .2s linear;
+  }
+
+  :hover p{
+    display: block;
+    padding: 10px;
+    transition: all .5s ease-in-out;
+  }
+
+  :hover{
+    transition: transform .2s linear;
+  }
+
+  :hover p{
+    display: block;
+    padding: 10px;
   }
   
   :hover img {
+    transition: all .5s ease-in-out;
     transform: scale(1.2);
+    
+  }
+  
+  :hover img {
+    transition: all .3s ease-in-out;
+    transform: scale(1.2);
+    
   }
   
   @media (max-width: 700px) {
