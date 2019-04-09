@@ -91,13 +91,13 @@ class Blog extends Component {
 
     renderFn = (post, index) => (
         <Post
-            image={process.env.REACT_APP_API_PUBLIC + '/' + post.images[0]}
+            image={post.images[0].path}
             gridArea={'a' + (index + 1)}
             name={post.header}
             key={index}
             onClick={() => this.onClickPost(post._id)}
         >
-            <ResponsiveImg src={process.env.REACT_APP_API_PUBLIC + '/' + post.images[0]}/>
+            <ResponsiveImg src={post.images[0].path}/>
             <PostInfo>
                 <p><StyledLink link={`${process.env.REACT_APP_API_URL}/blog/${post._id}`}>{post.header}</StyledLink></p>
                 <p>{post.resume}</p>

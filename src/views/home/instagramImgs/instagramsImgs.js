@@ -11,7 +11,8 @@ const InstagramImgs = ({ publications }) => {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-around;
-      gap: 15px;
+      width: 80%;
+      margin: -30px auto 0;
     `;
 
     const ImgsContainer = styled.div`
@@ -31,7 +32,7 @@ const InstagramImgs = ({ publications }) => {
     return (
         <ImgsContainer>
             <p>
-                Siguenos en Instagram!{' '}
+                ¡Siguenos en Instagram!{' '}
                 <StyledLink
                     external
                     link={'http://instagram.com/kavanarevest'}
@@ -44,7 +45,7 @@ const InstagramImgs = ({ publications }) => {
                     external
                     link={'https://www.facebook.com/kavanarevest/'}
                 >
-                    encuentranos en facebook
+                    Encuentranos en facebook
                 </StyledLink>
             </FindUsFb>
             <StyledDiv>

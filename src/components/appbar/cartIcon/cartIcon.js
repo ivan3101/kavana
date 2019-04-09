@@ -1,35 +1,25 @@
-import React from 'react';
 import styled from "styled-components";
-import {connect} from "react-redux";
-import cart from "../../assets/icons/CARRITO-SMALL.png";
-import ResponsiveImg from "../responsiveImg/responsiveImg";
-import minus from "../../assets/icons/minus-symbol.svg";
-import Modal from "../modal/modal";
-import closeIcon from "../../assets/icons/close.svg";
-import {clearCart, removeFromCart} from "../../actions/cart.actions";
+import {clearCart, removeFromCart} from "../../../actions/cart.actions";
+import Modal from "../../modal/modal";
+import closeIcon from "../../../assets/icons/close.svg";
 import * as axios from "axios";
-import Button from "../Button/Button";
-import SpinnerLoading from "../spinnerLoading/spinnerLoading";
-import SubmitError from "../form/submitError/submitError";
+import cart from "../../../assets/icons/CARRITO-BOTON.png";
+import {connect} from "react-redux";
+import React from "react";
+import ResponsiveImg from "../../responsiveImg/responsiveImg";
+import SpinnerLoading from "../../cart/cart";
+import Button from "../../Button/Button";
+import SubmitError from "../../form/submitError/submitError";
 
 const CartContainer = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 20px;
-  border-radius: 6px 6px 0 0;
-  background-color: #9E8382;
-  display: flex;
-  justify-content: space-between;
-  width: 300px;
-  height: 30px;
   cursor: pointer;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+ 
   img {
-    width: 60px;
-  }
-  
-  @media (max-width: 700px) {
-    width: 150px;
+    width: 70%;
   }
 `;
 
@@ -57,7 +47,7 @@ const Remove = styled.span`
   cursor: pointer;
 `;
 
-class Cart extends React.Component {
+class CartIcon extends React.Component {
 
     state = {
         loading: false,
@@ -169,7 +159,6 @@ class Cart extends React.Component {
                 </Modal>
                 <CartContainer onClick={this.onShowModal}>
                     <ResponsiveImg src={cart}/>
-                    <ResponsiveImg src={minus}/>
                 </CartContainer>
             </React.Fragment>
         );
@@ -181,4 +170,4 @@ const mapStateToProps = (state) => ({
     id: state.auth.id
 });
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps)(CartIcon);

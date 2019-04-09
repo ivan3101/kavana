@@ -16,6 +16,7 @@ const NavItem = ({ children, link, submenu, className }) => {
       transition: all 300ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
       text-decoration: none;
       border-bottom: 1px solid transparent;
+      margin-right: 10px;
       
       :hover {
         color: ${props => props.theme.secondary};
@@ -36,8 +37,10 @@ const NavItem = ({ children, link, submenu, className }) => {
                 padding: 0.5rem 0;
                 width: auto;
                 height: auto;
-                background: #000000;
+                background: #ffffff;
                 clip: auto;
+                border: 1px solid #FF6C0F;
+                border-radius: 3px;
             }
         ` : ''  
       }

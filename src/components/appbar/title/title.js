@@ -1,30 +1,81 @@
 import React from 'react';
 import styled from "styled-components";
+import NavItem from "../navMenu/navItem/navItem";
+import CartIcon from "../cartIcon/cartIcon";
+import Button from "../../Button/Button";
+import {connect} from "react-redux";
+import {logoutPut} from "../../../actions/auth.actions";
 
-const Title = () => {
+const Title = ({isLoggedIn, dispatch, role, username }) => {
     const StyledDiv = styled.div`
-      font-size: 1.70rem;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-right: 50px;
-      border-bottom: 1px solid ${props => props.theme.secondary};
       align-self: center;
-      width: 40%;
-      text-align: right;
+      width: 350px;
       height: 65px;
+    `;
+
+    const StyledUl = styled.ul`
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       
-      p {
-        width: 100%;
-        color: ${props => props.theme.text};
+      li {
+        margin-right: 5px;
       }
     `;
 
+    const onLogout = () => {
+        dispatch(logoutPut());
+    };
+
     return (
         <StyledDiv>
-            <p>Juntos lo hacemos realidad</p>
+            <StyledUl>
+                <CartIcon/>
+                {
+                    !isLoggedIn && (
+                        <React.Fragment>
+                            <NavItem link={'/login'}>Iniciar Sesión</NavItem>
+                            <NavItem link={"/register"}>Registrarse</NavItem>
+                        </React.Fragment>
+                    )
+                }
+
+                {
+                    isLoggedIn && (
+                        <p>Bienvenido, {username}</p>
+                    )
+                }
+                {
+                    isLoggedIn && role === "ADMIN" && (
+                        <NavItem link={'/admin'}>
+                            Panel de Control
+                        </NavItem>
+                    )
+                }
+
+                {
+                    isLoggedIn && (
+                            <Button onClick={onLogout}>
+                                Cerrar Sesión
+                            </Button>
+                    )
+                }
+            </StyledUl>
         </StyledDiv>
     );
 };
 
-export default Title;
+const mapStateToPros = (state) => ({
+    isLoggedIn: state.auth.isAuthenticated,
+    role: state.auth.role,
+    username: state.auth.username
+});
+
+export default connect(mapStateToPros)(Title);

@@ -17,6 +17,7 @@ const links = ({ className }) => {
 
     const Link = styled(StyledLink)`
        border-bottom: none;
+       font-weight: bold;
        
        :hover {
         border-bottom: none;
@@ -32,11 +33,11 @@ const links = ({ className }) => {
                 <Link link={'/blog'}>
                     Blog
                 </Link>
+                <Link link={'/inicio#servicios'}>
+                    Servicios
+                </Link>
                 <Link link={'/nosotros'}>
                     Nosotros
-                </Link>
-                <Link link={'/servicios'}>
-                    Servicios
                 </Link>
                 <Link link={'/contacto'}>
                     Contacto
@@ -45,53 +46,53 @@ const links = ({ className }) => {
 
             <Category>
                 <Link link={'/catalogo'}>
-                    Catalogo
+                    Catálogo
                 </Link>
 
                 <SubCategory>
-                    <Link link={'/catalogo/ceramica'}>
-                        ceramica
+                    <Link link={'/catalogo/ceramica-y-porcelanato/1'}>
+                        Cerámica y Porcelanatos
                     </Link>
-                    <Link link={'/catalogo/porcelanato'}>
-                        porcelanato
+                    <Link link={'/catalogo/materiales-de-instalacion/1'}>
+                        Materiales de Construcción
                     </Link>
                     <Link link={'/catalogo/piedras-ornamentales'}>
-                        piedras ornamentales
+                        Piedras Ornamentales
                     </Link>
                     <Link link={'/catalogo/mallas-y-decorados'}>
-                        mallas y decorados
+                        Mallas y Decorados
                     </Link>
                     <Link link={'/catalogo/piezas-de-baño'}>
-                        piezas de baño
+                        Piezas de Baño
                     </Link>
                     <Link link={'/catalogo/muebles-de-baño'}>
-                        muebles de baño
+                        Muebles de Baño
                     </Link>
                     <Link link={'/catalogo/griferias'}>
-                        griferias
+                        Griferias
                     </Link>
                     <Link link={'/catalogo/accesorios'}>
-                        accesorios
+                        Accesorios
                     </Link>
                 </SubCategory>
             </Category>
 
             <Category>
-                <Link link={'/comercio-e-industria'}>
-                    Comercio é Industria
+                <Link link={'/unete'}>
+                    Únete a nuestra red de Aliados
                 </Link>
                 <SubCategory>
-                    <Link link={'/comercio-e-industria/constructores'}>
-                        constructores
+                    <Link link={'/unete/constructores'}>
+                        Constructores
                     </Link>
-                    <Link link={'/comercio-e-industria/instaladores'}>
-                        instaladores
+                    <Link link={'/unete/instaladores'}>
+                        Instaladores
                     </Link>
-                    <Link link={'/comercio-e-industria/arquitectos'}>
-                        arquitectos
+                    <Link link={'/unete/arquitectos'}>
+                        Arquitectos
                     </Link>
-                    <Link link={'/comercio-e-industria/diseñadores-de-interiores'}>
-                        diseñadores de interiores
+                    <Link link={'/unete/diseñadores-de-interiores'}>
+                        Diseñadores de Interiores
                     </Link>
                 </SubCategory>
             </Category>

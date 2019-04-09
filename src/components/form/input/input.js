@@ -4,7 +4,7 @@ import { Field } from 'formik';
 
 const Input = styled(Field)`
   display: block;
-  width: 100%;
+  width: ${props => props.width || "100"}%;
   height: auto;
   padding: 0.25rem 0.50rem;
   border-radius: 6px;

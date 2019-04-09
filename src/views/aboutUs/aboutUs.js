@@ -70,7 +70,7 @@ class AboutUs extends Component {
 
         return (
             <AboutsUsContainer>
-                <Title>Kavana revestimientos</Title>
+                <Title>Kavana Revestimientos</Title>
                 <Description/>
                 <Info openModal={this.openModal}/>
                 <Modal

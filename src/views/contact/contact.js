@@ -4,6 +4,7 @@ import {Formik} from "formik";
 import * as Yup from "yup";
 import ContactForm from "./contactForm/contactForm";
 import axios from "axios";
+import StyledLocation from "../home/contact/location/location";
 
 const formInitValues = {
     name: '',
@@ -13,7 +14,7 @@ const formInitValues = {
     message: ''
 };
 
-const ContactContainer = styled.div`
+export const ContactContainer = styled.div`
   margin: 40px auto 0;
   padding: 0 2rem;
   width: 80%;
@@ -33,19 +34,16 @@ class Contact extends React.Component {
     render() {
 
         return (
-            <ContactContainer>
-                <h1>Contactanos</h1>
+            <ContactContainer className={this.props.className}>
+                <h1>{this.props.nameModal}</h1>
                 <Formik
                     initialValues={formInitValues}
                     validationSchema={Yup.object().shape({
-                        'name': Yup.string().trim().required('Debe ingresar su nombre').matches(/^[a-zA-Z\s]+$/, {
+                        'name': Yup.string().trim().required('Debe ingresar su nombre o razó social').matches(/^[a-zA-Z\s]+$/, {
                             message: 'Su nombre solo puede contener letras y espacios'
                         }),
-                        'lastname': Yup.string().trim().required('Debe ingresar su apellido').matches(/^[a-zA-Z\s]+$/, {
-                            message: 'Su apellido solo puede contener letras y espacios'
-                        }),
-                        'phone': Yup.string().trim().required('Debe ingresar su numero de telefono').matches(/^([0-9]{4})-([0-9]{7}$)/, {
-                            message: 'El numero de telefono debe tener el formato XXXX-XXXXXXX'
+                        'phone': Yup.string().trim().required('Debe ingresar su numero de teléfono').matches(/^([0-9]{4})-([0-9]{7}$)/, {
+                            message: 'El numero de teléfono debe tener el formato XXXX-XXXXXXX'
                         }),
                         'email': Yup.string().trim().required('Debe ingresar su email').email('Debe' +
                             ' ingresar un email con formato valido'),
@@ -80,6 +78,17 @@ class Contact extends React.Component {
                     }}
                     render={props => <ContactForm {...props} submitState={this.state.submitState} message={this.state.message}/>}
                 />
+
+                <br/>
+                <br/>
+                <br/>
+
+                <h2>Dnde nos encontramos</h2>
+
+                <br/>
+                <br/>
+
+                <StyledLocation/>
             </ContactContainer>
         )
     }

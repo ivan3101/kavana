@@ -2,6 +2,10 @@ import React from 'react';
 import styled from "styled-components";
 import StyledLink from "../../link/link";
 import {NavLink} from "react-router-dom";
+import {connect} from "react-redux";
+import NavItem from "../../appbar/navMenu/navItem/navItem";
+import Button from "../../Button/Button";
+import {logoutPut} from "../../../actions/auth.actions";
 
 const activeClassName = 'sideMenu-active';
 
@@ -49,19 +53,43 @@ const Overlay = styled.div`
   visibility: ${props => props.open ? 'visible' : 'hidden'};
 `;
 
-const SideMenu = ({ open, onClick }) => {
+const SideMenu = ({ open, onClick, isLoggedIn, dispatch }) => {
+
+    const onLogout = () => {
+        dispatch(logoutPut());
+    };
+
+
     return (
         <React.Fragment>
             <Overlay open={open} onClick={onClick}/>
             <SideMenuContainer open={open}>
-                <StyledLink to={'/inicio'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>inicio</StyledLink>
-                <StyledLink to={'/blog'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>blog</StyledLink>
-                <StyledLink to={'/nosotros'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>nosotros</StyledLink>
-                <StyledLink to={'/catalogo'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>catálogo</StyledLink>
-                <StyledLink to={'/contacto'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>contacto</StyledLink>
+                <StyledLink to={'/inicio'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Inicio</StyledLink>
+                <StyledLink to={'/blog/1'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Blog</StyledLink>
+                <StyledLink to={'/nosotros'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Nosotros</StyledLink>
+                <StyledLink to={'/catalogo'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Catálogo</StyledLink>
+                <StyledLink to={'/contacto'} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Contacto</StyledLink>
+                <StyledLink to={"/login"} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Iniciar Sesión</StyledLink>
+                <StyledLink to={"/register"} as={NavLink} activeClassName={activeClassName} onClick={onClick}>Registrarse</StyledLink>
+                {
+                    isLoggedIn && (
+                        <React.Fragment>
+                            <StyledLink link={'/admin'}>
+                                panel de control
+                            </StyledLink>
+                            <Button onClick={onLogout}>
+                                cerrar sesión
+                            </Button>
+                        </React.Fragment>
+                    )
+                }
             </SideMenuContainer>
         </React.Fragment>
     );
 };
 
-export default SideMenu;
+const mapStateToProps = (state) => ({
+    isLoggedIn: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps)(SideMenu);

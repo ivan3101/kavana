@@ -5,11 +5,16 @@ import {connect} from "react-redux";
 import * as Yup from "yup";
 import {loginFetch} from "../../actions/auth.actions";
 import LoginForm from "./loginForm/loginForm";
+import {ContactContainer} from "../contact/contact";
 
-const LoginContainer = styled.div`
+export const LoginContainer = styled.div`
   margin: 20px auto;
   width: 400px;
   height: auto;
+  
+  @media (max-width: 700px) {
+    width: 90%;
+  }
 `;
 
 const formInitValues = {
@@ -23,23 +28,25 @@ class Login extends React.Component {
         const { dispatch, error, message } = this.props;
 
         return (
-            <LoginContainer>
+            <ContactContainer>
                 <h1>Iniciar Sesión</h1>
-                <Formik
-                    initialValues={formInitValues}
-                    validationSchema={Yup.object().shape({
-                        username: Yup.string().trim().required('Debe ingresar su nombre'),
-                        password: Yup.string().trim().required('Debe ingresar su contraseña')
-                    })}
-                    onSubmit={(values, formikActions) => {
-                        formikActions.setSubmitting(true);
-                        const { username, password } = values;
+                <LoginContainer>
+                    <Formik
+                        initialValues={formInitValues}
+                        validationSchema={Yup.object().shape({
+                            username: Yup.string().trim().required('Debe ingresar su nombre'),
+                            password: Yup.string().trim().required('Debe ingresar su contraseña')
+                        })}
+                        onSubmit={(values, formikActions) => {
+                            formikActions.setSubmitting(true);
+                            const { username, password } = values;
 
-                        dispatch(loginFetch({ username, password }, formikActions.setSubmitting));
-                    }}
-                    render={props => <LoginForm {...props} submitState={error} message={message}/>}
-                />
-            </LoginContainer>
+                            dispatch(loginFetch({ username, password }, formikActions.setSubmitting));
+                        }}
+                        render={props => <LoginForm {...props} submitState={error} message={message}/>}
+                    />
+                </LoginContainer>
+            </ContactContainer>
         )
     }
 }

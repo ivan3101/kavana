@@ -90,7 +90,7 @@ class Sliders extends Component {
 
     renderFn = (slider, index) => (
         <ProductCard
-            icon={process.env.REACT_APP_API_PUBLIC + '/' + slider.image}
+            icon={slider.image}
             name={slider.message}
             key={index}
         >

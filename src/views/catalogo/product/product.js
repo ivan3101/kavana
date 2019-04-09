@@ -24,6 +24,10 @@ const ProductContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 30px;
+  
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 const ProductDescription = styled.div`
@@ -31,21 +35,37 @@ const ProductDescription = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
+  
+  @media (max-width: 700px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const ProductIcon = styled.div`
   height: auto;
   width: 50%;
+  max-height: 300px;
+  
+  @media (max-width: 700px) {
+    width: 100%;
+    max-height: 100%;
+  }
 `;
 
 const ProductDetails = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  justify-content: center;
   
   p:first-child {
     font-size: 1.25rem;
     font-weight: 500;
+  }
+  
+  @media (max-width: 700px) {
+    align-items: center;
   }
 `;
 
@@ -61,6 +81,12 @@ const CharacteristicsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
+  
+  @media (max-width: 700px) {
+    width: 100%;
+    gap: 0;
+    justify-content: center;
+  }
 `;
 
 const Characteristic = styled.div`
@@ -75,6 +101,31 @@ const AddToCartProduct = styled(AddToCart)`
   width: 55px;
   height: 55px;
   transform: translateY(0);
+`;
+
+const DataSheet = styled.table`
+  margin: 0 auto;
+  text-align: left;
+  font-size: 0.90rem;
+  border-collapse: collapse;
+  width: 40%;
+  
+  th, td {
+    padding: 0.85rem;
+    margin: 0;
+  }
+  
+  tr:hover {
+    background-color: #ebebeb;
+  }
+  
+  @media (max-width: 700px) {
+  width: 80%;
+  }
+`;
+
+const DSHeader = styled.thead`
+  background-color: #ebebeb;
 `;
 
 class Product extends React.Component {
@@ -99,7 +150,11 @@ class Product extends React.Component {
 
     addToCart = (productId, productName) => {
         const { dispatch } = this.props;
-        dispatch(addToCart({productId, productName}));
+
+        if (!this.inCart(productId)) {
+            dispatch(addToCart({productId, productName}));
+        }
+
     };
 
     inCart = (productId) => {
@@ -118,19 +173,15 @@ class Product extends React.Component {
         } else {
             return (
                 <div>
-                    <Banner banner={`${process.env.REACT_APP_API_PUBLIC}/${product.banner}`}/>
+                    <Banner banner={product.banner.path}/>
                     <ProductContainer>
                         <ProductDescription>
                             <ProductIcon>
-                                <ResponsiveImg src={`${process.env.REACT_APP_API_PUBLIC}/${product.icon}`}/>
+                                <ResponsiveImg src={product.icon.path}/>
                             </ProductIcon>
                             <ProductDetails>
                                 <p>{product.name}</p>
-                                <p>{product.sku}</p>
-                                <p>{product.size} m<Powered>2</Powered></p>
-                                <p>PZAS/CAJA {product.piecesByBox}</p>
-                                <p>m<Powered>2</Powered>/caja {product.sizeByBox}</p>
-                                <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={() => this.inCart(product._id)}/>
+                                <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={this.inCart(product._id)}/>
                             </ProductDetails>
                         </ProductDescription>
 
@@ -144,6 +195,41 @@ class Product extends React.Component {
                             }
                         </CharacteristicsContainer>
                     </ProductContainer>
+
+                    <DataSheet>
+                        <DSHeader>
+                        <tr>
+                            <th>
+                                Atributo
+                            </th>
+                            <th>
+                                Detalle
+                            </th>
+                        </tr>
+                        </DSHeader>
+                        <tbody>
+                        <tr>
+                            <td>Nombre</td>
+                            <td>{product.name}</td>
+                        </tr>
+                        <tr>
+                            <td>SKU</td>
+                            <td>{product.sku}</td>
+                        </tr>
+                        <tr>
+                            <td>Tamaño (m<Powered>2</Powered>)</td>
+                            <td>{product.size} m<Powered>2</Powered></td>
+                        </tr>
+                        <tr>
+                            <td>Piezas por Caja</td>
+                            <td>{product.piecesByBox}</td>
+                        </tr>
+                        <tr>
+                            <td>Tamaño por Caja (m<Powered>2</Powered>)</td>
+                            <td>{product.sizeByBox} m<Powered>2</Powered></td>
+                        </tr>
+                        </tbody>
+                    </DataSheet>
                 </div>
             )
         }

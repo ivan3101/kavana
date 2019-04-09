@@ -11,6 +11,7 @@ import Login from "../views/login/login";
 import Admin from "../views/admin/admin";
 import Blog from "../views/blog/blog";
 import BlogPost from "../views/blog/blogPost/blogPost";
+import Register from "../views/register/register";
 
 const TopLevelRoutes = () => {
     return (
@@ -19,12 +20,13 @@ const TopLevelRoutes = () => {
             <Route path={'/blog/post/:postId'} component={BlogPost}/>
             <Route path={'/blog/:page'} component={Blog} exact/>
             <Route path={'/catalogo'} component={Catalogo}/>
-            <Route path={'/contacto'} component={Contact}/>
-            <Route path={'/comercio-e-industria'} component={ComercioEIndustria}/>
+            <Route path={'/contacto'} render={props => <Contact {...props} nameModal={"Contactanos"}/>}/>
+            <Route path={'/unete'} component={ComercioEIndustria}/>
             <Route path={'/nosotros'} component={AboutUs}/>
 
             <EnsureVisitorOnly>
                 <Route path={'/login'} component={Login}/>
+                <Route path={'/register'} component={Register}/>
             </EnsureVisitorOnly>
 
             <EnsureUserOnly>

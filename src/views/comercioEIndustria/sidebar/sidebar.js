@@ -21,10 +21,10 @@ const sidebar = ({ className, match}) => {
 
     return (
         <div className={className}>
-            <SidebarItem to={`${match.url}/constructores`} activeClassName={activeClassName}>constructores</SidebarItem>
-            <SidebarItem to={`${match.url}/instaladores`} activeClassName={activeClassName}>instaladores</SidebarItem>
-            <SidebarItem to={`${match.url}/arquitectos`} activeClassName={activeClassName}>arquitectos</SidebarItem>
-            <SidebarItem to={`${match.url}/diseñadores-de-interiores`} activeClassName={activeClassName}>diseñadores de interiores</SidebarItem>
+            <SidebarItem to={`${match.url}/constructores`} activeClassName={activeClassName}>Constructores</SidebarItem>
+            <SidebarItem to={`${match.url}/instaladores`} activeClassName={activeClassName}>Instaladores</SidebarItem>
+            <SidebarItem to={`${match.url}/arquitectos`} activeClassName={activeClassName}>Arquitectos</SidebarItem>
+            <SidebarItem to={`${match.url}/diseñadores-de-interiores`} activeClassName={activeClassName}>Diseñadores de interiores</SidebarItem>
         </div>
     );
 };

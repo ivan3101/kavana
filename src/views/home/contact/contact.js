@@ -3,16 +3,49 @@ import styled from "styled-components";
 import StyledContactIcons from "./contactIcons/contactIcons";
 import StyledLocation from "./location/location";
 import StyledContactInfo from "./contactInfo/contactInfo";
+import ContactForm from "../../contact/contact";
+import Modal from "../../../components/modal/modal";
 
-const Contact = ({ className }) => {
-    return (
-        <div className={className}>
-            <StyledContactIcons/>
-            <StyledLocation/>
-            <StyledContactInfo/>
-        </div>
-    );
-};
+const StyledContactForm = styled(ContactForm)`
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  
+  form {
+    width: 100%;
+  }
+`;
+
+class Contact extends React.Component {
+
+    state = {
+      showModal: false
+    };
+
+    onShowModal = () => {
+        this.setState((prevState) => ({
+            showModal: !prevState.showModal
+        }))
+    };
+
+    render() {
+        const {className} = this.props;
+        return (
+            <div className={className}>
+                <Modal
+                    show={this.state.showModal}
+                    closeCb={this.onShowModal}
+                >
+                    <StyledContactForm nameModal={"Buzon de Sugerencias"}/>
+
+                </Modal>
+                <StyledContactIcons onClick={this.onShowModal}/>
+                <StyledLocation/>
+                <StyledContactInfo/>
+            </div>
+        );
+    }
+}
 
 const StyledContact = styled(Contact)`
   display: flex;
@@ -21,6 +54,7 @@ const StyledContact = styled(Contact)`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 40px;
 `;
 
 export default StyledContact;

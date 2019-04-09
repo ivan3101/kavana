@@ -67,12 +67,15 @@ class ImageSlider extends Component {
                 ref={this.slideRef}
             >
                 {
-                    sliders.length && sliders.map((slider, i) => (
-                        <Slide key={slider.image} image={`${process.env.REACT_APP_API_PUBLIC}/${slider.image}`} text={slider.message}/>
+                    !!sliders.length && sliders.map((slider, i) => (
+                        <Slide key={slider.image} image={slider.image} text={slider.message}/>
                     ))
                 }
                 {
                     !!this.state.loading && <SpinnerLoading/>
+                }
+                {
+                    !this.state.loading && !sliders.length && <h3>No se encontraron imagenes en la galeria</h3>
                 }
             </div>
         );

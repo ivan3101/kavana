@@ -11,10 +11,15 @@ const Location = ({ className }) => {
     );
 };
 
-const StyledLocation = styled(Location)`
+export const StyledLocation = styled(Location)`
   width: auto;
   height: 400px;
   max-height: 400px;
+  
+  img {
+    display: block;
+    margin: 0 auto;
+  }
   
   @media (max-width: 700px) {
     display: none;

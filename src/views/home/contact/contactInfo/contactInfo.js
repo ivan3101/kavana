@@ -31,7 +31,7 @@ const ContactInfo = ({ className }) => {
             </LocationIcons>
 
             <LocationIcons icon={phoneIcon}>
-                <p>+58 (241) 8256818</p>
+                <p>+58 241 - 8256818</p>
                 <p>+58 424 - 3674623</p>
             </LocationIcons>
 
@@ -47,7 +47,11 @@ const StyledContactInfo = styled(ContactInfo)`
   width: auto;
   height: 100%;
   flex-direction: column;
-  gap: 25px;
+  margin-left: 35px;
+  
+  & > div {
+    margin-top: 25px;
+  }
 `;
 
 export default StyledContactInfo;
