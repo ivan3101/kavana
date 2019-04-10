@@ -8,31 +8,23 @@ import styled from "styled-components";
 const PageNumbersContainer = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  margin-right: 10px;
   justify-content: center;
   margin-top: 30px;
 `;
 
 const ContainerGrid = styled.div`
   display: grid;
-  grid-gap: 20px;
-  grid-template-areas: 
-    'a1 a1 . . . .'
-    'a1 a1 a2 a2 a4 a4'
-    'a1 a1 a2 a2 a4 a4'
-    'a1 a1 a3 a3 a4 a4'
-    'a1 a1 a3 a3 a7 a7'
-    'a5 a5 a6 a6 a7 a7'
-    'a5 a5 a6 a6 a7 a7'
-    'a5 a5 . . . .'
-    'a5 a5 . . . .';
+  grid-gap: 40px;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-rows: 250px;
     
     @media (max-width: 700px) {
       display: flex;
       flex-direction: column;
       
       div {
-        margin-bottom: 2 0px;
+        margin-bottom: 20px;
       }
     }
   ;

@@ -13,7 +13,6 @@ const BlogContainer = styled.div`
 `;
 
 const Post = styled.div`
-  grid-area: ${props => props.gridArea};
   width: 100%;
   height: 100%;
   position: relative;
@@ -21,12 +20,13 @@ const Post = styled.div`
 
 const PostInfo = styled.div`
   position: absolute;
-  padding: 1rem;
+  padding: 0.75rem;
   color: #ffffff;
   background-color: #00000077;
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 70%;
   
   a {
     font-size: 1.25rem;
@@ -92,15 +92,14 @@ class Blog extends Component {
     renderFn = (post, index) => (
         <Post
             image={post.images[0].path}
-            gridArea={'a' + (index + 1)}
             name={post.header}
             key={index}
             onClick={() => this.onClickPost(post._id)}
         >
-            <ResponsiveImg src={post.images[0].path}/>
+            <ResponsiveImg style={{ "height": "auto" }} src={post.images[0].path}/>
             <PostInfo>
-                <p><StyledLink link={`${process.env.REACT_APP_API_URL}/blog/${post._id}`}>{post.header}</StyledLink></p>
-                <p>{post.resume}</p>
+                <p><StyledLink link={`/blog/${post._id}`}>{post.header}</StyledLink></p>
+                <p>{post.resume.slice(0, 100)}...</p>
             </PostInfo>
         </Post>
     );
