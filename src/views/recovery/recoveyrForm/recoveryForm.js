@@ -39,7 +39,7 @@ const RecoveryForm = ({ errors, isSubmitting, dirty, touched, status }) => {
             </FormGroup>
 
             <FormGroup>
-                <Label>Contraseña</Label>
+                <Label>Nueva Contraseña</Label>
                 <Input
                     type={"password"}
                     name={"password"}
