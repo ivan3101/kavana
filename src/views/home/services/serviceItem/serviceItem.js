@@ -50,6 +50,15 @@ const ServiceItem = styled.div`
     transform: scale(1.2);
     
   }
+
+  :hover{
+    transition: transform .2s linear;
+  }
+
+  :hover p{
+    display: block;
+    padding: 10px;
+  }
   
   :hover img {
     transition: all .3s ease-in-out;
