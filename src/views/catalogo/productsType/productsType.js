@@ -18,7 +18,7 @@ const ProductsContainer = styled.div`
 `;
 
 const SearchBar = styled(SearchInput)`
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   
   input {
@@ -33,6 +33,11 @@ const SearchBar = styled(SearchInput)`
   
   :focus {
     border: 2px solid ${props => props.invalid ? props.theme.warning : props.theme.secondary};
+    
+  }
+
+  :focus CatalogoContainer{
+      background: #000;
   }
   
   ::placeholder {
