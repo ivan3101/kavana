@@ -44,6 +44,15 @@ const ServiceItem = styled.div`
     display: block;
     padding: 10px;
   }
+
+  :hover{
+    transition: transform .2s linear;
+  }
+
+  :hover p{
+    display: block;
+    padding: 10px;
+  }
   
   :hover img {
     transition: all .5s ease-in-out;
