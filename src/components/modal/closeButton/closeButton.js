@@ -10,7 +10,7 @@ const CloseButton = styled.div`
   background: none;
   border: none;
   transition: opacity 0.2s ease;
-  width: 30px;
+  width: 15px;
   height: 30px;
 `;
 
