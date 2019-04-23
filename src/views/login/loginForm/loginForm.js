@@ -7,6 +7,7 @@ import isEmpty from "lodash.isempty";
 import Button from "../../../components/Button/Button";
 import SubmitError from "../../../components/form/submitError/submitError";
 import SpinnerLoading from "../../../components/spinnerLoading/spinnerLoading";
+import StyledLink from "../../../components/link/link";
 
 const LoginForm = ({ className, errors, isSubmitting, dirty, touched, match, submitState, message, isLoading }) => {
     return (
@@ -42,6 +43,12 @@ const LoginForm = ({ className, errors, isSubmitting, dirty, touched, match, sub
                 disabled={isSubmitting || !isEmpty(errors) || !dirty}
             >
                 {isLoading ? <SpinnerLoading/> : 'Iniciar Sesion'}</Button>
+
+            <br/>
+
+            <StyledLink link={"/recuperacion"}>
+                ¿Ha olvidado su contraseña? Haga click aquí
+            </StyledLink>
         </Form>
     );
 };

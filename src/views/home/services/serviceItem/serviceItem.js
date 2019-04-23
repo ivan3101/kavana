@@ -39,6 +39,10 @@ const ServiceItem = styled.div`
     
   }
   
+  :hover img {
+    transform: scale(1.2);
+  }
+  
   @media (max-width: 700px) {
     border-left: 1px solid ${props => lighten(0.7, props.theme.text)};
     width: 40vw;
