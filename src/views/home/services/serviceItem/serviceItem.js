@@ -12,6 +12,7 @@ const ServiceItem = styled.div`
   cursor: pointer;
   transition: transform .2s ease-in-out;
   margin-right: 20px;
+  transition: all .3s ease-in-out;
   
   p{
     paddin: 0;
@@ -22,6 +23,7 @@ const ServiceItem = styled.div`
   img {
     width: 200px;
     height: 200px;
+    transition: all .3s ease-in-out;
   }
 
   :hover{
@@ -31,10 +33,11 @@ const ServiceItem = styled.div`
   :hover p{
     display: block;
     padding: 10px;
+    transition: all .5s ease-in-out;
   }
   
   :hover img {
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     transform: scale(1.2);
     
   }
