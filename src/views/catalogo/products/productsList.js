@@ -1,4 +1,4 @@
-import ceramicas from "../../../assets/images/ceramicas.png";
+import ceramicas from "../../../assets/images/ceramicas.jpg";
 import piezasDeBano from "../../../assets/images/piezasdebano.png";
 import mueblesDeBano from "../../../assets/images/mueblesdebano.png";
 import piedrasOrnamentales from "../../../assets/images/piedrasornamentales.png";

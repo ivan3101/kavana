@@ -160,8 +160,8 @@ class ProductsType extends Component {
         return (
             <CatalogoContainer>
                 <ProductsContainer>
-                    <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') }</h1>
                     <SearchBar onChange={this.onSearch} placeholder={"Ingrese el texto de busqueda"}/>
+                    <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') }</h1>
                     <Pagination
                         items={filteredProducts}
                         totalItems={totalProducts}
