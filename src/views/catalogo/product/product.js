@@ -171,7 +171,7 @@ class Product extends React.Component {
                 </div>
             )
         } else {
-            if(product.piecesByBox!='' && product.sizeByBox1!=''){
+            if(product.piecesByBox!=='' && product.sizeByBox1!==''){
                return (
                   <div>
                     <Banner banner={product.banner.path}/>
