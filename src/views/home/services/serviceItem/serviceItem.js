@@ -28,53 +28,27 @@ const ServiceItem = styled.div`
 
   :hover{
     transition: transform .2s linear;
+    background: #FF6B0C;
   }
 
   :hover p{
     display: block;
     padding: 10px;
+    display: block;
     transition: all .5s ease-in-out;
+    color: #fff;
   }
 
-  :hover{
-    transition: transform .2s linear;
-  }
-
-  :hover p{
-    display: block;
-    padding: 10px;
-  }
-
-  :hover{
-    transition: transform .2s linear;
-  }
-
-  :hover p{
-    display: block;
-    padding: 10px;
-    transition: all .5s ease-in-out;
-  }
-  
   :hover img {
     transition: all .3s ease-in-out;
     transform: scale(1.2);
-    
   }
 
-  :hover{
-    transition: transform .2s linear;
+  :hover path {
+    fill: #49c;
   }
 
-  :hover p{
-    display: block;
-    padding: 10px;
-  }
-  
-  :hover img {
-    transition: all .3s ease-in-out;
-    transform: scale(1.2);
-    
-  }
+
   
   @media (max-width: 700px) {
     border-left: 1px solid ${props => lighten(0.7, props.theme.text)};
