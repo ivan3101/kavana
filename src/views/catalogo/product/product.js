@@ -12,7 +12,7 @@ const Banner = styled.div`
   width: 100%;
   height: 300px;
   background-image: url("${props => props.banner}");
-  background-size: contain;
+  ${'' /* background-size: contain; */}
   background-position: center;
   background-repeat: no-repeat;
 `;
@@ -171,8 +171,9 @@ class Product extends React.Component {
                 </div>
             )
         } else {
-            return (
-                <div>
+            if(product.piecesByBox!='' && product.sizeByBox1!=''){
+               return (
+                  <div>
                     <Banner banner={product.banner.path}/>
                     <ProductContainer>
                         <ProductDescription>
@@ -231,7 +232,63 @@ class Product extends React.Component {
                         </tbody>
                     </DataSheet>
                 </div>
-            )
+                )
+            }else{
+              return (
+                <div>
+                  <Banner banner={product.banner.path}/>
+                  <ProductContainer>
+                      <ProductDescription>
+                          <ProductIcon>
+                              <ResponsiveImg src={product.icon.path}/>
+                          </ProductIcon>
+                          <ProductDetails>
+                              <p>{product.name}</p>
+                              <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={this.inCart(product._id)}/>
+                          </ProductDetails>
+                      </ProductDescription>
+
+                      <CharacteristicsContainer>
+                          {
+                              product.characteristics.map(characteristic => (
+                                  <Characteristic key={characteristic}>
+                                      <ResponsiveImg src={`${process.env.REACT_APP_API_PUBLIC}/productIcon/${characteristic}`}/>
+                                  </Characteristic>
+                              ))
+                          }
+                      </CharacteristicsContainer>
+                  </ProductContainer>
+
+                  <DataSheet>
+                      <DSHeader>
+                      <tr>
+                          <th>
+                              Atributo
+                          </th>
+                          <th>
+                              Detalle
+                          </th>
+                      </tr>
+                      </DSHeader>
+                      <tbody>
+                      <tr>
+                          <td>Nombre</td>
+                          <td>{product.name}</td>
+                      </tr>
+                      <tr>
+                          <td>SKU</td>
+                          <td>{product.sku}</td>
+                      </tr>
+                      <tr>
+                          <td>Tamaño (m<Powered>2</Powered>)</td>
+                          <td>{product.size} m<Powered>2</Powered></td>
+                      </tr>
+                      </tbody>
+                  </DataSheet>
+              </div>
+              )
+            }
+           
         }
     }
 }
