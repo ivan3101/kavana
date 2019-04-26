@@ -3,37 +3,32 @@ import styled from "styled-components";
 import Copyright from "./copyright/copyright";
 import SocialAccounts from "./socialAccounts/socialAccounts";
 import Links from "./links/links";
-import Redaliada from "./redaliada";
 import Red from "./links/redali";
 
-
-
-const footer = ({ className }) => {
+const reda = ({ className }) => {
     return (
         <div className={className}>
-            <Copyright/>
-            <SocialAccounts/>
-            <Links/>
+            <Red/>
         </div>
     );
 };
 
-const Footer = styled(footer)`
+const Reda = styled(reda)`
+display: inline-block;
   float:left;
-  display: inline-block;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 1.5rem 1.25rem;
-  width: 80%;
+  padding: 4.5rem 1.25rem;
+  width: 20%;
   height: auto;
-  background-color: #E2D9DA;
+  background-color: #2E3841;
+  border-radius: 10px 10px 0 0 ;
   
   @media (max-width: 700px) {
-    flex-wrap: wrap;
-    width: 100%;
+    display: none;
   }
 `;
 
-export default Footer;
+export default Reda;

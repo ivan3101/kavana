@@ -1,28 +1,46 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from "styled-components";
 import ProductCard from "./productCard/productCard";
+import ka from "../../../assets/logo/k.png";
+import ResponsiveImg from "../../../../src/components/responsiveImg/responsiveImg";
 import * as axios from "axios";
 import Pagination from "../../../components/pagination/pagination";
-import {addToCart} from "../../../actions/cart.actions";
-import {connect} from "react-redux";
-import {CatalogoContainer} from "../catalogo";
-import SearchInput, {createFilter} from "react-search-input";
+import { addToCart } from "../../../actions/cart.actions";
+import { connect } from "react-redux";
+import { CatalogoContainer } from "../catalogo";
+import SearchInput, { createFilter } from "react-search-input";
 import { lighten } from 'polished';
 
 const ProductsContainer = styled.div`
   width: 90%;
+
+  > img {
+    width: 7%;
+    float: left;
+  }
   
   h1 {
     text-transform: capitalize;
   }
+
+  @media (max-width: 700px) {
+    > img {
+        width: 20%;
+        float: left;
+    }
+  }
+
 `;
+
+
 
 const SearchBar = styled(SearchInput)`
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 10px;
   
   input {
-  width: 100%;
+  width: 40%;
   background-color: white;
   padding: 0.4rem 0.60rem;
   border-radius: 6px;
@@ -31,18 +49,27 @@ const SearchBar = styled(SearchInput)`
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   
-  :focus {
-    border: 2px solid ${props => props.invalid ? props.theme.warning : props.theme.secondary};
-    
+  :hover{
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    border-color: #FF7219;
+    outline: 0;  
   }
 
-  :focus CatalogoContainer{
-      background: #000;
+  :focus {
+    border-color: #FF7219;
+    background: #e9e9e9;
+    -webkit-box-shadow: 0.1px 0.1px 10px #FF7219;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    outline: 0;
+
   }
-  
-  ::placeholder {
-    color: ${props => lighten(0.3, props.theme.text)};
+
   }
+
+  @media (max-width: 700px) {
+    input {
+        width: 65%;
+    }
   }
 `;
 
@@ -58,9 +85,9 @@ class ProductsType extends Component {
     };
 
     async componentDidMount() {
-        const { category,page } = this.props.match.params;
+        const { category, page } = this.props.match.params;
 
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/category/${category}?offset=${(page -1 ) * 9}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/products/category/${category}?offset=${(page - 1) * 9}`);
 
         const { products, totalProducts } = response.data.data;
 
@@ -121,13 +148,13 @@ class ProductsType extends Component {
         const { dispatch } = this.props;
 
         if (!this.inCart(productId)) {
-            dispatch(addToCart({productId, productName}));
+            dispatch(addToCart({ productId, productName }));
         }
 
     };
 
     inCart = (productId) => {
-        const {cart} = this.props;
+        const { cart } = this.props;
         return cart.findIndex(product => product.productId === productId) > -1;
     };
 
@@ -152,7 +179,7 @@ class ProductsType extends Component {
     };
 
     render() {
-        const { products, totalProducts, loading,searchTerm } = this.state;
+        const { products, totalProducts, loading, searchTerm } = this.state;
         const { category } = this.props.match.params;
 
         const filteredProducts = products.filter(createFilter(searchTerm, "name"));
@@ -160,8 +187,10 @@ class ProductsType extends Component {
         return (
             <CatalogoContainer>
                 <ProductsContainer>
-                    <h1 style={{textTransform: 'capitalize'}}>{ category.split('-').join(' ') }</h1>
-                    <SearchBar onChange={this.onSearch} placeholder={"Ingrese el texto de busqueda"}/>
+                    <ResponsiveImg src={ka}/>
+                    <SearchBar style={{ margin: '1.5rem 0 0 1rem' }} onChange={this.onSearch} placeholder={"Buscar Producto"} />
+                    <br/>
+                    <h1 style={{ textTransform: 'capitalize' }}>{category.split('-').join(' ')}</h1>
                     <Pagination
                         items={filteredProducts}
                         totalItems={totalProducts}

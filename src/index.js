@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ReactTooltip from 'react-tooltip'
 import * as serviceWorker from './serviceWorker';
 import GlobalStyles from "./components/globalStyles/globalStyles";
 import store from "./store/store";
@@ -9,6 +10,7 @@ import Appbar from "./components/appbar/appbar";
 import {BrowserRouter as Router} from "react-router-dom";
 import TopLevelRoutes from "./routes/topLevelRoutes";
 import Footer from "./components/footer/footer";
+import Redaliada from "./components/footer/redaliada";
 import StickyAppbar from "./components/appbar/stickyAppbar/stickyAppbar";
 import AuthCheck from "./components/authCheck/authCheck";
 import MobileAppbar from "./components/mobileAppbar/mobileAppbar";
@@ -20,6 +22,7 @@ ReactDOM.render(
             <Router>
                 <div>
                     <GlobalStyles/>
+                    <ReactTooltip />
                     <Appbar/>
                     <StickyAppbar/>
                     <MobileAppbar/>
@@ -27,6 +30,7 @@ ReactDOM.render(
                         <TopLevelRoutes/>
                     </AuthCheck>
                     <Footer/>
+                    <Redaliada/>
                     <Cart/>
                 </div>
             </Router>
