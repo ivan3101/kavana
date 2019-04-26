@@ -28,7 +28,7 @@ const ServiceItem = styled.div`
 
   :hover{
     transition: transform .2s linear;
-    background: #FF6B0C;
+    background: #f5f5f5;
   }
 
   :hover p{
@@ -36,7 +36,9 @@ const ServiceItem = styled.div`
     padding: 10px;
     display: block;
     transition: all .5s ease-in-out;
-    color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
   }
 
   :hover img {
@@ -48,8 +50,6 @@ const ServiceItem = styled.div`
     fill: #49c;
   }
 
-
-  
   @media (max-width: 700px) {
     border-left: 1px solid ${props => lighten(0.7, props.theme.text)};
     width: 40vw;

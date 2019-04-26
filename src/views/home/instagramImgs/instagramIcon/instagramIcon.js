@@ -5,7 +5,7 @@ import icon from "../../../../assets/icons/instagram--white.png";
 
 const IconContainer = styled.div`
   position: absolute;
-  top: 5%;
+  top: 20%;
   left: 5%;
   height: 50px;
 `;
