@@ -19,12 +19,16 @@ const ContactIcons = ({ className, onClick, history }) => {
 
     return (
         <div className={className}>
+          <div data-tip="Contáctanos">
             <IconContainer onClick={toContactUs}>
-                <ResponsiveImg src={correoIcon}/>
+              <ResponsiveImg src={correoIcon}/>
             </IconContainer>
-            <IconContainer onClick={onClick}>
-                <ResponsiveImg src={cajaIcon}/>
-            </IconContainer>
+          </div>
+          <div data-tip="Buzón de sugerencias">
+              <IconContainer onClick={onClick}>
+                  <ResponsiveImg src={cajaIcon}/>
+              </IconContainer>
+          </div>
         </div>
     );
 };
