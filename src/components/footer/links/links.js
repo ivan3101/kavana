@@ -77,7 +77,7 @@ const links = ({ className }) => {
                 </SubCategory>
             </Category>
 
-            <Category>
+            {/* <Category>
                 <Link link={'/unete'}>
                     Únete a nuestra red de Aliados
                 </Link>
@@ -95,7 +95,7 @@ const links = ({ className }) => {
                         Diseñadores de Interiores
                     </Link>
                 </SubCategory>
-            </Category>
+            </Category> */}
         </div>
     );
 };

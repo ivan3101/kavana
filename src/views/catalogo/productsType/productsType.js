@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import ProductCard from "./productCard/productCard";
+import ka from "../../../assets/logo/k.png";
+import ResponsiveImg from "../../../../src/components/responsiveImg/responsiveImg";
 import * as axios from "axios";
 import Pagination from "../../../components/pagination/pagination";
 import { addToCart } from "../../../actions/cart.actions";
@@ -11,11 +13,26 @@ import { lighten } from 'polished';
 
 const ProductsContainer = styled.div`
   width: 90%;
+
+  > img {
+    width: 7%;
+    float: left;
+  }
   
   h1 {
     text-transform: capitalize;
   }
+
+  @media (max-width: 700px) {
+    > img {
+        width: 20%;
+        float: left;
+    }
+  }
+
 `;
+
+
 
 const SearchBar = styled(SearchInput)`
   width: 100%;
@@ -23,7 +40,7 @@ const SearchBar = styled(SearchInput)`
   margin-bottom: 10px;
   
   input {
-  width: 100%;
+  width: 40%;
   background-color: white;
   padding: 0.4rem 0.60rem;
   border-radius: 6px;
@@ -47,6 +64,12 @@ const SearchBar = styled(SearchInput)`
 
   }
 
+  }
+
+  @media (max-width: 700px) {
+    input {
+        width: 65%;
+    }
   }
 `;
 
@@ -164,7 +187,9 @@ class ProductsType extends Component {
         return (
             <CatalogoContainer>
                 <ProductsContainer>
-                    <SearchBar onChange={this.onSearch} placeholder={"Ingrese el texto de busqueda"} />
+                    <ResponsiveImg src={ka}/>
+                    <SearchBar style={{ margin: '1.5rem 0 0 1rem' }} onChange={this.onSearch} placeholder={"Buscar Producto"} />
+                    <br/>
                     <h1 style={{ textTransform: 'capitalize' }}>{category.split('-').join(' ')}</h1>
                     <Pagination
                         items={filteredProducts}
