@@ -5,7 +5,6 @@ import muestras from "../../../assets/icons/Envío de Muestras.svg";
 import ecommerce from "../../../assets/icons/E-Commerce Mercado Libre.svg";
 import whatsapp from "../../../assets/icons/Atención vía Whatsapp.svg";
 import aliados from "../../../assets/icons/Enlace con la Red de Aliados.svg";
-import atencionPersonalizada from "../../../assets/icons/Atención Personalizada.svg";
 import asesoriaTecnica from "../../../assets/icons/Asesoría Técnica Especializada.svg";
 
 export const servicesItems = [
