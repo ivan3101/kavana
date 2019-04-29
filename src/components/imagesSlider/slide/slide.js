@@ -11,6 +11,10 @@ const Slide = ({ text, image }) => {
       height: 100%;
       display: inline-block;
       position: relative;
+
+      @media (max-width: 750px){
+        height: 50%;
+      }
       
       div {
         position: absolute;
@@ -30,13 +34,23 @@ const Slide = ({ text, image }) => {
       }
     `;
 
-    return (
+
+    if(text===''){
+      return (
         <StyledDiv>
             <div>
-                <p>{ text }</p>
             </div>
         </StyledDiv>
-    );
+    ); 
+    }else{
+      return (
+          <StyledDiv>
+              <div>
+                  <p>{ text }</p>
+              </div>
+          </StyledDiv>
+      ); 
+    }
 };
 
 export default Slide;
