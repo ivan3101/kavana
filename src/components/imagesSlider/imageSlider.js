@@ -88,6 +88,9 @@ const StyledImageSlider = styled(ImageSlider)`
   transition: transform 450ms ease-out;
   position: relative;
   white-space: nowrap;
+  @media (max-width: 750px){
+    height: 50%;
+  }
 `;
 
 export default StyledImageSlider;
