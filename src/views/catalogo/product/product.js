@@ -7,6 +7,7 @@ import isEmpty from "lodash.isempty";
 import SpinnerLoading from "../../../components/spinnerLoading/spinnerLoading";
 import ResponsiveImg from "../../../components/responsiveImg/responsiveImg";
 import {AddToCart} from "../productsType/productCard/productCard";
+import ReactZoomy from 'react-zoomy';
 
 const Banner = styled.div`
   width: 100%;
@@ -43,8 +44,10 @@ const ProductDescription = styled.div`
 `;
 
 const ProductIcon = styled.div`
+  cursor: pointer;
   height: auto;
   width: 50%;
+  margin-bottom:10px;
   max-height: 300px;
   
   @media (max-width: 700px) {
@@ -104,6 +107,7 @@ const AddToCartProduct = styled(AddToCart)`
 `;
 
 const DataSheet = styled.table`
+  
   margin: 0 auto;
   text-align: left;
   font-size: 0.90rem;
@@ -178,7 +182,21 @@ class Product extends React.Component {
                     <ProductContainer>
                         <ProductDescription>
                             <ProductIcon>
-                                <ResponsiveImg src={product.icon.path}/>
+                                <ReactZoomy
+                                    imageUrl={product.icon.path}
+                                    renderThumbnail={
+                                        ({ showImage }) => 
+                                        <ResponsiveImg src={product.icon.path}onClick={showImage}/>
+                                    }
+                                    scale={[1, 1]}
+                                    imageProps={{
+                                        style: {
+                                        width: '50vw',
+                                        height: 'auto'
+                                        }
+                                    }}
+                                />
+
                             </ProductIcon>
                             <ProductDetails>
                                 <p>{product.name}</p>
@@ -234,59 +252,142 @@ class Product extends React.Component {
                 </div>
                 )
             }else{
-              return (
-                <div>
-                  <Banner banner={product.banner.path}/>
-                  <ProductContainer>
-                      <ProductDescription>
-                          <ProductIcon>
-                              <ResponsiveImg src={product.icon.path}/>
-                          </ProductIcon>
-                          <ProductDetails>
-                              <p>{product.name}</p>
-                              <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={this.inCart(product._id)}/>
-                          </ProductDetails>
-                      </ProductDescription>
+                if(product.characteristics==''){
+                    return (
+                        <div>
+                            <Banner banner={product.banner.path}/>
+                            <ProductContainer>
+                                <ProductDescription>
+                                    <ProductIcon>
+                                        <ReactZoomy
+                                            imageUrl={product.icon.path}
+                                            renderThumbnail={
+                                                ({ showImage }) => 
+                                                <ResponsiveImg src={product.icon.path} onClick={showImage}/>
+                                            }
+                                            scale={[1.1, 1.1]}
+                                            imageProps={{
+                                                style: {
+                                                width: '50vw',
+                                                height: 'auto'
+                                                }
+                                            }}
+                                        />
+                                    </ProductIcon>
+                                    <ProductDetails>
+                                        <p>{product.name}</p>
+                                        <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={this.inCart(product._id)}/>
+                                    </ProductDetails>
+                                </ProductDescription>
 
-                      <CharacteristicsContainer>
-                          {
-                              product.characteristics.map(characteristic => (
-                                  <Characteristic key={characteristic}>
-                                      <ResponsiveImg src={`${process.env.REACT_APP_API_PUBLIC}/productIcon/${characteristic}`}/>
-                                  </Characteristic>
-                              ))
-                          }
-                      </CharacteristicsContainer>
-                  </ProductContainer>
+                                {/* <CharacteristicsContainer>
+                                    {
+                                        product.characteristics.map(characteristic => (
+                                            <Characteristic key={characteristic}>
+                                                <ResponsiveImg src={`${process.env.REACT_APP_API_PUBLIC}/productIcon/${characteristic}`}/>
+                                            </Characteristic>
+                                        ))
+                                    }
+                                </CharacteristicsContainer> */}
+                            </ProductContainer>
 
-                  <DataSheet>
-                      <DSHeader>
-                      <tr>
-                          <th>
-                              Atributo
-                          </th>
-                          <th>
-                              Detalle
-                          </th>
-                      </tr>
-                      </DSHeader>
-                      <tbody>
-                      <tr>
-                          <td>Nombre</td>
-                          <td>{product.name}</td>
-                      </tr>
-                      <tr>
-                          <td>SKU</td>
-                          <td>{product.sku}</td>
-                      </tr>
-                      <tr>
-                          <td>Tamaño (m<Powered>2</Powered>)</td>
-                          <td>{product.size} m<Powered>2</Powered></td>
-                      </tr>
-                      </tbody>
-                  </DataSheet>
-              </div>
-              )
+                            <DataSheet>
+                                <DSHeader>
+                                <tr>
+                                    <th>
+                                        Atributo
+                                    </th>
+                                    <th>
+                                        Detalle
+                                    </th>
+                                </tr>
+                                </DSHeader>
+                                <tbody>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>{product.name}</td>
+                                </tr>
+                                <tr>
+                                    <td>SKU</td>
+                                    <td>{product.sku}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tamaño (m<Powered>2</Powered>)</td>
+                                    <td>{product.size} m<Powered>2</Powered></td>
+                                </tr>
+                                </tbody>
+                            </DataSheet>
+                        </div>
+                    )
+                }else{
+                    return (
+                        <div>
+                          <Banner banner={product.banner.path}/>
+                          <ProductContainer>
+                              <ProductDescription>
+                                  <ProductIcon>
+                                    <ReactZoomy
+                                        imageUrl={product.icon.path}
+                                        renderThumbnail={
+                                            ({ showImage }) => 
+                                            <ResponsiveImg src={product.icon.path} onClick={showImage}/>
+                                        }
+                                        scale={[1.1, 1.1]}
+                                        imageProps={{
+                                            style: {
+                                            width: '50vw',
+                                            height: 'auto'
+                                            }
+                                         }}
+                                    />
+                                  </ProductIcon>
+                                  <ProductDetails>
+                                      <p>{product.name}</p>
+                                      <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={this.inCart(product._id)}/>
+                                  </ProductDetails>
+                              </ProductDescription>
+        
+                              <CharacteristicsContainer>
+                                  {
+                                      product.characteristics.map(characteristic => (
+                                          <Characteristic key={characteristic}>
+                                              <ResponsiveImg src={`${process.env.REACT_APP_API_PUBLIC}/productIcon/${characteristic}`}/>
+                                          </Characteristic>
+                                      ))
+                                  }
+                              </CharacteristicsContainer>
+                          </ProductContainer>
+        
+                          <DataSheet>
+                              <DSHeader>
+                              <tr>
+                                  <th>
+                                      Atributo
+                                  </th>
+                                  <th>
+                                      Detalle
+                                  </th>
+                              </tr>
+                              </DSHeader>
+                              <tbody>
+                              <tr>
+                                  <td>Nombre</td>
+                                  <td>{product.name}</td>
+                              </tr>
+                              <tr>
+                                  <td>SKU</td>
+                                  <td>{product.sku}</td>
+                              </tr>
+                              <tr>
+                                  <td>Tamaño (m<Powered>2</Powered>)</td>
+                                  <td>{product.size} m<Powered>2</Powered></td>
+                              </tr>
+                              </tbody>
+                          </DataSheet>
+                      </div>
+                      )
+                }
+              
             }
            
         }
