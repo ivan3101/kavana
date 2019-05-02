@@ -36,9 +36,7 @@ const ServiceItem = styled.div`
     padding: 10px;
     display: block;
     transition: all .5s ease-in-out;
-    color: #000;
-    font-weight: bold;
-    text-decoration: underline;
+    color: #0097A9;
   }
 
   :hover img {

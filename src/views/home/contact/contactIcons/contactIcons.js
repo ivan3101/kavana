@@ -4,6 +4,7 @@ import ResponsiveImg from "../../../../components/responsiveImg/responsiveImg";
 import correoIcon from "../../../../assets/icons/correo-21.svg";
 import cajaIcon from "../../../../assets/icons/caja-23.svg";
 import {withRouter} from "react-router-dom";
+import ReactTooltip from 'react-tooltip'
 
 const ContactIcons = ({ className, onClick, history }) => {
     const IconContainer = styled.div`
@@ -18,7 +19,9 @@ const ContactIcons = ({ className, onClick, history }) => {
     };
 
     return (
+    
         <div className={className}>
+          <ReactTooltip/>
           <div data-tip="Contáctanos">
             <IconContainer onClick={toContactUs}>
               <ResponsiveImg src={correoIcon}/>
