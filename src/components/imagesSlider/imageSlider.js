@@ -55,13 +55,56 @@ class ImageSlider extends Component {
         return this.slideRef.current.clientWidth;
     };
 
+    getNextIndex(idx) {
+        const { currentIndex, sliders } = this.state;
+        if (currentIndex >= sliders.length - 1) {
+          return 0;
+        }
+        return currentIndex + 1;
+    }
+
+    aja = () => {
+        const { currentIndex, sliders } = this.state;
+
+        if (currentIndex >= sliders.length - 1) {
+            this.setState(() => ({
+                currentIndex: 0,
+                translateValue: 0
+            }))
+
+        } else {
+            this.setState((prevState) => ({
+                currentIndex: prevState.currentIndex + 1,
+                translateValue: prevState.translateValue + -(this.slideWidth())
+            }))
+        }
+    };
+
+    eje = () => {
+
+        const { currentIndex, sliders } = this.state;
+
+        if (currentIndex >= 0) {
+            this.setState(() => ({
+                currentIndex: 0,
+                translateValue: 0
+            }))
+
+        } else {
+            this.setState((prevState) => ({
+                currentIndex: prevState.currentIndex - 1,
+                translateValue: prevState.translateValue + -(this.slideWidth())
+            }))
+        }
+    };
+
     render() {
         const { className } = this.props;
         const { sliders } = this.state;
         return (
             <div className={className}>
-                <a class="prev">&#10094;</a>
-                <a class="next">&#10095;</a>
+                <a class="prev" onClick={this.eje}>&#10094;</a>
+                <a class="next" onClick={this.aja}>&#10095;</a>
                 <div
                     className={className}
                     style={{
@@ -108,7 +151,7 @@ const StyledImageSlider = styled(ImageSlider)`
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 4px 4px 0;
   user-select: none;
   z-index:999999;
 }
@@ -121,7 +164,7 @@ const StyledImageSlider = styled(ImageSlider)`
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-    background-color: #A6AAAF;
+  background-color: #A6AAAF;
 }
 `;
 
