@@ -121,7 +121,7 @@ const StyledImageSlider = styled(ImageSlider)`
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-    background-color: #A6AAAF;
+  background-color: #A6AAAF;
 }
 `;
 
