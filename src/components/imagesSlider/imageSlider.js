@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from "styled-components";
 import Slide from "./slide/slide";
 import * as axios from "axios";
@@ -59,24 +59,29 @@ class ImageSlider extends Component {
         const { className } = this.props;
         const { sliders } = this.state;
         return (
-            <div
-                className={className}
-                style={{
-                    transform: `translateX(${this.state.translateValue}px`
-                }}
-                ref={this.slideRef}
-            >
-                {
-                    !!sliders.length && sliders.map((slider, i) => (
-                        <Slide key={slider.image} image={slider.image} text={slider.message}/>
-                    ))
-                }
-                {
-                    !!this.state.loading && <SpinnerLoading/>
-                }
-                {
-                    !this.state.loading && !sliders.length && <h3>No se encontraron imagenes en la galeria</h3>
-                }
+            <div className={className}>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+                <div
+                    className={className}
+                    style={{
+                        transform: `translateX(${this.state.translateValue}px`
+                    }}
+                    ref={this.slideRef}
+                >
+
+                    {
+                        !!sliders.length && sliders.map((slider, i) => (
+                            <Slide key={slider.image} image={slider.image} text={slider.message} />
+                        ))
+                    }
+                    {
+                        !!this.state.loading && <SpinnerLoading />
+                    }
+                    {
+                        !this.state.loading && !sliders.length && <h3>No se encontraron imagenes en la galeria</h3>
+                    }
+                </div>
             </div>
         );
     }
@@ -91,6 +96,33 @@ const StyledImageSlider = styled(ImageSlider)`
   @media (max-width: 750px){
     height: 50%;
   }
+  /* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #FF6B0C;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index:999999;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: #A6AAAF;
+}
 `;
 
 export default StyledImageSlider;
