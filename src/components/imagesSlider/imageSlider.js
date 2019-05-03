@@ -145,7 +145,7 @@ const StyledImageSlider = styled(ImageSlider)`
   transition: 0.6s ease;
   border-radius: 0 4px 4px 0;
   user-select: none;
-  z-index:999999;
+  z-index:999;
 }
 
 /* Position the "next button" to the right */
