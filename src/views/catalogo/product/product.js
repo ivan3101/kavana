@@ -7,7 +7,8 @@ import isEmpty from "lodash.isempty";
 import SpinnerLoading from "../../../components/spinnerLoading/spinnerLoading";
 import ResponsiveImg from "../../../components/responsiveImg/responsiveImg";
 import {AddToCart} from "../productsType/productCard/productCard";
-import ReactZoomy from 'react-zoomy';
+import ImageZoom from 'react-medium-image-zoom'
+
 
 const Banner = styled.div`
   width: 100%;
@@ -25,7 +26,7 @@ const ProductContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 30px;
-  
+
   @media (max-width: 700px) {
     flex-direction: column;
   }
@@ -36,7 +37,7 @@ const ProductDescription = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
-  
+
   @media (max-width: 700px) {
     flex-direction: column;
     width: 100%;
@@ -49,7 +50,7 @@ const ProductIcon = styled.div`
   width: 50%;
   margin-bottom:10px;
   max-height: 300px;
-  
+
   @media (max-width: 700px) {
     width: 100%;
     max-height: 100%;
@@ -61,12 +62,12 @@ const ProductDetails = styled.div`
   flex-direction: column;
   gap: 30px;
   justify-content: center;
-  
+
   p:first-child {
     font-size: 1.25rem;
     font-weight: 500;
   }
-  
+
   @media (max-width: 700px) {
     align-items: center;
   }
@@ -74,7 +75,7 @@ const ProductDetails = styled.div`
 
 const Powered = styled.span`
   position: relative;
-  bottom: 1ex; 
+  bottom: 1ex;
   font-size: 80%;
 `;
 
@@ -84,7 +85,7 @@ const CharacteristicsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
-  
+
   @media (max-width: 700px) {
     width: 100%;
     gap: 0;
@@ -107,22 +108,22 @@ const AddToCartProduct = styled(AddToCart)`
 `;
 
 const DataSheet = styled.table`
-  
+
   margin: 0 auto;
   text-align: left;
   font-size: 0.90rem;
   border-collapse: collapse;
   width: 40%;
-  
+
   th, td {
     padding: 0.85rem;
     margin: 0;
   }
-  
+
   tr:hover {
     background-color: #ebebeb;
   }
-  
+
   @media (max-width: 700px) {
   width: 80%;
   }
@@ -182,18 +183,15 @@ class Product extends React.Component {
                     <ProductContainer>
                         <ProductDescription>
                             <ProductIcon>
-                                <ReactZoomy
-                                    imageUrl={product.icon.path}
-                                    renderThumbnail={
-                                        ({ showImage }) => 
-                                        <ResponsiveImg src={product.icon.path}onClick={showImage}/>
-                                    }
-                                    scale={[1, 1]}
-                                    imageProps={{
-                                        style: {
-                                        width: '50vw',
-                                        height: 'auto'
-                                        }
+                                <ImageZoom
+                                    image={{
+                                    src: product.icon.path,
+                                    alt: product.name,
+                                    className: 'img',
+                                    }}
+                                    zoomImage={{
+                                    src: product.icon.path,
+                                    alt: product.name
                                     }}
                                 />
 
@@ -259,20 +257,19 @@ class Product extends React.Component {
                             <ProductContainer>
                                 <ProductDescription>
                                     <ProductIcon>
-                                        <ReactZoomy
-                                            imageUrl={product.icon.path}
-                                            renderThumbnail={
-                                                ({ showImage }) => 
-                                                <ResponsiveImg src={product.icon.path} onClick={showImage}/>
-                                            }
-                                            scale={[1.1, 1.1]}
-                                            imageProps={{
-                                                style: {
-                                                width: '50vw',
-                                                height: 'auto'
-                                                }
+                                        <ImageZoom
+                                            image={{
+                                            src: product.icon.path,
+                                            alt: product.name,
+                                            className: 'img',
+    
+                                            }}
+                                            zoomImage={{
+                                            src: product.icon.path,
+                                            alt: product.name
                                             }}
                                         />
+
                                     </ProductIcon>
                                     <ProductDetails>
                                         <p>{product.name}</p>
@@ -326,19 +323,17 @@ class Product extends React.Component {
                           <ProductContainer>
                               <ProductDescription>
                                   <ProductIcon>
-                                    <ReactZoomy
-                                        imageUrl={product.icon.path}
-                                        renderThumbnail={
-                                            ({ showImage }) => 
-                                            <ResponsiveImg src={product.icon.path} onClick={showImage}/>
-                                        }
-                                        scale={[1.1, 1.1]}
-                                        imageProps={{
-                                            style: {
-                                            width: '50vw',
-                                            height: 'auto'
-                                            }
-                                         }}
+                                    <ImageZoom
+                                        image={{
+                                        src: product.icon.path,
+                                        alt: product.name,
+                                        className: 'img',
+
+                                        }}
+                                        zoomImage={{
+                                        src: product.icon.path,
+                                        alt: product.name
+                                        }}
                                     />
                                   </ProductIcon>
                                   <ProductDetails>
@@ -346,7 +341,7 @@ class Product extends React.Component {
                                       <AddToCartProduct onClick={() => this.addToCart(product._id, product.name)} inCart={this.inCart(product._id)}/>
                                   </ProductDetails>
                               </ProductDescription>
-        
+
                               <CharacteristicsContainer>
                                   {
                                       product.characteristics.map(characteristic => (
@@ -357,7 +352,7 @@ class Product extends React.Component {
                                   }
                               </CharacteristicsContainer>
                           </ProductContainer>
-        
+
                           <DataSheet>
                               <DSHeader>
                               <tr>
@@ -387,9 +382,9 @@ class Product extends React.Component {
                       </div>
                       )
                 }
-              
+
             }
-           
+
         }
     }
 }

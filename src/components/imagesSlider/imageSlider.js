@@ -55,28 +55,21 @@ class ImageSlider extends Component {
         return this.slideRef.current.clientWidth;
     };
 
-    getNextIndex(idx) {
-        const { currentIndex, sliders } = this.state;
-        if (currentIndex >= sliders.length - 1) {
-          return 0;
-        }
-        return currentIndex + 1;
-    }
 
     aja = () => {
-        const { currentIndex, sliders } = this.state;
 
+        const { currentIndex, sliders } = this.state;
         if (currentIndex >= sliders.length - 1) {
             this.setState(() => ({
                 currentIndex: 0,
                 translateValue: 0
             }))
-
         } else {
             this.setState((prevState) => ({
                 currentIndex: prevState.currentIndex + 1,
                 translateValue: prevState.translateValue + -(this.slideWidth())
             }))
+            
         }
     };
 
@@ -89,11 +82,10 @@ class ImageSlider extends Component {
                 currentIndex: 0,
                 translateValue: 0
             }))
-
         } else {
             this.setState((prevState) => ({
                 currentIndex: prevState.currentIndex - 1,
-                translateValue: prevState.translateValue + -(this.slideWidth())
+                translateValue: prevState.translateValue - -(this.slideWidth())
             }))
         }
     };
