@@ -6,6 +6,9 @@ const ImageSliderContainer = styled.div`
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+  @media (max-width: 750px){
+    height:250px;
+  }
 `;
 
 export default ImageSliderContainer;

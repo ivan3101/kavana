@@ -55,28 +55,21 @@ class ImageSlider extends Component {
         return this.slideRef.current.clientWidth;
     };
 
-    getNextIndex(idx) {
-        const { currentIndex, sliders } = this.state;
-        if (currentIndex >= sliders.length - 1) {
-          return 0;
-        }
-        return currentIndex + 1;
-    }
 
     aja = () => {
-        const { currentIndex, sliders } = this.state;
 
+        const { currentIndex, sliders } = this.state;
         if (currentIndex >= sliders.length - 1) {
             this.setState(() => ({
                 currentIndex: 0,
                 translateValue: 0
             }))
-
         } else {
             this.setState((prevState) => ({
                 currentIndex: prevState.currentIndex + 1,
                 translateValue: prevState.translateValue + -(this.slideWidth())
             }))
+            
         }
     };
 
@@ -89,11 +82,10 @@ class ImageSlider extends Component {
                 currentIndex: 0,
                 translateValue: 0
             }))
-
         } else {
             this.setState((prevState) => ({
                 currentIndex: prevState.currentIndex - 1,
-                translateValue: prevState.translateValue + -(this.slideWidth())
+                translateValue: prevState.translateValue - -(this.slideWidth())
             }))
         }
     };
@@ -153,7 +145,7 @@ const StyledImageSlider = styled(ImageSlider)`
   transition: 0.6s ease;
   border-radius: 0 4px 4px 0;
   user-select: none;
-  z-index:999999;
+  z-index:999;
 }
 
 /* Position the "next button" to the right */
