@@ -39,7 +39,7 @@ const RegisterForm = ({ errors, isSubmitting, dirty, touched, status }) => {
             </FormGroup>
 
             <FormGroup>
-                <Label>Cedula</Label>
+                <Label>Cédula</Label>
                 <InlineInputs>
                     <Input
                         component={"select"}
@@ -66,7 +66,7 @@ const RegisterForm = ({ errors, isSubmitting, dirty, touched, status }) => {
             </FormGroup>
 
             <FormGroup>
-                <Label>Correo electronico</Label>
+                <Label>Correo electrónico</Label>
                 <Input
                     type={"email"}
                     name={"email"}

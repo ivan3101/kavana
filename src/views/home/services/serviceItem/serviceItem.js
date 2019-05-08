@@ -57,6 +57,8 @@ const ServiceItem = styled.div`
       height: auto;
     }
   }
+  @media (min-width: 1920px) {
+    margin-right: 100px;
 `;
 
 export default ServiceItem;

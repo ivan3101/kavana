@@ -39,7 +39,7 @@ export const productsList = [
         url: '/mallas-y-decorados'
     },
     {
-        name: 'Griferias',
+        name: 'Griferías',
         icon: griferias,
         url: '/griferias'
     },
