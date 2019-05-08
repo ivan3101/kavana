@@ -78,11 +78,21 @@ const StyledTestimonials = styled(Testimonials)`
         overflow: hidden;
         height: 100%;
       }
+
+      & > div img{
+            margin-left: 30px;
+        }
       
       & > div:first-child {
         height: 100px;
         padding: 0;
         width: auto;
+      }
+
+      @media (min-width: 1920px){
+        & > div img{
+            margin-left: 150px;
+        }
       }
       
       @media (max-width: 700px) {
@@ -93,7 +103,11 @@ const StyledTestimonials = styled(Testimonials)`
         }
         
         & > div:first-child {
-          display: none;
+            display: none;
+            transform: rotateZ(0deg) translateX(0%) translateY(0%);
+        }
+        & > div img{
+            margin-left: 0;
         }
       }
     `;

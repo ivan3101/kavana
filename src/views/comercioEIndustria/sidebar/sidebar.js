@@ -11,10 +11,11 @@ const sidebar = ({ className, match}) => {
     })`
       text-decoration: none;
       color: ${props => props.theme.text};
-      
+      margin-bottom:10px;
       
       &.${activeClassName} {
         font-weight: 700;
+        
       }
     `;
 
