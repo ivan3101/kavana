@@ -29,7 +29,7 @@ const catalogoRoutes = [
         route: '/catalogo/piezas-de-baño/1'
     },
     {
-        name: 'Griferias',
+        name: 'Griferías',
         route: '/catalogo/griferias/1'
     },
     {
