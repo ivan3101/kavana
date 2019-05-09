@@ -3,10 +3,6 @@ import styled from "styled-components";
 import Copyright from "./copyright/copyright";
 import SocialAccounts from "./socialAccounts/socialAccounts";
 import Links from "./links/links";
-import Redaliada from "./redaliada";
-import Red from "./links/redali";
-
-
 
 const footer = ({ className }) => {
     return (
