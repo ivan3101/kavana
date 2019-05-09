@@ -12,10 +12,6 @@ const Slide = ({ text, image }) => {
       display: inline-block;
       position: relative;
 
-      @media (max-width: 750px){
-        height: 50%;
-      }
-      
       div {
         position: absolute;
         top: 50%;
