@@ -129,7 +129,7 @@ const StyledImageSlider = styled(ImageSlider)`
   position: relative;
   white-space: nowrap;
   @media (max-width: 750px){
-    height: 50%;
+    height: 85%;
   }
   /* Next & previous buttons */
 .prev, .next {
