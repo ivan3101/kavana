@@ -25,7 +25,7 @@ const ContentContainer = styled.div`
 
 const formInitValues = {
     'name': '',
-    'lastname': '',
+    'identification': '',
     'phone': '',
     'email': ''
 };
@@ -60,8 +60,8 @@ class ComercioEIndustria extends Component {
                                     'name': Yup.string().trim().required('Debe ingresar su nombre').matches(/^[a-zA-Z\s]+$/, {
                                         message: 'Su nombre solo puede contener letras y espacios'
                                     }),
-                                    'lastname': Yup.string().trim().required('Debe ingresar su apellido').matches(/^[a-zA-Z\s]+$/, {
-                                        message: 'Su apellido solo puede contener letras y espacios'
+                                    'identification': Yup.string().trim().required('Debe ingresar su cédula').matches(/^([0-9]{6,10})$/, {
+                                        message: 'Su cédula o RIF solo puede tener numeros'
                                     }),
                                     'phone': Yup.string().trim().required('Debe ingresar su numero de telefono').matches(/^([0-9]{4})-([0-9]{7}$)/, {
                                         message: 'El numero de telefono debe tener el formato XXXX-XXXXXXX'
@@ -83,7 +83,7 @@ class ComercioEIndustria extends Component {
                                         });
                                         this.setState(() => ({
                                             submitState: 'success',
-                                            message: 'Mensaje Enviado con exito'
+                                            message: 'Mensaje enviado con exito'
                                         }))
 
                                         formikActions.resetForm();
