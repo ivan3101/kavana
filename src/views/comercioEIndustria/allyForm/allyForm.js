@@ -28,7 +28,7 @@ const AllyForm = ({ errors, isSubmitting, dirty, touched, match, submitState, me
                 <Input
                     type={'text'}
                     name={'name'} invalid={errors.name && touched.name ? 1 : 0}
-                    placeholder={'nombre'}
+                    placeholder={'Nombre o Razón Social'}
                 />
                 <ValidationError name={'name'}/>
             </FormGroup>
@@ -36,17 +36,17 @@ const AllyForm = ({ errors, isSubmitting, dirty, touched, match, submitState, me
             <FormGroup>
                 <Input
                     type={'text'}
-                    name={'lastname'} invalid={errors.lastname && touched.lastname ? 1 : 0}
-                    placeholder={'apellido'}
+                    name={'identification'} invalid={errors.identification && touched.identification ? 1 : 0}
+                    placeholder={'Cédula o RIF'}
                 />
-                <ValidationError name={'lastname'}/>
+                <ValidationError name={'identification'}/>
             </FormGroup>
 
             <FormGroup>
                 <Input
                     type={'text'}
                     name={'phone'} invalid={errors.phone && touched.phone ? 1 : 0}
-                    placeholder={'telefono'}
+                    placeholder={'Telefono'}
                 />
                 <ValidationError name={'phone'}/>
             </FormGroup>
@@ -55,7 +55,7 @@ const AllyForm = ({ errors, isSubmitting, dirty, touched, match, submitState, me
                 <Input
                     type={'text'}
                     name={'email'} invalid={errors.email && touched.email ? 1 : 0}
-                    placeholder={'email'}
+                    placeholder={'Email'}
                 />
                 <ValidationError name={'email'}/>
             </FormGroup>
@@ -63,7 +63,7 @@ const AllyForm = ({ errors, isSubmitting, dirty, touched, match, submitState, me
             <Button type={'submit'}
                     disabled={isSubmitting || !isEmpty(errors) || !dirty}
             >
-                enviar
+                Enviar
             </Button>
         </Form>
     );

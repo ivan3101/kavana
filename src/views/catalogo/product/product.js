@@ -8,6 +8,7 @@ import SpinnerLoading from "../../../components/spinnerLoading/spinnerLoading";
 import ResponsiveImg from "../../../components/responsiveImg/responsiveImg";
 import {AddToCart} from "../productsType/productCard/productCard";
 import ImageZoom from 'react-medium-image-zoom'
+import SimpleZoom from 'react-simple-zoom'
 
 
 const Banner = styled.div`
@@ -183,16 +184,13 @@ class Product extends React.Component {
                     <ProductContainer>
                         <ProductDescription>
                             <ProductIcon>
-                                <ImageZoom
-                                    image={{
-                                    src: product.icon.path,
-                                    alt: product.name,
-                                    className: 'img',
-                                    }}
-                                    zoomImage={{
-                                    src: product.icon.path,
-                                    alt: product.name
-                                    }}
+                                <SimpleZoom
+                                    thumbUrl={product.icon.path}
+                                    fullUrl={product.icon.path}
+                                    zoomScale={2.6}
+                                    onEnterCallback={() => { /* Do something on mouseenter */ }}
+                                    onExitCallback={() => { /* Do something on mouseout */ }}
+                                    onExitTimeout={2000}
                                 />
 
                             </ProductIcon>
@@ -257,17 +255,13 @@ class Product extends React.Component {
                             <ProductContainer>
                                 <ProductDescription>
                                     <ProductIcon>
-                                        <ImageZoom
-                                            image={{
-                                            src: product.icon.path,
-                                            alt: product.name,
-                                            className: 'img',
-    
-                                            }}
-                                            zoomImage={{
-                                            src: product.icon.path,
-                                            alt: product.name
-                                            }}
+                                        <SimpleZoom
+                                            thumbUrl={product.icon.path}
+                                            fullUrl={product.icon.path}
+                                            zoomScale={2.6}
+                                            onEnterCallback={() => { /* Do something on mouseenter */ }}
+                                            onExitCallback={() => { /* Do something on mouseout */ }}
+                                            onExitTimeout={2000}
                                         />
 
                                     </ProductIcon>
@@ -323,17 +317,13 @@ class Product extends React.Component {
                           <ProductContainer>
                               <ProductDescription>
                                   <ProductIcon>
-                                    <ImageZoom
-                                        image={{
-                                        src: product.icon.path,
-                                        alt: product.name,
-                                        className: 'img',
-
-                                        }}
-                                        zoomImage={{
-                                        src: product.icon.path,
-                                        alt: product.name
-                                        }}
+                                    <SimpleZoom
+                                        thumbUrl={product.icon.path}
+                                        fullUrl={product.icon.path}
+                                        zoomScale={2.6}
+                                        onEnterCallback={() => { /* Do something on mouseenter */ }}
+                                        onExitCallback={() => { /* Do something on mouseout */ }}
+                                        onExitTimeout={2000}
                                     />
                                   </ProductIcon>
                                   <ProductDetails>

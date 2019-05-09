@@ -36,7 +36,7 @@ export const servicesItems = [
     {
         name: 'Atención vía Whatsapp',
         icon: whatsapp,
-        description: `Facilitamos la atención para aquellos que no pueden venir a la tienda, por este medio enviamos imágenes de productos, cotizaciones y todo lo relacionado con el proceso de ventas. Puede contactarnos a nuestro numéro 0414-5796872`
+        description: `Facilitamos la atención para aquellos que no pueden venir a la tienda, por este medio enviamos imágenes de productos, cotizaciones y todo lo relacionado con el proceso de ventas. Puede contactarnos a nuestro número 0414-5796872`
     },
     {
         name: 'Enlace con la Red de Aliados',
