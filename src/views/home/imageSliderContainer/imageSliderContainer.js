@@ -7,7 +7,7 @@ const ImageSliderContainer = styled.div`
   white-space: nowrap;
   position: relative;
   @media (max-width: 750px){
-    height:250px;
+    height:200px;
   }
 `;
 

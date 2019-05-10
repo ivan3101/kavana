@@ -128,9 +128,7 @@ const StyledImageSlider = styled(ImageSlider)`
   transition: transform 450ms ease-out;
   position: relative;
   white-space: nowrap;
-  @media (max-width: 750px){
-    height: 85%;
-  }
+
   /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -145,7 +143,7 @@ const StyledImageSlider = styled(ImageSlider)`
   transition: 0.6s ease;
   border-radius: 0 4px 4px 0;
   user-select: none;
-  z-index:999;
+  z-index:2;
 }
 
 /* Position the "next button" to the right */
