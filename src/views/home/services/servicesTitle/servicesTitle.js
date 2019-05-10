@@ -11,7 +11,6 @@ const ServicesTitleContainer= styled.div`
   -webkit-box-shadow: 10px 10px 1px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 10px 10px 1px 0px rgba(0,0,0,0.2);
   box-shadow: 10px 10px 1px 0px rgba(0,0,0,0.2);
-
   
   @media (max-width: 700px) {
     width: 100%;
