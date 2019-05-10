@@ -15,8 +15,10 @@ const ServiceItem = styled.div`
   transition: all .3s ease-in-out;
   
   p{
-    paddin: 0;
-    display: none;
+    paddin: 8px;
+    width: 95%;
+    font-size:14px;
+    display:block;
     transition: transform .5s ease-in-out;
   }
 
@@ -33,15 +35,14 @@ const ServiceItem = styled.div`
 
   :hover p{
     display: block;
-    padding: 10px;
-    display: block;
-    transition: all .5s ease-in-out;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
     color: #0097A9;
   }
 
   :hover img {
     transition: all .3s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   :hover path {
