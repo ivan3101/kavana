@@ -47,6 +47,7 @@ const ProductsItem = styled.p`
   border-radius: 10px;
   background-color: #cccccc;
   position: relative;
+  margin:5px;
 `;
 
 const Remove = styled.span`
