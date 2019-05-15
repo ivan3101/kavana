@@ -33,7 +33,7 @@ const contactForm = ({ className, errors, isSubmitting, dirty, touched, match, s
                 <Input
                     type={'text'}
                     name={'phone'} invalid={errors.phone && touched.phone ? 1 : 0}
-                    placeholder={'telefono'}
+                    placeholder={'Telefono'}
                 />
                 <ValidationError name={'phone'}/>
             </FormGroup>
@@ -42,7 +42,7 @@ const contactForm = ({ className, errors, isSubmitting, dirty, touched, match, s
                 <Input
                     type={'text'}
                     name={'email'} invalid={errors.email && touched.email ? 1 : 0}
-                    placeholder={'email'}
+                    placeholder={'Email'}
                 />
                 <ValidationError name={'email'}/>
             </FormGroup>
@@ -51,7 +51,7 @@ const contactForm = ({ className, errors, isSubmitting, dirty, touched, match, s
                 <Input
                     component={'textarea'}
                     name={'message'} invalid={errors.message && touched.message ? 1 : 0}
-                    placeholder={'mensaje'}
+                    placeholder={'Mensaje'}
                     style={{height: '200px'}}
                 />
                 <ValidationError name={'message'}/>

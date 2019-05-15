@@ -24,7 +24,7 @@ const Footer = styled(footer)`
   padding: 1.5rem 1.25rem;
   width: 80%;
   height: auto;
-  background-color: #E2D9DA;
+  background-color: #A6AAAF;
   
   @media (max-width: 700px) {
     flex-wrap: wrap;

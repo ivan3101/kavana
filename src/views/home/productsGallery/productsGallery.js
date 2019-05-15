@@ -21,7 +21,7 @@ class ProductsGallery extends Component {
                 loading: true
             }));
 
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/products?limit=3`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/products?limit=5`);
 
             const { products } = response.data.data;
 
