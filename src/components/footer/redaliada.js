@@ -20,7 +20,7 @@ display: inline-block;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 4.5rem 1.25rem;
+  padding: 4.37rem 1.25rem;
   width: 20%;
   height: auto;
   background-color: #2E3841;

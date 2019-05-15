@@ -4,7 +4,10 @@ import {Formik} from "formik";
 import * as Yup from "yup";
 import ContactForm from "./contactForm/contactForm";
 import axios from "axios";
+import StyledContactInfo from "../home/contact/contactInfo/contactInfo";
+
 import StyledLocation from "../home/contact/location/location";
+
 
 const formInitValues = {
     name: '',
@@ -22,6 +25,16 @@ export const ContactContainer = styled.div`
   @media (max-width: 700px) {
     width: 95%;
   }
+`;
+
+const StyledContact = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
 `;
 
 
@@ -83,12 +96,14 @@ class Contact extends React.Component {
                 <br/>
                 <br/>
 
-                <h2>Dnde nos encontramos</h2>
+                <h2>Donde nos encontramos</h2>
 
                 <br/>
                 <br/>
-
-                <StyledLocation/>
+                <StyledContact>
+                    <StyledLocation/>
+                    <StyledContactInfo/>
+                </StyledContact>
             </ContactContainer>
         )
     }
