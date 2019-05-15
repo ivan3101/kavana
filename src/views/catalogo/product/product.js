@@ -22,7 +22,7 @@ const Banner = styled.div`
 
 const ProductContainer = styled.div`
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   padding: 1.5rem 0;
   display: flex;
   flex-direction: row;
@@ -232,7 +232,7 @@ class Product extends React.Component {
                             <td>{product.sku}</td>
                         </tr>
                         <tr>
-                            <td>Tamaño (m<Powered>2</Powered>)</td>
+                            <td>Dimensiones (m<Powered>2</Powered>)</td>
                             <td>{product.size} m<Powered>2</Powered></td>
                         </tr>
                         <tr>
@@ -240,7 +240,7 @@ class Product extends React.Component {
                             <td>{product.piecesByBox}</td>
                         </tr>
                         <tr>
-                            <td>Tamaño por Caja (m<Powered>2</Powered>)</td>
+                            <td>Empaque (m<Powered>2</Powered>)</td>
                             <td>{product.sizeByBox} m<Powered>2</Powered></td>
                         </tr>
                         </tbody>
@@ -303,7 +303,7 @@ class Product extends React.Component {
                                     <td>{product.sku}</td>
                                 </tr>
                                 <tr>
-                                    <td>Tamaño (m<Powered>2</Powered>)</td>
+                                    <td>Dimensiones (m<Powered>2</Powered>)</td>
                                     <td>{product.size} m<Powered>2</Powered></td>
                                 </tr>
                                 </tbody>
@@ -364,7 +364,7 @@ class Product extends React.Component {
                                   <td>{product.sku}</td>
                               </tr>
                               <tr>
-                                  <td>Tamaño (m<Powered>2</Powered>)</td>
+                                  <td>Dimensiones (m<Powered>2</Powered>)</td>
                                   <td>{product.size} m<Powered>2</Powered></td>
                               </tr>
                               </tbody>

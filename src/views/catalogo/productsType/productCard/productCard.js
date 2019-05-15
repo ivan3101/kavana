@@ -4,7 +4,7 @@ import ResponsiveImg from "../../../../components/responsiveImg/responsiveImg";
 import cart from "../../../../assets/icons/CARRITO-BOTON.png";
 
 const ProductCardContainer = styled.div`
-  width: 350px;
+  width: 250px;
   height: auto;
   margin-top: 50px;
   border-radius: 6px;
@@ -17,6 +17,9 @@ const ProductCardContainer = styled.div`
   > img {
     height: 150px;
     width: 100%;
+  }
+  @media (min-width: 1920px){
+    width: 350px;
   }
 `;
 
