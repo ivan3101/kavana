@@ -104,7 +104,7 @@ const ProductForm = ({ className, errors, isSubmitting, dirty, touched, match, s
                     <Input
                         type={'text'}
                         name={'name'} invalid={errors.name && touched.name ? 1 : 0}
-                        placeholder={'nombre del producto'}
+                        placeholder={'Nombre del Producto'}
                     />
                     <ValidationError name={'name'}/>
                 </FormGroup>
@@ -114,27 +114,27 @@ const ProductForm = ({ className, errors, isSubmitting, dirty, touched, match, s
                     <Input
                         type={'text'}
                         name={'sku'} invalid={errors.sku && touched.sku ? 1 : 0}
-                        placeholder={'codigo del producto'}
+                        placeholder={'Codigo del Producto'}
                     />
                     <ValidationError name={'sku'}/>
                 </FormGroup>
 
                 <FormGroup>
-                    <Label>Tamaño del producto</Label>
+                    <Label>Dimensiones del producto</Label>
                     <Input
                         type={'text'}
                         name={'size'} invalid={errors.size && touched.size ? 1 : 0}
-                        placeholder={'tamaño'}
+                        placeholder={'Dimensiones'}
                     />
                     <ValidationError name={'size'}/>
                 </FormGroup>
 
                 <FormGroup>
-                    <Label>m2 por caja del producto</Label>
+                    <Label>Empaque del producto</Label>
                     <Input
                         type={'text'}
                         name={'sizeByBox'} invalid={errors.sizeByBox && touched.sizeByBox ? 1 : 0}
-                        placeholder={'m2 por caja'}
+                        placeholder={'Empaque'}
                     />
                     <ValidationError name={'sizeByBox'}/>
                 </FormGroup>
@@ -144,7 +144,7 @@ const ProductForm = ({ className, errors, isSubmitting, dirty, touched, match, s
                     <Input
                         type={'text'}
                         name={'piecesByBox'} invalid={errors.piecesByBox && touched.piecesByBox ? 1 : 0}
-                        placeholder={'piezas por caja'}
+                        placeholder={'Piezas por caja'}
                     />
                     <ValidationError name={'piecesByBox'}/>
                 </FormGroup>
