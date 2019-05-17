@@ -110,7 +110,7 @@ const AddToCartProduct = styled(AddToCart)`
 
 const DataSheet = styled.table`
 
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   text-align: left;
   font-size: 0.90rem;
   border-collapse: collapse;
