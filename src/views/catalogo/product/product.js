@@ -110,7 +110,7 @@ const AddToCartProduct = styled(AddToCart)`
 
 const DataSheet = styled.table`
 
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   text-align: left;
   font-size: 0.90rem;
   border-collapse: collapse;
@@ -232,7 +232,7 @@ class Product extends React.Component {
                             <td>{product.sku}</td>
                         </tr>
                         <tr>
-                            <td>Dimensiones (m<Powered>2</Powered>)</td>
+                            <td>Dimensiones</td>
                             <td>{product.size} m<Powered>2</Powered></td>
                         </tr>
                         <tr>
@@ -240,7 +240,7 @@ class Product extends React.Component {
                             <td>{product.piecesByBox}</td>
                         </tr>
                         <tr>
-                            <td>Empaque (m<Powered>2</Powered>)</td>
+                            <td>Empaque</td>
                             <td>{product.sizeByBox} m<Powered>2</Powered></td>
                         </tr>
                         </tbody>
@@ -303,7 +303,7 @@ class Product extends React.Component {
                                     <td>{product.sku}</td>
                                 </tr>
                                 <tr>
-                                    <td>Dimensiones (m<Powered>2</Powered>)</td>
+                                    <td>Dimensiones</td>
                                     <td>{product.size} m<Powered>2</Powered></td>
                                 </tr>
                                 </tbody>
@@ -364,7 +364,7 @@ class Product extends React.Component {
                                   <td>{product.sku}</td>
                               </tr>
                               <tr>
-                                  <td>Dimensiones (m<Powered>2</Powered>)</td>
+                                  <td>Dimensiones</td>
                                   <td>{product.size} m<Powered>2</Powered></td>
                               </tr>
                               </tbody>
